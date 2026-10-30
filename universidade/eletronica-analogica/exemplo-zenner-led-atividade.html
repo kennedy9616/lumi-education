@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Simulador didático de diodo Zener e LED, com circuitos, gráficos e resolução por etapas.">
+  <title>Simulador Zener e LED · Atividade LUMI</title>
+  <script src="../../scripts/theme.js"></script>
+  <link rel="stylesheet" href="../../template/tokens.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Lato:wght@400;700;900&family=Merriweather:wght@700;900&display=swap">
+  <link rel="stylesheet" href="../../template/vendor/katex.css">
+  <link rel="stylesheet" href="../../template/pages/zener-led.css">
+  <link rel="stylesheet" href="../../template/activity.css">
+  <script src="../../scripts/vendor/katex.min.js" defer></script>
+  <script src="../../scripts/lessons/zener-led.js" defer></script>
+  <script src="../../scripts/activity.js" defer></script>
+</head>
+<body data-activity="zener-led">
+<div id="app">
+  <header class="topbar">
+    <span class="brand"><b>Cap. 6</b> · Diodo Zener e LED</span><span class="spacer"></span>
+    <button class="tb-btn" id="bMenu" type="button">Menu <kbd>M</kbd></button>
+    <button class="tb-btn" id="bNotes" type="button">Notas <kbd>N</kbd></button>
+  </header>
+  <main id="deck"></main>
+  <footer class="footer">
+    <span>Eletrônica Analógica — UFMA — Prof. Kennedy</span>
+    <span class="where" id="where"></span>
+    <div class="progress"><i id="prog"></i></div>
+    <button class="nav-btn" id="bPrev" type="button" aria-label="Voltar">←</button>
+    <button class="nav-btn" id="bNext" type="button" aria-label="Avançar">→</button>
+  </footer>
+</div>
+<div class="overlay" id="menuOv"><div class="sheet"><h2><span>Menu</span><button class="xbtn" type="button">Fechar (Esc)</button></h2><div class="menu-grid"></div></div></div>
+<aside class="notes" id="notes" aria-live="polite"></aside>
+</body>
+</html>

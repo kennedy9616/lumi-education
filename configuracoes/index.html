@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Configurações">
+    <meta name="theme-color" content="#0b2540">
+    <title>
+      Configurações · LUMI Education
+    </title>
+    <script src="../scripts/theme.js">
+    </script>
+    <link rel="stylesheet" href="../template/tokens.css">
+    <link rel="stylesheet" href="../template/base.css">
+    <link rel="stylesheet" href="../template/layout.css">
+    <link rel="stylesheet" href="../template/pages/settings.css">
+    <script src="../scripts/site.js" defer>
+    </script>
+    <script src="../scripts/settings.js" defer>
+    </script>
+  </head>
+  <body data-root="../" data-area="configuracoes">
+    <a class="skip" href="#conteudo">
+      Pular para o conteúdo
+    </a>
+    <header class="topbar" data-site-header>
+    </header>
+    <progress class="progress reading-progress" data-reading-progress value="0" max="100" aria-label="Progresso de leitura da página">
+    </progress>
+    <aside class="sidebar" id="sidebar" data-site-sidebar aria-label="Menu do aluno">
+    </aside>
+    <button class="scrim" type="button" aria-label="Fechar menu" tabindex="-1">
+    </button>
+    <noscript>
+      <p class="noscript">
+        Ative o JavaScript para usar o menu e as atividades interativas.
+        <a href="../index.html">
+          Visão geral
+        </a>
+        ·
+        <a href="../infantil/index.html">
+          Infantil
+        </a>
+        ·
+        <a href="../universidade/index.html">
+          Universidade
+        </a>
+        ·
+        <a href="../tecnico/index.html">
+          Técnico
+        </a>
+        ·
+        <a href="../configuracoes/index.html">
+          Configurações
+        </a>
+      </p>
+    </noscript>
+    <main class="main " id="conteudo" tabindex="-1">
+      <nav class="breadcrumb" aria-label="Trilha de navegação">
+        <a href="../index.html">
+          Início
+        </a>
+        <span aria-hidden="true">
+          ›
+        </span>
+        <span aria-current="page">
+          Configurações
+        </span>
+      </nav>
+      <section class="hero">
+        <div class="eyebrow">
+          DO SEU JEITO
+        </div>
+        <h1 tabindex="-1">
+          Configurações do ambiente
+        </h1>
+        <p class="hero-text">
+          Escolha como você quer ver a LUMI. Suas preferências são aplicadas em todas as páginas e salvas neste navegador.
+        </p>
+      </section>
+      <div class="settings-grid">
+        <form id="preferences" class="settings-form" aria-label="Preferências de aparência">
+          <fieldset class="settings-group">
+            <legend>
+              Tema
+            </legend>
+            <p>
+              Encontre a iluminação mais confortável para estudar.
+            </p>
+            <div class="options">
+              <label class="option">
+                <input type="radio" name="theme" value="light">
+                <span aria-hidden="true">
+                  ☀
+                </span>
+                Claro
+              </label>
+              <label class="option">
+                <input type="radio" name="theme" value="dark">
+                <span aria-hidden="true">
+                  ☾
+                </span>
+                Escuro
+              </label>
+              <label class="option">
+                <input type="radio" name="theme" value="system">
+                <span aria-hidden="true">
+                  ◐
+                </span>
+                Sistema
+              </label>
+            </div>
+          </fieldset>
+          <fieldset class="settings-group">
+            <legend>
+              Cor de destaque
+            </legend>
+            <p>
+              Personalize os botões e os detalhes do seu ambiente.
+            </p>
+            <div class="options">
+              <label class="option">
+                <input type="radio" name="accent" value="dourado">
+                <span class="swatch gold" aria-hidden="true">
+                </span>
+                Dourado
+              </label>
+              <label class="option">
+                <input type="radio" name="accent" value="azul">
+                <span class="swatch blue" aria-hidden="true">
+                </span>
+                Azul
+              </label>
+              <label class="option">
+                <input type="radio" name="accent" value="verde">
+                <span class="swatch green" aria-hidden="true">
+                </span>
+                Verde
+              </label>
+              <label class="option">
+                <input type="radio" name="accent" value="violeta">
+                <span class="swatch purple" aria-hidden="true">
+                </span>
+                Violeta
+              </label>
+            </div>
+          </fieldset>
+          <fieldset class="settings-group">
+            <legend>
+              Movimento
+            </legend>
+            <p>
+              Reduza as animações do portal para uma navegação mais tranquila.
+            </p>
+            <div class="options">
+              <label class="option">
+                <input type="radio" name="motion" value="system">
+                Seguir o sistema
+              </label>
+              <label class="option">
+                <input type="radio" name="motion" value="reduced">
+                Reduzir animações
+              </label>
+            </div>
+          </fieldset>
+          <div>
+            <button class="btn" id="reset-preferences" type="button">
+              Restaurar padrão
+            </button>
+            <p id="settings-status" class="settings-status" role="status" aria-live="polite">
+              As alterações são salvas automaticamente.
+            </p>
+          </div>
+        </form>
+        <aside class="card theme-preview" aria-label="Prévia da aparência">
+          <div class="eyebrow">
+            PRÉVIA AO VIVO
+          </div>
+          <div class="preview-banner">
+            <strong>
+              LUMI Education
+            </strong>
+            <p>
+              Um ambiente para suas descobertas.
+            </p>
+          </div>
+          <h3>
+            Seu próximo aprendizado
+          </h3>
+          <p>
+            As cores, os cartões e os botões acompanham suas escolhas.
+          </p>
+          <a class="btn primary" href="../index.html#cursos">
+            Explorar cursos
+            <span aria-hidden="true">
+              →
+            </span>
+          </a>
+        </aside>
+      </div>
+      <footer class="footer shell-footer">
+        <span>LUMI Education · Do fundamento à aplicação.</span>
+      <span>Educação Infantil · Profª Nilcilene Mendes<br>Universidade e Ensino Técnico · Prof. Kennedy Nunes</span>
+        <a href="../configuracoes/index.html">
+          Personalizar meu ambiente
+        </a>
+      </footer>
+    </main>
+    <button class="icon-btn to-top" type="button" data-to-top aria-label="Voltar ao topo">
+      ↑
+    </button>
+  </body>
+</html>

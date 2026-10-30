@@ -1,0 +1,54 @@
+/* Identidade visual da LUMI. Altere as cores aqui para atualizar todo o AVA. */
+:root {
+  color-scheme: light;
+  --navy: #0b2540;
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --ink: #18334a;
+  --muted: #536779;
+  --line: #dce4eb;
+  --soft: #eaf2f3;
+  --teal: #146b73;
+  --amber: #e3a23b;
+  --on-accent: #172c3d;
+  --shadow: 0 8px 32px #0b254008;
+  --card-radius: 18px;
+  --font-ui: Inter, 'Segoe UI', system-ui, sans-serif;
+  --font-heading: Sora, 'Segoe UI', system-ui, sans-serif;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0c1724;
+  --surface: #142536;
+  --ink: #e6eef5;
+  --muted: #b1c0cd;
+  --line: #304456;
+  --soft: #1b353e;
+  --teal: #77cbd0;
+  --shadow: 0 8px 32px #0002;
+}
+:root[data-accent="azul"] {
+  --amber: #87b9ff;
+  --on-accent: #102c50;
+}
+:root[data-accent="verde"] {
+  --amber: #82d6b4;
+  --on-accent: #123a2c;
+}
+:root[data-accent="violeta"] {
+  --amber: #c5aeff;
+  --on-accent: #30234d;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --bg: #0c1724;
+    --surface: #142536;
+    --ink: #e6eef5;
+    --muted: #b1c0cd;
+    --line: #304456;
+    --soft: #1b353e;
+    --teal: #77cbd0;
+    --shadow: 0 8px 32px #0002;
+  }
+}

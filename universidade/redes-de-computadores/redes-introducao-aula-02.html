@@ -1,0 +1,1619 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Entenda como a informação vira sinal e por que banda, ruído e codificação impõem limites à comunicação.">
+    <meta name="theme-color" content="#0b2540">
+    <title>
+      Fundamentos de comunicação de dados · LUMI Education
+    </title>
+    <script src="../../scripts/theme.js">
+    </script>
+    <link rel="stylesheet" href="../../template/tokens.css">
+    <link rel="stylesheet" href="../../template/base.css">
+    <link rel="stylesheet" href="../../template/layout.css">
+    <link rel="stylesheet" href="../../template/pages/redes.css">
+    <script src="../../scripts/site.js" defer>
+    </script>
+    <script src="../../scripts/icons.js" defer>
+    </script>
+    <script src="../../scripts/lessons/redes.js" defer>
+    </script>
+  </head>
+  <body data-root="../../" data-area="universidade">
+    <a class="skip" href="#conteudo">
+      Pular para o conteúdo
+    </a>
+    <header class="topbar" data-site-header>
+    </header>
+    <progress class="progress reading-progress" data-reading-progress value="0" max="100" aria-label="Progresso de leitura da página">
+    </progress>
+    <aside class="sidebar" id="sidebar" data-site-sidebar aria-label="Menu do aluno">
+    </aside>
+    <button class="scrim" type="button" aria-label="Fechar menu" tabindex="-1">
+    </button>
+    <noscript>
+      <p class="noscript">
+        Ative o JavaScript para usar o menu e as atividades interativas.
+        <a href="../../index.html">
+          Visão geral
+        </a>
+        ·
+        <a href="../../infantil/index.html">
+          Infantil
+        </a>
+        ·
+        <a href="../../universidade/index.html">
+          Universidade
+        </a>
+        ·
+        <a href="../../tecnico/index.html">
+          Técnico
+        </a>
+        ·
+        <a href="../../configuracoes/index.html">
+          Configurações
+        </a>
+      </p>
+    </noscript>
+    <template id="course-navigation">
+      <div class="course-navigation">
+        <p class="side-kicker">
+          NESTE CURSO
+        </p>
+        <nav aria-label="Redes de Computadores">
+          <a href="redes-index.html" class="side-home">
+            <i data-lucide="layout-dashboard" aria-hidden="true">
+            </i>
+            Visão geral
+          </a>
+          <div class="side-module">
+            <a href="redes-introducao.html" class="module-link">
+              <span class="nav-index">
+                00
+              </span>
+              Introdução
+            </a>
+            <a href="redes-introducao-aula-01.html" class="lesson-link">
+              <span class="num">
+                01
+              </span>
+              História da Internet e conceitos fundamentais
+            </a>
+            <a href="redes-introducao-aula-02.html" class="lesson-link active" aria-current="page" aria-current="page">
+              <span class="num">
+                02
+              </span>
+              Fundamentos de comunicação de dados
+            </a>
+            <a href="redes-introducao-aula-03.html" class="lesson-link">
+              <span class="num">
+                03
+              </span>
+              Arquitetura de redes e modelo OSI
+            </a>
+          </div>
+          <div class="side-module">
+            <a class="module-link" href="redes-index.html#enlace-fisica">
+              <span class="nav-index">
+                01
+              </span>
+              Enlace e Física
+            </a>
+            <span class="soon">
+              Em breve
+            </span>
+          </div>
+          <div class="side-module">
+            <a class="module-link" href="redes-index.html#rede">
+              <span class="nav-index">
+                02
+              </span>
+              Rede
+            </a>
+            <span class="soon">
+              Em breve
+            </span>
+          </div>
+          <div class="side-module">
+            <a class="module-link" href="redes-index.html#transporte">
+              <span class="nav-index">
+                03
+              </span>
+              Transporte
+            </a>
+            <span class="soon">
+              Em breve
+            </span>
+          </div>
+          <div class="side-module">
+            <a class="module-link" href="redes-index.html#aplicacao">
+              <span class="nav-index">
+                04
+              </span>
+              Aplicação
+            </a>
+            <span class="soon">
+              Em breve
+            </span>
+          </div>
+        </nav>
+      </div>
+    </template>
+    <main class="main " id="conteudo" tabindex="-1">
+      <nav class="breadcrumb" aria-label="Trilha de navegação">
+        <a href="../../index.html">
+          Início
+        </a>
+        <span aria-hidden="true">
+          ›
+        </span>
+        <a href="../index.html">
+          Universidade
+        </a>
+        <span aria-hidden="true">
+          ›
+        </span>
+        <a href="redes-index.html">
+          Redes de Computadores
+        </a>
+        <span aria-hidden="true">
+          ›
+        </span>
+        <span aria-current="page">
+          Fundamentos de comunicação de dados
+        </span>
+      </nav>
+      <nav class="utility" aria-label="Navegação da aula">
+        <div class="utility-group">
+          <a href="redes-index.html" class="btn small">
+            <i data-lucide="house" aria-hidden="true">
+            </i>
+            Início da disciplina
+          </a>
+          <a href="redes-introducao.html" class="btn small">
+            <i data-lucide="grid-2x2" aria-hidden="true">
+            </i>
+            Voltar ao módulo
+          </a>
+        </div>
+        <div class="utility-group">
+          <a href="redes-introducao-aula-01.html" class="btn small">
+            <i data-lucide="arrow-left" aria-hidden="true">
+            </i>
+            Aula anterior
+          </a>
+          <a href="redes-introducao-aula-03.html" class="btn small">
+            <i data-lucide="arrow-right" aria-hidden="true">
+            </i>
+            Próxima aula
+          </a>
+        </div>
+      </nav>
+      <div class="hero">
+        <div class="eyebrow">
+          Aula 02 / Introdução
+        </div>
+        <h1 tabindex="-1">
+          Fundamentos de comunicação de dados
+        </h1>
+        <p class="hero-text">
+          Entenda como a informação vira sinal e por que banda, ruído e codificação impõem limites à comunicação.
+        </p>
+        <div class="meta">
+          <span class="pill">
+            <i data-lucide="graduation-cap" aria-hidden="true">
+            </i>
+            Engenharia Elétrica · UFMA
+          </span>
+          <span class="pill">
+            <i data-lucide="clock-3" aria-hidden="true">
+            </i>
+            Leitura estimada: 35 min
+          </span>
+          <span class="pill">
+            5 questões de revisão
+          </span>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card reveal span2 objectives" data-kind="Conceito">
+          <div class="eyebrow kind">
+            <i data-lucide="layers" aria-hidden="true">
+            </i>
+            Conceito
+          </div>
+          <h3>
+            Ao final desta aula, você poderá…
+          </h3>
+          <ul>
+            <li>
+              Reconhecer os elementos e critérios de qualidade da comunicação.
+            </li>
+            <li>
+              Distinguir dados, sinais analógicos e sinais digitais.
+            </li>
+            <li>
+              Interpretar taxa de transmissão, banda e throughput.
+            </li>
+            <li>
+              Aplicar os exemplos de Nyquist e Shannon com atenção às unidades.
+            </li>
+          </ul>
+        </article>
+        <article class="card reveal " data-kind="Resumo">
+          <div class="eyebrow kind">
+            <i data-lucide="list-checks" aria-hidden="true">
+            </i>
+            Resumo
+          </div>
+          <h3>
+            Nesta aula
+          </h3>
+          <nav aria-label="Sumário da aula" class="toc">
+            <a href="#sistema">
+              <small>
+                01
+              </small>
+              Sistema de comunicação
+            </a>
+            <a href="#sinais">
+              <small>
+                02
+              </small>
+              Dados e sinais
+            </a>
+            <a href="#metricas">
+              <small>
+                03
+              </small>
+              Taxa, banda e throughput
+            </a>
+            <a href="#capacidade">
+              <small>
+                04
+              </small>
+              Ruído e capacidade
+            </a>
+            <a href="#aplicacoes">
+              <small>
+                05
+              </small>
+              Engenharia e contexto
+            </a>
+            <a href="#resumo">
+              <small>
+                06
+              </small>
+              Resumo
+            </a>
+            <a href="#verifique">
+              <small>
+                07
+              </small>
+              Verifique seu entendimento
+            </a>
+            <a href="#exercicios">
+              <small>
+                08
+              </small>
+              Exercícios originais
+            </a>
+            <a href="#referencias">
+              <small>
+                09
+              </small>
+              Para saber mais
+            </a>
+          </nav>
+        </article>
+      </div>
+      <section id="sistema" class="lesson-section">
+        <div class="section-heading">
+          <span class="section-line">
+          </span>
+          <h2>
+            A informação precisa atravessar um meio real
+          </h2>
+        </div>
+        <p class="section-intro">
+          Vídeo, telemetria e comandos industriais dependem de sinais sujeitos às condições do canal.
+        </p>
+        <div class="grid">
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Comunicação de dados
+            </h3>
+            <p>
+              É a transferência de informação codificada entre pontos, através de um meio físico e segundo regras compreendidas pelos participantes.
+            </p>
+          </article>
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Critérios de qualidade
+            </h3>
+            <ul>
+              <li>
+                <strong>
+                  Entrega:
+                </strong>
+                destino correto.
+              </li>
+              <li>
+                <strong>
+                  Exatidão:
+                </strong>
+                informação sem alteração.
+              </li>
+              <li>
+                <strong>
+                  Tempestividade:
+                </strong>
+                chegada em tempo útil, especialmente em voz e vídeo.
+              </li>
+            </ul>
+          </article>
+          <article class="card reveal " data-kind="Atenção">
+            <div class="eyebrow kind">
+              <i data-lucide="triangle-alert" aria-hidden="true">
+              </i>
+              Atenção
+            </div>
+            <h3>
+              O que pode faltar?
+            </h3>
+            <ul>
+              <li>
+                Sem meio: não existe caminho físico.
+              </li>
+              <li>
+                Sem protocolo: os sinais podem não ser interpretados.
+              </li>
+              <li>
+                Com codificação incorreta: o conteúdo pode ser incompreensível.
+              </li>
+              <li>
+                Sem receptor apto: não há interpretação da informação.
+              </li>
+            </ul>
+          </article>
+          <article class="card reveal wide" data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Os cinco elementos em conjunto
+            </h3>
+            <figure class="figure">
+              <svg viewBox="0 0 660 210" role="img" aria-labelledby="sys-title">
+                <title id="sys-title">
+                  Mensagem codificada pelo emissor, transmitida pelo meio e decodificada pelo receptor, sob regras de protocolo.
+                </title>
+                <defs>
+                  <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                    <path d="M0 0L6 3L0 6" fill="currentColor"/>
+                  </marker>
+                </defs>
+                <path class="track" d="M175 85H245M405 85H475" marker-end="url(#arrow)"/>
+                <rect class="node" x="15" y="45" width="160" height="80" rx="12"/>
+                <rect class="node" x="245" y="45" width="160" height="80" rx="12"/>
+                <rect class="node" x="475" y="45" width="170" height="80" rx="12"/>
+                <text x="95" y="77" text-anchor="middle">Emissor</text><text x="95" y="101" text-anchor="middle">codifica a mensagem</text><text x="325" y="77" text-anchor="middle">Meio</text><text x="325" y="101" text-anchor="middle">transporta o sinal</text><text x="560" y="77" text-anchor="middle">Receptor</text><text x="560" y="101" text-anchor="middle">decodifica a mensagem</text>
+                <rect class="layer" x="15" y="155" width="630" height="40" rx="8"/>
+                <text x="330" y="181" text-anchor="middle">Protocolo: regras compartilhadas pelos participantes</text>
+              </svg>
+              <figcaption>
+                A mensagem é a informação. O protocolo rege a comunicação; não é uma etapa física posterior ao receptor.
+              </figcaption>
+            </figure>
+          </article>
+          <article class="card reveal " data-kind="Analogia">
+            <div class="eyebrow kind">
+              <i data-lucide="route" aria-hidden="true">
+              </i>
+              Analogia
+            </div>
+            <h3>
+              A analogia rodoviária
+            </h3>
+            <p>
+              Cidades representam emissor e receptor; a estrada, o meio; carros, os dados; leis de trânsito, o protocolo. Faixas ajudam a imaginar capacidade; buracos e obras ilustram dificuldades no percurso.
+            </p>
+          </article>
+          <article class="card reveal " data-kind="Atenção">
+            <div class="eyebrow kind">
+              <i data-lucide="triangle-alert" aria-hidden="true">
+              </i>
+              Atenção
+            </div>
+            <h3>
+              O limite da analogia
+            </h3>
+            <p>
+              Uma via larga pode ser subutilizada, e um gargalo pode limitar o percurso inteiro. Mas sinais também sofrem deformações que não possuem equivalente direto no trânsito. Use a analogia para intuição, não como definição física.
+            </p>
+          </article>
+          <article class="card reveal " data-kind="Exemplo">
+            <div class="eyebrow kind">
+              <i data-lucide="search" aria-hidden="true">
+              </i>
+              Exemplo
+            </div>
+            <h3>
+              Aplicações que motivam a aula
+            </h3>
+            <ul>
+              <li>
+                Leituras de sensores de smart grids.
+              </li>
+              <li>
+                Controle entre CLPs industriais.
+              </li>
+              <li>
+                Telemetria de satélites.
+              </li>
+              <li>
+                Redes ópticas entre subestações.
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <section id="sinais" class="lesson-section">
+        <div class="section-heading">
+          <span class="section-line">
+          </span>
+          <h2>
+            Da informação à representação física
+          </h2>
+        </div>
+        <p class="section-intro">
+          O dado é o conteúdo; o sinal é a forma física utilizada para transportá-lo.
+        </p>
+        <div class="grid">
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Sinal analógico
+            </h3>
+            <p>
+              Apresenta valores contínuos de amplitude. A aula usa ondas senoidais e exemplos de voz e rádio AM/FM.
+            </p>
+            <ul>
+              <li>
+                <strong>
+                  Amplitude:
+                </strong>
+                altura da onda.
+              </li>
+              <li>
+                <strong>
+                  Período T:
+                </strong>
+                duração de um ciclo.
+              </li>
+              <li>
+                <strong>
+                  Frequência:
+                </strong>
+                ciclos por segundo, em Hz.
+              </li>
+            </ul>
+            <span class="formula">
+              f = 1 / T
+            </span>
+          </article>
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Sinal digital
+            </h3>
+            <p>
+              Assume um conjunto finito de níveis. No caso binário, dois níveis representam 0 e 1. O material usa Ethernet, USB e sinais internos de computadores como exemplos.
+            </p>
+            <p>
+              Também é um sinal físico: a representação em níveis não elimina a propagação pelo meio.
+            </p>
+          </article>
+          <article class="card reveal " data-kind="Atenção">
+            <div class="eyebrow kind">
+              <i data-lucide="triangle-alert" aria-hidden="true">
+              </i>
+              Atenção
+            </div>
+            <h3>
+              Dado não é sinal
+            </h3>
+            <p>
+              Voz, como dado analógico, pode ser transportada digitalmente por amostragem e quantização, no exemplo PCM. Dados digitais também podem ser transportados com sinais analógicos, como no exemplo de modem.
+            </p>
+          </article>
+          <article class="card reveal wide" data-kind="Na prática">
+            <div class="eyebrow kind">
+              <i data-lucide="wrench" aria-hidden="true">
+              </i>
+              Na prática
+            </div>
+            <h3>
+              Observe as diferenças
+            </h3>
+            <div class="controls" role="group" aria-label="Representação do sinal">
+              <button class="btn" data-wave-mode="analogico" aria-pressed="true">
+                Analógico
+              </button>
+              <button class="btn" data-wave-mode="digital" aria-pressed="false">
+                Digital
+              </button>
+              <button class="btn" data-wave-mode="ruido" aria-pressed="false">
+                Com ruído
+              </button>
+              <button class="btn" data-wave-mode="atenuacao" aria-pressed="false">
+                Atenuado
+              </button>
+            </div>
+            <figure class="figure">
+              <svg viewBox="0 0 650 220" role="img" aria-label="Comparação qualitativa de sinais: onda contínua, níveis digitais, perturbação por ruído e redução da amplitude">
+                <path class="edge" d="M30 25V180H620M30 105H620"/>
+                <text x="35" y="20">Amplitude</text>
+                <g data-wave="analogico">
+                  <path class="track" d="M30.0,105.0 L33.0,100.2 L36.0,95.5 L39.0,90.8 L42.0,86.3 L45.0,82.0 L48.0,77.9 L51.0,74.1 L54.0,70.6 L57.0,67.4 L60.0,64.6 L63.0,62.2 L66.0,60.3 L69.0,58.7 L72.0,57.7 L75.0,57.1 L78.0,57.0 L81.0,57.4 L84.0,58.3 L87.0,59.6 L90.0,61.4 L93.0,63.6 L96.0,66.2 L99.0,69.2 L102.0,72.6 L105.0,76.3 L108.0,80.3 L111.0,84.5 L114.0,88.9 L117.0,93.5 L120.0,98.2 L123.0,103.0 L126.0,107.8 L129.0,112.6 L132.0,117.3 L135.0,121.8 L138.0,126.2 L141.0,130.4 L144.0,134.4 L147.0,138.0 L150.0,141.3 L153.0,144.3 L156.0,146.8 L159.0,149.0 L162.0,150.7 L165.0,151.9 L168.0,152.7 L171.0,153.0 L174.0,152.8 L177.0,152.2 L180.0,151.0 L183.0,149.4 L186.0,147.4 L189.0,144.9 L192.0,142.1 L195.0,138.9 L198.0,135.3 L201.0,131.4 L204.0,127.3 L207.0,122.9 L210.0,118.4 L213.0,113.7 L216.0,109.0 L219.0,104.2 L222.0,99.4 L225.0,94.7 L228.0,90.0 L231.0,85.6 L234.0,81.3 L237.0,77.2 L240.0,73.5 L243.0,70.0 L246.0,66.9 L249.0,64.2 L252.0,61.9 L255.0,60.0 L258.0,58.5 L261.0,57.6 L264.0,57.1 L267.0,57.1 L270.0,57.5 L273.0,58.4 L276.0,59.8 L279.0,61.7 L282.0,64.0 L285.0,66.7 L288.0,69.7 L291.0,73.2 L294.0,76.9 L297.0,81.0 L300.0,85.2 L303.0,89.7 L306.0,94.3 L309.0,99.0 L312.0,103.8 L315.0,108.6 L318.0,113.4 L321.0,118.0 L324.0,122.6 L327.0,127.0 L330.0,131.1 L333.0,135.0 L336.0,138.6 L339.0,141.8 L342.0,144.7 L345.0,147.2 L348.0,149.3 L351.0,150.9 L354.0,152.1 L357.0,152.8 L360.0,153.0 L363.0,152.7 L366.0,152.0 L369.0,150.8 L372.0,149.1 L375.0,147.0 L378.0,144.5 L381.0,141.6 L384.0,138.3 L387.0,134.7 L390.0,130.8 L393.0,126.6 L396.0,122.2 L399.0,117.6 L402.0,112.9 L405.0,108.2 L408.0,103.4 L411.0,98.6 L414.0,93.9 L417.0,89.3 L420.0,84.8 L423.0,80.6 L426.0,76.6 L429.0,72.9 L432.0,69.5 L435.0,66.4 L438.0,63.8 L441.0,61.5 L444.0,59.7 L447.0,58.3 L450.0,57.5 L453.0,57.0 L456.0,57.1 L459.0,57.6 L462.0,58.6 L465.0,60.1 L468.0,62.1 L471.0,64.4 L474.0,67.2 L477.0,70.3 L480.0,73.8 L483.0,77.6 L486.0,81.7 L489.0,86.0 L492.0,90.5 L495.0,95.1 L498.0,99.8 L501.0,104.6 L504.0,109.4 L507.0,114.2 L510.0,118.8 L513.0,123.3 L516.0,127.7 L519.0,131.8 L522.0,135.6 L525.0,139.2 L528.0,142.4 L531.0,145.2 L534.0,147.6 L537.0,149.6 L540.0,151.1 L543.0,152.2 L546.0,152.9 L549.0,153.0 L552.0,152.6 L555.0,151.8 L558.0,150.5 L561.0,148.8 L564.0,146.6 L567.0,144.0 L570.0,141.0 L573.0,137.7 L576.0,134.0 L579.0,130.1 L582.0,125.9 L585.0,121.4 L588.0,116.9 L591.0,112.2 L594.0,107.4 L597.0,102.6 L600.0,97.8 L603.0,93.1 L606.0,88.5 L609.0,84.1"/>
+                  <text x="515" y="210">Tempo</text>
+                </g>
+                <g class="diagram-hidden" data-wave="digital">
+                  <path class="track" d="M30 145H100V65H175V145H250V65H400V145H475V65H550V145H610"/>
+                  <text x="515" y="210">Tempo</text>
+                </g>
+                <g class="diagram-hidden" data-wave="ruido">
+                  <path d="M30.0,105.0 L33.0,100.2 L36.0,95.5 L39.0,90.8 L42.0,86.3 L45.0,82.0 L48.0,77.9 L51.0,74.1 L54.0,70.6 L57.0,67.4 L60.0,64.6 L63.0,62.2 L66.0,60.3 L69.0,58.7 L72.0,57.7 L75.0,57.1 L78.0,57.0 L81.0,57.4 L84.0,58.3 L87.0,59.6 L90.0,61.4 L93.0,63.6 L96.0,66.2 L99.0,69.2 L102.0,72.6 L105.0,76.3 L108.0,80.3 L111.0,84.5 L114.0,88.9 L117.0,93.5 L120.0,98.2 L123.0,103.0 L126.0,107.8 L129.0,112.6 L132.0,117.3 L135.0,121.8 L138.0,126.2 L141.0,130.4 L144.0,134.4 L147.0,138.0 L150.0,141.3 L153.0,144.3 L156.0,146.8 L159.0,149.0 L162.0,150.7 L165.0,151.9 L168.0,152.7 L171.0,153.0 L174.0,152.8 L177.0,152.2 L180.0,151.0 L183.0,149.4 L186.0,147.4 L189.0,144.9 L192.0,142.1 L195.0,138.9 L198.0,135.3 L201.0,131.4 L204.0,127.3 L207.0,122.9 L210.0,118.4 L213.0,113.7 L216.0,109.0 L219.0,104.2 L222.0,99.4 L225.0,94.7 L228.0,90.0 L231.0,85.6 L234.0,81.3 L237.0,77.2 L240.0,73.5 L243.0,70.0 L246.0,66.9 L249.0,64.2 L252.0,61.9 L255.0,60.0 L258.0,58.5 L261.0,57.6 L264.0,57.1 L267.0,57.1 L270.0,57.5 L273.0,58.4 L276.0,59.8 L279.0,61.7 L282.0,64.0 L285.0,66.7 L288.0,69.7 L291.0,73.2 L294.0,76.9 L297.0,81.0 L300.0,85.2 L303.0,89.7 L306.0,94.3 L309.0,99.0 L312.0,103.8 L315.0,108.6 L318.0,113.4 L321.0,118.0 L324.0,122.6 L327.0,127.0 L330.0,131.1 L333.0,135.0 L336.0,138.6 L339.0,141.8 L342.0,144.7 L345.0,147.2 L348.0,149.3 L351.0,150.9 L354.0,152.1 L357.0,152.8 L360.0,153.0 L363.0,152.7 L366.0,152.0 L369.0,150.8 L372.0,149.1 L375.0,147.0 L378.0,144.5 L381.0,141.6 L384.0,138.3 L387.0,134.7 L390.0,130.8 L393.0,126.6 L396.0,122.2 L399.0,117.6 L402.0,112.9 L405.0,108.2 L408.0,103.4 L411.0,98.6 L414.0,93.9 L417.0,89.3 L420.0,84.8 L423.0,80.6 L426.0,76.6 L429.0,72.9 L432.0,69.5 L435.0,66.4 L438.0,63.8 L441.0,61.5 L444.0,59.7 L447.0,58.3 L450.0,57.5 L453.0,57.0 L456.0,57.1 L459.0,57.6 L462.0,58.6 L465.0,60.1 L468.0,62.1 L471.0,64.4 L474.0,67.2 L477.0,70.3 L480.0,73.8 L483.0,77.6 L486.0,81.7 L489.0,86.0 L492.0,90.5 L495.0,95.1 L498.0,99.8 L501.0,104.6 L504.0,109.4 L507.0,114.2 L510.0,118.8 L513.0,123.3 L516.0,127.7 L519.0,131.8 L522.0,135.6 L525.0,139.2 L528.0,142.4 L531.0,145.2 L534.0,147.6 L537.0,149.6 L540.0,151.1 L543.0,152.2 L546.0,152.9 L549.0,153.0 L552.0,152.6 L555.0,151.8 L558.0,150.5 L561.0,148.8 L564.0,146.6 L567.0,144.0 L570.0,141.0 L573.0,137.7 L576.0,134.0 L579.0,130.1 L582.0,125.9 L585.0,121.4 L588.0,116.9 L591.0,112.2 L594.0,107.4 L597.0,102.6 L600.0,97.8 L603.0,93.1 L606.0,88.5 L609.0,84.1" fill="none" stroke="var(--muted)" stroke-width="1"/>
+                  <path class="track" d="M30.0,121.5 L33.0,89.5 L36.0,82.8 L39.0,91.3 L42.0,88.5 L45.0,101.1 L48.0,72.5 L51.0,61.0 L54.0,67.6 L57.0,65.6 L60.0,84.7 L63.0,62.4 L66.0,48.5 L69.0,53.4 L72.0,51.3 L75.0,76.3 L78.0,62.3 L81.0,48.4 L84.0,52.0 L87.0,48.4 L90.0,78.0 L93.0,72.9 L96.0,60.7 L99.0,63.6 L102.0,57.2 L105.0,88.8 L108.0,92.2 L111.0,83.0 L114.0,85.6 L117.0,75.0 L120.0,105.6 L123.0,115.9 L126.0,109.9 L129.0,112.8 L132.0,97.2 L135.0,123.7 L138.0,138.3 L141.0,135.3 L144.0,139.1 L147.0,118.2 L150.0,137.9 L153.0,154.1 L156.0,153.1 L159.0,158.6 L162.0,132.9 L165.0,144.0 L168.0,159.2 L171.0,159.1 L174.0,166.9 L177.0,138.0 L180.0,140.0 L183.0,152.0 L186.0,151.8 L189.0,162.6 L192.0,132.7 L195.0,126.4 L198.0,134.1 L201.0,132.6 L204.0,147.1 L207.0,119.0 L210.0,106.1 L213.0,109.5 L216.0,105.8 L219.0,124.4 L222.0,100.9 L225.0,84.2 L228.0,83.9 L231.0,77.6 L234.0,100.1 L237.0,83.5 L240.0,66.0 L243.0,63.5 L246.0,54.2 L249.0,79.9 L252.0,71.8 L255.0,56.3 L258.0,53.3 L261.0,40.9 L264.0,68.3 L267.0,69.0 L270.0,57.7 L273.0,56.0 L276.0,40.5 L279.0,67.7 L282.0,76.3 L285.0,70.2 L288.0,71.3 L291.0,52.8 L294.0,77.4 L297.0,91.9 L300.0,91.1 L303.0,96.0 L306.0,74.7 L309.0,94.5 L312.0,112.1 L315.0,115.3 L318.0,124.5 L321.0,101.0 L324.0,114.0 L327.0,131.7 L330.0,137.1 L333.0,150.5 L336.0,125.6 L339.0,130.6 L342.0,145.6 L345.0,150.9 L348.0,168.0 L351.0,143.0 L354.0,140.0 L357.0,150.1 L360.0,152.9 L363.0,173.1 L366.0,149.5 L369.0,139.4 L372.0,143.7 L375.0,142.4 L378.0,164.7 L381.0,144.3 L384.0,129.2 L387.0,127.9 L390.0,121.2 L393.0,144.8 L396.0,129.4 L399.0,111.9 L402.0,106.4 L405.0,94.1 L408.0,118.0 L411.0,108.9 L414.0,92.0 L417.0,84.6 L420.0,67.0 L423.0,90.5 L426.0,88.4 L429.0,74.7 L432.0,68.1 L435.0,46.4 L438.0,68.3 L441.0,73.1 L444.0,64.6 L447.0,61.3 L450.0,36.9 L453.0,56.2 L456.0,66.8 L459.0,64.3 L462.0,66.5 L465.0,41.0 L468.0,56.4 L471.0,71.1 L474.0,74.2 L477.0,83.0 L480.0,57.7 L483.0,68.4 L486.0,84.6 L489.0,91.6 L492.0,107.2 L495.0,83.3 L498.0,88.6 L501.0,103.8 L504.0,112.2 L507.0,133.7 L510.0,112.3 L513.0,111.8 L516.0,123.5 L519.0,130.4 L522.0,156.3 L525.0,138.1 L528.0,132.1 L531.0,138.8 L534.0,141.4 L537.0,169.5 L540.0,155.1 L543.0,144.7 L546.0,145.6 L549.0,141.9 L552.0,170.1 L555.0,159.8 L558.0,146.5 L561.0,142.4 L564.0,131.1 L567.0,157.5 L570.0,151.5 L573.0,137.5 L576.0,130.0 L579.0,111.3 L582.0,134.3 L585.0,132.8 L588.0,120.2 L591.0,111.9 L594.0,86.9 L597.0,105.6 L600.0,108.4 L603.0,99.1 L606.0,93.0 L609.0,63.7"/>
+                  <text x="515" y="210">Tempo</text>
+                </g>
+                <g class="diagram-hidden" data-wave="atenuacao">
+                  <path class="track" d="M30.0,105.0 L33.0,99.6 L36.0,94.3 L39.0,89.2 L42.0,84.4 L45.0,79.9 L48.0,75.8 L51.0,72.0 L54.0,68.6 L57.0,65.6 L60.0,63.1 L63.0,61.1 L66.0,59.5 L69.0,58.5 L72.0,57.9 L75.0,57.8 L78.0,58.2 L81.0,59.0 L84.0,60.3 L87.0,62.0 L90.0,64.1 L93.0,66.5 L96.0,69.3 L99.0,72.4 L102.0,75.8 L105.0,79.4 L108.0,83.1 L111.0,87.1 L114.0,91.1 L117.0,95.2 L120.0,99.3 L123.0,103.3 L126.0,107.3 L129.0,111.2 L132.0,115.0 L135.0,118.6 L138.0,122.0 L141.0,125.1 L144.0,128.0 L147.0,130.6 L150.0,132.9 L153.0,134.9 L156.0,136.5 L159.0,137.8 L162.0,138.7 L165.0,139.3 L168.0,139.5 L171.0,139.4 L174.0,138.9 L177.0,138.1 L180.0,137.0 L183.0,135.6 L186.0,133.9 L189.0,131.9 L192.0,129.8 L195.0,127.4 L198.0,124.8 L201.0,122.1 L204.0,119.3 L207.0,116.4 L210.0,113.4 L213.0,110.4 L216.0,107.5 L219.0,104.5 L222.0,101.6 L225.0,98.8 L228.0,96.1 L231.0,93.6 L234.0,91.2 L237.0,89.0 L240.0,87.1 L243.0,85.3 L246.0,83.8 L249.0,82.5 L252.0,81.4 L255.0,80.6 L258.0,80.1 L261.0,79.8 L264.0,79.8 L267.0,80.1 L270.0,80.5 L273.0,81.3 L276.0,82.2 L279.0,83.4 L282.0,84.7 L285.0,86.2 L288.0,87.9 L291.0,89.7 L294.0,91.7 L297.0,93.7 L300.0,95.8 L303.0,97.9 L306.0,100.1 L309.0,102.3 L312.0,104.5 L315.0,106.6 L318.0,108.7 L321.0,110.7 L324.0,112.6 L327.0,114.4 L330.0,116.0 L333.0,117.5 L336.0,118.9 L339.0,120.1 L342.0,121.1 L345.0,121.9 L348.0,122.6 L351.0,123.0 L354.0,123.3 L357.0,123.4 L360.0,123.3 L363.0,123.0 L366.0,122.6 L369.0,121.9 L372.0,121.2 L375.0,120.2 L378.0,119.2 L381.0,118.0 L384.0,116.7 L387.0,115.3 L390.0,113.9 L393.0,112.4 L396.0,110.8 L399.0,109.2 L402.0,107.6 L405.0,106.0 L408.0,104.5 L411.0,102.9 L414.0,101.5 L417.0,100.0 L420.0,98.7 L423.0,97.5 L426.0,96.3 L429.0,95.3 L432.0,94.3 L435.0,93.5 L438.0,92.9 L441.0,92.3 L444.0,91.9 L447.0,91.7 L450.0,91.6 L453.0,91.6 L456.0,91.7 L459.0,92.0 L462.0,92.4 L465.0,92.9 L468.0,93.6 L471.0,94.3 L474.0,95.1 L477.0,96.0 L480.0,97.0 L483.0,98.1 L486.0,99.1 L489.0,100.3 L492.0,101.4 L495.0,102.6 L498.0,103.8 L501.0,104.9 L504.0,106.0 L507.0,107.1 L510.0,108.2 L513.0,109.2 L516.0,110.1 L519.0,111.0 L522.0,111.8 L525.0,112.5 L528.0,113.1 L531.0,113.7 L534.0,114.1 L537.0,114.4 L540.0,114.7 L543.0,114.8 L546.0,114.8 L549.0,114.7 L552.0,114.6 L555.0,114.3 L558.0,114.0 L561.0,113.5 L564.0,113.0 L567.0,112.5 L570.0,111.8 L573.0,111.1 L576.0,110.4 L579.0,109.6 L582.0,108.8 L585.0,108.0 L588.0,107.1 L591.0,106.3 L594.0,105.4 L597.0,104.6 L600.0,103.8 L603.0,103.0 L606.0,102.2 L609.0,101.5"/>
+                  <text x="490" y="210">Percurso</text>
+                </g>
+              </svg>
+              <figcaption>
+                Ilustrações sem escala numérica. As formas servem para comparação visual, sem representar medições.
+              </figcaption>
+            </figure>
+            <div class="diagram-status" id="wave-status" role="status">
+              Analógico: amplitude contínua. O esquema destaca uma onda periódica; amplitude, período e frequência descrevem seu comportamento.
+            </div>
+          </article>
+          <article class="card reveal wide" data-kind="Resumo">
+            <div class="eyebrow kind">
+              <i data-lucide="list-checks" aria-hidden="true">
+              </i>
+              Resumo
+            </div>
+            <h3>
+              Analógico × digital
+            </h3>
+            <div class="table-scroll" tabindex="0" role="region" aria-label="Tabela comparativa, role horizontalmente se necessário">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      Aspecto
+                    </th>
+                    <th scope="col">
+                      Analógico
+                    </th>
+                    <th scope="col">
+                      Digital
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      Valores
+                    </td>
+                    <td>
+                      Contínuos
+                    </td>
+                    <td>
+                      Discretos
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Ruído no exemplo
+                    </td>
+                    <td>
+                      Variações afetam a forma
+                    </td>
+                    <td>
+                      Decisão entre níveis
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Regeneração no material
+                    </td>
+                    <td>
+                      Amplificação também pode ampliar ruído
+                    </td>
+                    <td>
+                      Repetidores recriam níveis
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Exemplos
+                    </td>
+                    <td>
+                      Rádio AM/FM e voz na linha
+                    </td>
+                    <td>
+                      Redes, USB e HDMI
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Por que o digital?
+            </h3>
+            <ul>
+              <li>
+                Facilita processamento, compressão e criptografia.
+              </li>
+              <li>
+                Permite trabalhar com detecção de erros.
+              </li>
+              <li>
+                Integra voz, vídeo e dados como bits.
+              </li>
+              <li>
+                A aula destaca decisão por níveis e regeneração.
+              </li>
+            </ul>
+          </article>
+          <article class="card reveal wide" data-kind="Atenção">
+            <div class="eyebrow kind">
+              <i data-lucide="triangle-alert" aria-hidden="true">
+              </i>
+              Atenção
+            </div>
+            <h3>
+              Nota para revisão do professor
+            </h3>
+            <p>
+              O PDF descreve “regeneração perfeita” e afirma que sinais digitais geralmente exigem mais banda que sinais analógicos equivalentes. São formulações simplificadas: o material não especifica condições de comparação ou limites de regeneração. A nota preserva essa ressalva sem substituir o conteúdo.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="metricas" class="lesson-section">
+        <div class="section-heading">
+          <span class="section-line">
+          </span>
+          <h2>
+            Três medidas, três perguntas
+          </h2>
+        </div>
+        <p class="section-intro">
+          Diferencie as unidades antes de comparar os valores.
+        </p>
+        <div class="grid">
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Taxa de transmissão
+            </h3>
+            <p>
+              Quantos bits são transmitidos por segundo? A taxa é medida em bps e seus múltiplos.
+            </p>
+            <span class="formula">
+              Taxa = bits transmitidos / tempo (s)
+            </span>
+            <p>
+              1 kbps = 1.000 bps
+              <br>
+              1 Mbps = 1.000 kbps
+              <br>
+              1 Gbps = 1.000 Mbps
+            </p>
+          </article>
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Largura de banda física
+            </h3>
+            <p>
+              Qual faixa de frequências o meio consegue transportar sem atenuação excessiva? Nesta aula, a unidade é Hertz (Hz).
+            </p>
+            <p>
+              O PDF relaciona a banda ao meio e cita um canal telefônico filtrado para cerca de 3.100 Hz.
+            </p>
+          </article>
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Throughput
+            </h3>
+            <p>
+              Quantos bits atravessam efetivamente a rede no intervalo observado? Pode ficar abaixo da taxa nominal por disputa do meio, topologia, tráfego e retransmissões.
+            </p>
+            <p>
+              Exemplo do exercício: 62 Mbps em um enlace nominal de 100 Mbps correspondem a 62% de eficiência.
+            </p>
+          </article>
+          <article class="card reveal wide" data-kind="Atenção">
+            <div class="eyebrow kind">
+              <i data-lucide="triangle-alert" aria-hidden="true">
+              </i>
+              Atenção
+            </div>
+            <h3>
+              Nota para revisão do professor
+            </h3>
+            <p>
+              A página 17 escreve “Throughput ≤ Taxa de transmissão ≤ Largura de banda disponível”, embora defina banda em Hz. Essa comparação mistura unidades e fica marcada para revisão. A analogia também alterna “velocidade dos carros” e “carros por segundo” para representar taxa; ela não deve ser usada como igualdade física.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="capacidade" class="lesson-section">
+        <div class="section-heading">
+          <span class="section-line">
+          </span>
+          <h2>
+            Ruído e capacidade do canal
+          </h2>
+        </div>
+        <p class="section-intro">
+          As fórmulas do material relacionam banda, níveis de sinal e relação sinal-ruído.
+        </p>
+        <div class="grid">
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Quatro fontes de ruído
+            </h3>
+            <ul>
+              <li>
+                <strong>
+                  Térmico:
+                </strong>
+                movimento aleatório de elétrons.
+              </li>
+              <li>
+                <strong>
+                  Diafonia:
+                </strong>
+                interferência entre pares ou cabos próximos.
+              </li>
+              <li>
+                <strong>
+                  Impulsivo:
+                </strong>
+                picos por chaveamento ou descargas.
+              </li>
+              <li>
+                <strong>
+                  Eletromagnético externo:
+                </strong>
+                motores, transmissores e linhas próximas.
+              </li>
+            </ul>
+          </article>
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Atenuação e distorção
+            </h3>
+            <p>
+              <strong>
+                Atenuação:
+              </strong>
+              perda de energia ao longo do caminho, associada ao material e à frequência.
+            </p>
+            <p>
+              <strong>
+                Distorção por atraso:
+              </strong>
+              componentes chegam em instantes diferentes e alteram a forma do pulso.
+            </p>
+          </article>
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Relação sinal-ruído
+            </h3>
+            <p>
+              S/N compara as potências de sinal e ruído. A fórmula em decibéis apresentada é:
+            </p>
+            <span class="formula">
+              S/N em dB = 10 · log₁₀(S/N)
+            </span>
+            <p>
+              S/N = 100 → 20 dB
+              <br>
+              S/N = 1.000 → 30 dB
+              <br>
+              Na fórmula de Shannon, use a razão de potências, não o valor em dB.
+            </p>
+          </article>
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Nyquist: canal ideal
+            </h3>
+            <p>
+              Para um canal sem ruído, com largura de banda W e V níveis discretos:
+            </p>
+            <span class="formula">
+              C = 2 · W · log₂(V)
+            </span>
+            <ul>
+              <li>
+                C: capacidade em bits/s.
+              </li>
+              <li>
+                W: banda em Hz.
+              </li>
+              <li>
+                V: número de níveis do sinal.
+              </li>
+            </ul>
+          </article>
+          <article class="card reveal " data-kind="Exemplo">
+            <div class="eyebrow kind">
+              <i data-lucide="search" aria-hidden="true">
+              </i>
+              Exemplo
+            </div>
+            <h3>
+              Nyquist — exemplo resolvido
+            </h3>
+            <p>
+              Para W = 3 kHz, compare os níveis do sinal:
+            </p>
+            <ol class="step-list">
+              <li>
+                Converta W: 3 kHz = 3.000 Hz.
+              </li>
+              <li>
+                Binário, V = 2: C = 2 × 3.000 × 1 =
+                <strong>
+                  6.000 bps
+                </strong>
+                .
+              </li>
+              <li>
+                Com V = 16: C = 2 × 3.000 × 4 =
+                <strong>
+                  24.000 bps
+                </strong>
+                .
+              </li>
+            </ol>
+          </article>
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Shannon: canal com ruído
+            </h3>
+            <p>
+              Para o cenário de ruído gaussiano apresentado no PDF:
+            </p>
+            <span class="formula">
+              C = W · log₂(1 + S/N)
+            </span>
+            <ul>
+              <li>
+                W: banda em Hz.
+              </li>
+              <li>
+                S/N: razão de potências.
+              </li>
+              <li>
+                C: limite de capacidade em bits/s.
+              </li>
+            </ul>
+          </article>
+          <article class="card reveal " data-kind="Exemplo">
+            <div class="eyebrow kind">
+              <i data-lucide="search" aria-hidden="true">
+              </i>
+              Exemplo
+            </div>
+            <h3>
+              Shannon — exemplo resolvido
+            </h3>
+            <ol class="step-list">
+              <li>
+                Dados: W = 3 kHz e S/N = 30 dB.
+              </li>
+              <li>
+                Converta 30 dB para razão: S/N = 1.000.
+              </li>
+              <li>
+                C = 3.000 × log₂(1.001).
+              </li>
+              <li>
+                Resultado aproximado do material:
+                <strong>
+                  30.000 bps
+                </strong>
+                , ou 30 kbps.
+              </li>
+            </ol>
+          </article>
+          <article class="card reveal span2" data-kind="Resumo">
+            <div class="eyebrow kind">
+              <i data-lucide="list-checks" aria-hidden="true">
+              </i>
+              Resumo
+            </div>
+            <h3>
+              Compare as condições
+            </h3>
+            <div class="table-scroll" tabindex="0" role="region" aria-label="Tabela comparativa, role horizontalmente se necessário">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      Modelo
+                    </th>
+                    <th scope="col">
+                      Variáveis
+                    </th>
+                    <th scope="col">
+                      Cenário
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      Nyquist
+                    </td>
+                    <td>
+                      W e V
+                    </td>
+                    <td>
+                      Canal ideal sem ruído
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Shannon
+                    </td>
+                    <td>
+                      W e S/N
+                    </td>
+                    <td>
+                      Canal com ruído gaussiano
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              Observe qual cenário está sendo descrito antes de escolher a fórmula. Não substitua dB diretamente por S/N.
+            </p>
+          </article>
+          <article class="card reveal wide" data-kind="Atenção">
+            <div class="eyebrow kind">
+              <i data-lucide="triangle-alert" aria-hidden="true">
+              </i>
+              Atenção
+            </div>
+            <h3>
+              Nota para revisão do professor
+            </h3>
+            <p>
+              O texto afirma que o ruído “sempre reduz” o valor de Nyquist, mas seus exemplos resultam em 24 kbps (16 níveis) e cerca de 30 kbps (Shannon). As condições e restrições comparadas precisam ser esclarecidas pelo professor. A menção a modems de 33.600 bps também não explica a diferença em relação ao exemplo de 30 kbps.
+            </p>
+          </article>
+          <article class="card reveal wide" data-kind="Atenção">
+            <div class="eyebrow kind">
+              <i data-lucide="triangle-alert" aria-hidden="true">
+              </i>
+              Atenção
+            </div>
+            <h3>
+              Nota para revisão do professor
+            </h3>
+            <p>
+              A frase “atenuação é proporcional à frequência” é apresentada sem uma relação quantitativa ou condições do meio. O diagrama desta página é apenas qualitativo. A generalização de Shannon como limite de “qualquer canal” também deve ser lida junto ao cenário de ruído gaussiano descrito no próprio PDF.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="aplicacoes" class="lesson-section">
+        <div class="section-heading">
+          <span class="section-line">
+          </span>
+          <h2>
+            Comunicação na Engenharia Elétrica
+          </h2>
+        </div>
+        <p class="section-intro">
+          Use o contexto para interpretar as fórmulas e os limites.
+        </p>
+        <div class="grid">
+          <article class="card reveal " data-kind="Na prática">
+            <div class="eyebrow kind">
+              <i data-lucide="wrench" aria-hidden="true">
+              </i>
+              Na prática
+            </div>
+            <h3>
+              Smart grids e indústria
+            </h3>
+            <p>
+              Medidores operam em canais estreitos e ruidosos; sensores e CLPs convivem com interferência eletromagnética de motores. O desafio do PDF combina a capacidade de um canal com a demanda de 2.000 medidores.
+            </p>
+          </article>
+          <article class="card reveal " data-kind="Na prática">
+            <div class="eyebrow kind">
+              <i data-lucide="wrench" aria-hidden="true">
+              </i>
+              Na prática
+            </div>
+            <h3>
+              Enlaces e provedores
+            </h3>
+            <p>
+              Redes ópticas e satélites conectam pontos distantes. O material relaciona dimensionamento de enlaces à banda, atenuação, ruído e capacidade, além da taxa nominal.
+            </p>
+          </article>
+          <article class="card reveal " data-kind="Curiosidade">
+            <div class="eyebrow kind">
+              <i data-lucide="sparkles" aria-hidden="true">
+              </i>
+              Curiosidade
+            </div>
+            <h3>
+              Nomes por trás das fórmulas
+            </h3>
+            <p>
+              A aula apresenta Harry Nyquist e Claude Shannon, ambos ligados aos Bell Labs, e cita o artigo de Shannon de 1948,
+              <em>
+                A Mathematical Theory of Communication
+              </em>
+              . Relaciona o nome decibel a Alexander Graham Bell.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="resumo" class="lesson-section">
+        <div class="section-heading">
+          <span class="section-line">
+          </span>
+          <h2>
+            Resumo da aula
+          </h2>
+        </div>
+        <p class="section-intro">
+          Antes de calcular, confira o significado de cada grandeza.
+        </p>
+        <div class="grid">
+          <article class="card reveal wide" data-kind="Resumo">
+            <div class="eyebrow kind">
+              <i data-lucide="list-checks" aria-hidden="true">
+              </i>
+              Resumo
+            </div>
+            <h3>
+              O essencial
+            </h3>
+            <ul>
+              <li>
+                Emissor, mensagem, meio, protocolo e receptor formam o sistema.
+              </li>
+              <li>
+                Dado é informação; sinal é a sua representação física.
+              </li>
+              <li>
+                Sinais analógicos são contínuos; digitais usam níveis discretos.
+              </li>
+              <li>
+                Nesta aula, banda está em Hz; taxa e throughput, em bits/s.
+              </li>
+              <li>
+                Ruído, atenuação e distorção afetam a comunicação.
+              </li>
+              <li>
+                Nyquist usa W e V; Shannon usa W e S/N.
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <section id="verifique" class="lesson-section">
+        <div class="section-heading">
+          <span class="section-line">
+          </span>
+          <h2>
+            Verifique seu entendimento
+          </h2>
+        </div>
+        <p class="section-intro">
+          Questões adaptadas do material. Escolha uma resposta e confira a explicação.
+        </p>
+        <div class="grid">
+          <form class="card quiz-card" data-answer="0" data-explanation="A banda física é uma faixa de frequências, medida em Hz. Taxa de transmissão usa bits/s.">
+            <div class="question-index">
+              QUESTÃO 01
+            </div>
+            <fieldset>
+              <legend>
+                Qual unidade mede a largura de banda física nesta aula?
+              </legend>
+              <div class="quiz-options">
+                <label>
+                  <input type="radio" name="q1" value="0">
+                  <span>
+                    Hertz (Hz)
+                  </span>
+                </label>
+                <label>
+                  <input type="radio" name="q1" value="1">
+                  <span>
+                    Bytes
+                  </span>
+                </label>
+                <label>
+                  <input type="radio" name="q1" value="2">
+                  <span>
+                    Segundos
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+            <button class="btn" type="submit">
+              Conferir resposta
+            </button>
+            <div class="feedback" role="status" hidden>
+            </div>
+          </form>
+          <form class="card quiz-card" data-answer="0" data-explanation="O sinal digital usa um conjunto finito de níveis e continua sendo uma representação física.">
+            <div class="question-index">
+              QUESTÃO 02
+            </div>
+            <fieldset>
+              <legend>
+                Qual descrição corresponde a um sinal digital?
+              </legend>
+              <div class="quiz-options">
+                <label>
+                  <input type="radio" name="q2" value="0">
+                  <span>
+                    Assume níveis discretos
+                  </span>
+                </label>
+                <label>
+                  <input type="radio" name="q2" value="1">
+                  <span>
+                    Não se propaga fisicamente
+                  </span>
+                </label>
+                <label>
+                  <input type="radio" name="q2" value="2">
+                  <span>
+                    É sempre idêntico ao dado analógico
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+            <button class="btn" type="submit">
+              Conferir resposta
+            </button>
+            <div class="feedback" role="status" hidden>
+            </div>
+          </form>
+          <form class="card quiz-card" data-answer="1" data-explanation="C = 2 × 4.000 × log₂(2) = 8.000 bps, conforme o exercício da Parte B.">
+            <div class="question-index">
+              QUESTÃO 03
+            </div>
+            <fieldset>
+              <legend>
+                Para Nyquist, W = 4 kHz e V = 2 resultam em…
+              </legend>
+              <div class="quiz-options">
+                <label>
+                  <input type="radio" name="q3" value="0">
+                  <span>
+                    4.000 bps
+                  </span>
+                </label>
+                <label>
+                  <input type="radio" name="q3" value="1">
+                  <span>
+                    8.000 bps
+                  </span>
+                </label>
+                <label>
+                  <input type="radio" name="q3" value="2">
+                  <span>
+                    16.000 bps
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+            <button class="btn" type="submit">
+              Conferir resposta
+            </button>
+            <div class="feedback" role="status" hidden>
+            </div>
+          </form>
+          <form class="card quiz-card" data-answer="2" data-explanation="Pela expressão 20 = 10 log₁₀(S/N), a razão S/N é 100. Essa razão entra na fórmula de Shannon.">
+            <div class="question-index">
+              QUESTÃO 04
+            </div>
+            <fieldset>
+              <legend>
+                Uma relação sinal-ruído de 20 dB corresponde a qual razão?
+              </legend>
+              <div class="quiz-options">
+                <label>
+                  <input type="radio" name="q4" value="0">
+                  <span>
+                    20
+                  </span>
+                </label>
+                <label>
+                  <input type="radio" name="q4" value="1">
+                  <span>
+                    10
+                  </span>
+                </label>
+                <label>
+                  <input type="radio" name="q4" value="2">
+                  <span>
+                    100
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+            <button class="btn" type="submit">
+              Conferir resposta
+            </button>
+            <div class="feedback" role="status" hidden>
+            </div>
+          </form>
+          <form class="card quiz-card" data-answer="0" data-explanation="A eficiência do exemplo é 62/100 × 100% = 62%.">
+            <div class="question-index">
+              QUESTÃO 05
+            </div>
+            <fieldset>
+              <legend>
+                62 Mbps de throughput em um enlace nominal de 100 Mbps representam…
+              </legend>
+              <div class="quiz-options">
+                <label>
+                  <input type="radio" name="q5" value="0">
+                  <span>
+                    62% de eficiência
+                  </span>
+                </label>
+                <label>
+                  <input type="radio" name="q5" value="1">
+                  <span>
+                    100% de eficiência
+                  </span>
+                </label>
+                <label>
+                  <input type="radio" name="q5" value="2">
+                  <span>
+                    38 Mbps de taxa nominal
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+            <button class="btn" type="submit">
+              Conferir resposta
+            </button>
+            <div class="feedback" role="status" hidden>
+            </div>
+          </form>
+        </div>
+      </section>
+      <p class="quiz-score" role="status">
+        Responda no seu ritmo. As respostas não são enviadas.
+      </p>
+      <button class="btn" data-reset-quiz>
+        Reiniciar questões
+      </button>
+      <section id="exercicios" class="lesson-section">
+        <div class="section-heading">
+          <span class="section-line">
+          </span>
+          <h2>
+            Pratique com o material original
+          </h2>
+        </div>
+        <p class="section-intro">
+          Enunciados e gabaritos preservados. As quebras de linha foram adaptadas ao formato de leitura.
+        </p>
+        <div class="grid">
+          <article class="card reveal wide" data-kind="Exercício">
+            <div class="eyebrow kind">
+              <i data-lucide="pencil" aria-hidden="true">
+              </i>
+              Exercício
+            </div>
+            <h3>
+              Exercícios e respostas
+            </h3>
+            <details>
+              <summary>
+                Parte A — questões conceituais
+              </summary>
+              <div class="details-body original-text">
+                11E X E R C Í C I O S  — P A R T E  A
+Parte A — Conceituais
+1 Cite e explique, com suas palavras, os cinco elementos de um sistema de comunicação.
+2 Qual a diferença fundamental entre um sinal analógico e um sinal digital?
+3 Por que sinais digitais são mais resistentes a ruído do que sinais analógicos?
+4 Explique, com suas palavras, a diferença entre largura de banda e taxa de transmissão.
+5 O que é throughput e por que ele costuma ser menor que a taxa nominal de um link?
+6 Cite duas fontes de ruído em um meio de transmissão e explique brevemente cada uma.
+7 Qual a diferença essencial entre a Lei de Nyquist e a Lei de Shannon?
+                <span class="source-tag">
+                  Material original · páginas 33 do PDF.
+                </span>
+              </div>
+            </details>
+            <details>
+              <summary>
+                Parte B — cálculos
+              </summary>
+              <div class="details-body original-text">
+                11E X E R C Í C I O S  — P A R T E  B
+Parte B — Cálculos
+1 Um canal ideal (sem ruído) tem largura de banda de 4 kHz. Qual a capacidade máxima para um sinal binário (V =
+2)?
+2 O mesmo canal de 4 kHz agora usa um sinal com 8 níveis (V = 8). Calcule a nova capacidade máxima pela Lei de
+Nyquist.
+3 Um canal tem largura de banda de 2 MHz e relação sinal-ruído de 20 dB. Calcule sua capacidade máxima pela Lei
+de Shannon.
+4 Uma rede Ethernet nominal de 100 Mbps apresenta throughput medido de 62 Mbps. Calcule a eficiência
+percentual do link.
+DICA DO PROFESSOR
+Lembre-se: converta S/N de decibéis para razão antes de aplicar a fórmula de Shannon (dB = 10·log₁₀(S/N)).
+                <span class="source-tag">
+                  Material original · páginas 34 do PDF.
+                </span>
+              </div>
+            </details>
+            <details>
+              <summary>
+                Parte C — análise
+              </summary>
+              <div class="details-body original-text">
+                11E X E R C Í C I O S  — P A R T E  C
+Parte C — Análise
+1 Dois técnicos medem o mesmo cabo de par trançado: um obtém 3.100 Hz de largura de banda útil e outro mede
+uma taxa de transmissão de 33.600 bps no mesmo cabo. Explique por que os dois valores não são comparáveis
+diretamente.
+2 Um engenheiro observa que, ao aumentar a distância entre dois pontos de uma rede óptica, a taxa útil de
+transmissão cai, mesmo sem mudança na largura de banda do meio. Que fenômenos físicos explicam essa queda?
+3 Em um gráfico comparando um sinal limpo e um sinal ruidoso sobrepostos, como você identificaria visualmente
+que a relação S/N é baixa? O que aconteceria com a capacidade do canal nesse caso, segundo Shannon?
+                <span class="source-tag">
+                  Material original · páginas 35 do PDF.
+                </span>
+              </div>
+            </details>
+            <details>
+              <summary>
+                Parte D — desafios de engenharia
+              </summary>
+              <div class="details-body original-text">
+                11E X E R C Í C I O S  — P A R T E  D
+Parte D — Desafio
+1 Uma concessionária de energia elétrica deseja implantar um sistema de telemetria em smart grids usando um
+canal com largura de banda de 10 kHz e relação sinal-ruído de 25 dB. (a) Calcule a capacidade máxima pela Lei de
+Shannon. (b) Se o sistema precisa transmitir leituras de 2.000 medidores a cada 5 segundos, com pacotes de 200
+bits cada, esse canal é suficiente? Justifique com cálculos.
+2
+Compare dois projetos de enlace: Projeto X usa banda estreita (3 kHz) com S/N muito alta (40 dB); Projeto Y usa
+banda larga (30 kHz) com S/N baixa (10 dB). Calcule a capacidade de Shannon para ambos e discuta, do ponto de
+vista de engenharia, qual estratégia — aumentar banda ou melhorar S/N — é mais eficiente neste caso.
+                <span class="source-tag">
+                  Material original · páginas 36 do PDF.
+                </span>
+              </div>
+            </details>
+            <details>
+              <summary>
+                Gabarito — Partes A e B
+              </summary>
+              <div class="details-body original-text">
+                12G A B A R I T O  C O M E N T A D O
+Gabarito — Partes A e B
+Parte A (resumo)
+1-2. Emissor/mensagem/meio/protocolo/receptor; analógico = contínuo, digital = discreto.  3. Digital exige distinguir apenas
+poucos níveis.  4. Banda = capacidade física (Hz); taxa = bits/s efetivos.  5. Throughput é real; sofre com topologia, contenção e
+falhas.  6. Ruído térmico, diafonia, impulsivo, EM externo.  7. Nyquist ignora ruído; Shannon o incorpora via S/N.
+Parte B (cálculos)
+1. C = 2·4.000·log₂(2) = 8.000 bps
+2. C = 2·4.000·log₂(8) = 2·4.000·3 = 24.000 bps
+3. 20 dB → S/N = 100; C = 2.000.000·log₂(101) ≈ 2.000.000·6,66 ≈ 13,3 Mbps
+4. Eficiência = 62/100 = 62%
+                <span class="source-tag">
+                  Material original · páginas 37 do PDF.
+                </span>
+              </div>
+            </details>
+            <details>
+              <summary>
+                Gabarito — Partes C e D
+              </summary>
+              <div class="details-body original-text">
+                12G A B A R I T O  C O M E N T A D O
+Gabarito — Partes C e D
+Parte C (análise)
+1. Largura de banda (Hz) descreve o meio; taxa (bps) descreve o sinal transmitido — grandezas de naturezas diferentes, não
+comparáveis diretamente.  2. Atenuação (perda de energia com a distância) e distorção por atraso reduzem a taxa útil sem alterar
+W.  3. Sinal ruidoso mostra maior dispersão em torno da curva limpa; S/N baixa → pela fórmula de Shannon, C cai
+proporcionalmente ao log₂(1+S/N).
+Parte D (desafio)
+1a. 25 dB → S/N ≈ 316; C = 10.000·log₂(317) ≈ 10.000·8,3 ≈ 83 kbps.
+1b. Demanda: 2.000 medidores × 200 bits ÷ 5 s = 80.000 bps = 80 kbps → próximo do limite (83 kbps); margem
+insuficiente para engenharia segura.
+2. Projeto X: C = 3.000·log₂(1+10.000) ≈ 39,8 kbps.  Projeto Y: C = 30.000·log₂(1+10) ≈ 103,8 kbps → aumentar
+banda venceu, mas o ganho depende do regime; em S/N já altíssima, ganhar banda costuma compensar mais que
+melhorar S/N (retornos decrescentes do log).
+                <span class="source-tag">
+                  Material original · páginas 38 do PDF.
+                </span>
+              </div>
+            </details>
+          </article>
+        </div>
+      </section>
+      <section id="referencias" class="lesson-section">
+        <div class="section-heading">
+          <span class="section-line">
+          </span>
+          <h2>
+            Para saber mais
+          </h2>
+        </div>
+        <p class="section-intro">
+          Somente referências presentes nos arquivos fornecidos.
+        </p>
+        <div class="grid">
+          <article class="card reveal wide" data-kind="Resumo">
+            <div class="eyebrow kind">
+              <i data-lucide="list-checks" aria-hidden="true">
+              </i>
+              Resumo
+            </div>
+            <h3>
+              Referências do material
+            </h3>
+            <ul>
+              <li>
+                Tanenbaum, Andrew S.
+                <em>
+                  Redes de Computadores.
+                </em>
+                4ª ed. — Cap. 2.
+              </li>
+              <li>
+                Forouzan, Behrouz A. — Cap. 3,
+                <em>
+                  Data and Signals
+                </em>
+                . O PDF não informa edição ou título completo nesta referência.
+              </li>
+              <li>
+                Fernández, Marcial Porto.
+                <em>
+                  Redes de Computadores.
+                </em>
+                — Cap. 2.
+              </li>
+              <li>
+                Kurose, J.; Ross, K.
+                <em>
+                  Redes de Computadores e a Internet.
+                </em>
+                — Cap. 1.
+              </li>
+            </ul>
+            <p>
+              A edição de Tanenbaum indicada nesta aula difere da bibliografia geral; ambas foram mantidas conforme os respectivos PDFs.
+            </p>
+          </article>
+        </div>
+      </section>
+      <nav class="end-nav" aria-label="Continuar estudos">
+        <a href="redes-introducao-aula-01.html" class="btn">
+          <i data-lucide="arrow-left" aria-hidden="true">
+          </i>
+          Aula anterior
+        </a>
+        <a href="redes-introducao.html" class="btn">
+          <i data-lucide="grid-2x2" aria-hidden="true">
+          </i>
+          Voltar ao módulo
+        </a>
+        <a href="redes-introducao-aula-03.html" class="btn">
+          <i data-lucide="arrow-right" aria-hidden="true">
+          </i>
+          Próxima aula
+        </a>
+      </nav>
+      <footer class="footer shell-footer">
+        <span>LUMI Education · Do fundamento à aplicação.</span>
+      <span>Educação Infantil · Profª Nilcilene Mendes<br>Universidade e Ensino Técnico · Prof. Kennedy Nunes</span>
+        <a href="../../configuracoes/index.html">
+          Personalizar meu ambiente
+        </a>
+      </footer>
+    </main>
+    <button class="icon-btn to-top" type="button" data-to-top aria-label="Voltar ao topo">
+      ↑
+    </button>
+  </body>
+</html>

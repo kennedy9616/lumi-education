@@ -1,0 +1,2813 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>
+      Densidade Espectral de Potência · Atividade LUMI
+    </title>
+    <script src="../../scripts/theme.js">
+    </script>
+    <link rel="stylesheet" href="../../template/tokens.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap">
+    <link rel="stylesheet" href="../../template/vendor/katex.css">
+    <link rel="stylesheet" href="../../template/pages/densidade-espectral.css">
+    <link rel="stylesheet" href="../../template/activity.css">
+    <script src="../../scripts/vendor/katex.min.js" defer>
+    </script>
+    <script src="../../scripts/lessons/densidade-espectral.js" defer>
+    </script>
+    <script src="../../scripts/activity.js" defer>
+    </script>
+  </head>
+  <body data-activity="densidade-espectral">
+    <div id="progress" aria-hidden="true">
+      <i>
+      </i>
+    </div>
+    <button id="menuBtn" class="tbtn" type="button" aria-label="Abrir sumário (tecla M)" aria-expanded="false" aria-controls="menu">
+      ☰
+    </button>
+    <div id="tools" role="toolbar" aria-label="Controles da apresentação">
+      <button class="tbtn" id="prevBtn" type="button" aria-label="Voltar uma etapa (seta para a esquerda)">
+        ‹
+      </button>
+      <button class="tbtn" id="nextBtn" type="button" aria-label="Avançar uma etapa (seta para a direita)">
+        ›
+      </button>
+      <button class="tbtn" id="notesBtn" type="button" aria-label="Notas do professor (tecla N)" aria-expanded="false" aria-controls="notes">
+        N
+      </button>
+      <button class="tbtn" id="fsBtn" type="button" aria-label="Tela cheia (tecla F)">
+        <svg viewBox="0 0 20 20" aria-hidden="true">
+          <path d="M2 7V2h5M13 2h5v5M18 13v5h-5M7 18H2v-5" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </button>
+    </div>
+    <nav id="menu" aria-label="Sumário da aula" aria-hidden="true">
+      <h2>
+        Sumário
+      </h2>
+      <div id="menuList">
+      </div>
+      <p class="menu-keys">
+        <kbd>
+          ←
+        </kbd>
+        <kbd>
+          →
+        </kbd>
+        ou
+        <kbd>
+          espaço
+        </kbd>
+        etapas ·
+        <kbd>
+          F
+        </kbd>
+        tela cheia ·
+        <kbd>
+          N
+        </kbd>
+        notas ·
+        <kbd>
+          M
+        </kbd>
+        sumário ·
+        <kbd>
+          Home
+        </kbd>
+        capa ·
+        <kbd>
+          Esc
+        </kbd>
+        fecha painéis
+      </p>
+    </nav>
+    <aside id="notes" aria-label="Notas do professor" aria-hidden="true">
+      <div id="notesContent">
+      </div>
+    </aside>
+    <div id="flowbar">
+      <button class="tbtn" id="fMenu" type="button" aria-label="Sumário">
+        ☰
+      </button>
+      <button class="tbtn" id="fPrev" type="button" aria-label="Slide anterior">
+        ‹
+      </button>
+      <span id="fCount" class="mono">
+        1 / 16
+      </span>
+      <button class="tbtn" id="fNext" type="button" aria-label="Próximo slide">
+        ›
+      </button>
+      <button class="tbtn" id="fNotes" type="button" aria-label="Notas do professor">
+        N
+      </button>
+    </div>
+    <main id="viewport">
+      <div id="stage">
+        <!-- =================================================================== 1 -->
+        <section class="slide cover" id="sec-1" data-title="Capa" data-group="capa" aria-label="Slide 1: capa">
+          <canvas class="bgnoise" data-w="1920" data-h="1080" data-k="0.6" aria-hidden="true">
+          </canvas>
+          <div class="cover-in">
+            <p class="cover-top">
+              <strong>
+                APOSTILA DE PROCESSOS ESTOCÁSTICOS
+              </strong>
+              <span>
+                Engenharia Elétrica — UFMA
+              </span>
+            </p>
+            <div class="cover-mid">
+              <p class="cover-cap">
+                Capítulo 7
+              </p>
+              <h1>
+                Densidade Espectral de Potência
+              </h1>
+              <p class="cover-sub">
+                Em que frequências está a potência?
+              </p>
+              <p class="cover-date">
+                Aula de 23/09 · Seções 7.1 a 7.5
+              </p>
+            </div>
+            <p class="cover-foot">
+              Prof. Me. Kennedy Nunes
+              <br>
+              CCBL — Curso de Engenharia Elétrica
+              <br>
+              Universidade Federal do Maranhão
+            </p>
+          </div>
+          <aside class="notes">
+            <p class="nmeta">
+              ⏱ 2 min · Capa e roteiro do capítulo
+            </p>
+            <h4>
+              O que falar
+            </h4>
+            <ul>
+              <li>
+                No Capítulo 6 resumimos um processo pela média
+                <span class="tex">
+                  m_X(t)
+                </span>
+                e pela autocorrelação
+                <span class="tex">
+                  R_X
+                </span>
+                .
+              </li>
+              <li>
+                Hoje: a pergunta que todo engenheiro faz diante de um sinal — em que frequências está a potência?
+              </li>
+              <li>
+                Frase-guia do capítulo: a DEP é a autocorrelação vista pela janela da frequência (provaremos com Wiener–Khinchin).
+              </li>
+              <li>
+                Roteiro: 23/09 (7.1–7.5, hoje) · 24/09 Wiener–Khinchin (7.6–7.8) · 30/09 ruído branco e colorido (7.9–7.11).
+              </li>
+            </ul>
+            <h4>
+              Pergunte à turma
+            </h4>
+            <ul>
+              <li>
+                Alguém já usou um analisador de espectro? O que ele mostra na tela?
+              </li>
+            </ul>
+          </aside>
+        </section>
+        <!-- =================================================================== 2 -->
+        <section class="slide" id="sec-2" data-title="O paradoxo da bancada" data-group="7.1" aria-label="Slide 2">
+          <header class="shead">
+            <p class="eyebrow">
+              7.1 · Motivação
+            </p>
+            <h2>
+              O paradoxo da bancada
+            </h2>
+          </header>
+          <div class="sbody s2">
+            <div class="s2-inst">
+              <figure class="inst">
+                <figcaption class="inst-head">
+                  <span>
+                    Osciloscópio
+                  </span>
+                  <span class="mono">
+                    CH1 · saída do LNA
+                  </span>
+                </figcaption>
+                <div class="screen">
+                  <canvas id="s2-scope" data-w="800" data-h="460" role="img" aria-label="Trajetória de ruído capturada pelo osciloscópio">
+                  </canvas>
+                </div>
+                <div class="inst-ctl">
+                  <button class="hwbtn" id="s2-single" type="button" aria-label="Capturar nova trajetória">
+                    SINGLE
+                  </button>
+                  <span class="mono" id="s2-count" aria-live="polite">
+                    captura 1
+                  </span>
+                </div>
+              </figure>
+              <figure class="inst" data-step="1">
+                <figcaption class="inst-head">
+                  <span>
+                    Analisador de espectro
+                  </span>
+                  <span class="mono">
+                    AVG · 31 trechos
+                  </span>
+                </figcaption>
+                <div class="screen blue">
+                  <canvas id="s2-spec" data-w="800" data-h="460" role="img" aria-label="Espectros estimados de cada captura sobrepostos à curva teórica">
+                  </canvas>
+                </div>
+                <div class="inst-ctl">
+                  <span class="lg">
+                    uma curva por captura
+                  </span>
+                  <span class="lg theory">
+                    curva teórica
+                  </span>
+                </div>
+              </figure>
+            </div>
+            <p class="gold-line center" data-step="2">
+              As trajetórias são imprevisíveis. O espectro é estável, reprodutível e mensurável.
+            </p>
+          </div>
+          <aside class="notes">
+            <p class="nmeta">
+              ⏱ 7 min · Seção 7.1 · Fig. 7.1
+            </p>
+            <h4>
+              O que falar
+            </h4>
+            <ul>
+              <li>
+                Cena: saída do LNA de um receptor (gateway LoRa, ponto de acesso Wi-Fi) ligada ao osciloscópio e ao analisador ao mesmo tempo.
+              </li>
+              <li>
+                Aperte SINGLE várias vezes: cada captura é completamente diferente da anterior.
+              </li>
+              <li>
+                Avance: no analisador, as estimativas de todas as capturas quase coincidem com a curva teórica tracejada.
+              </li>
+              <li>
+                O paradoxo: trajetórias imprevisíveis, mas uma propriedade do processo, vista na frequência, estável, reprodutível e mensurável.
+              </li>
+              <li>
+                Por trás: ruído “colorido”
+                <span class="tex">
+                  x[n]=0{,}9\,x[n-1]+w[n]
+                </span>
+                (Seção 7.10); cada curva é a média de 31 trechos de 256 amostras.
+              </li>
+            </ul>
+            <h4>
+              Pergunte à turma
+            </h4>
+            <ul>
+              <li>
+                O que muda de uma captura para outra? O que permanece?
+              </li>
+            </ul>
+          </aside>
+        </section>
+        <!-- =================================================================== 3 -->
+        <section class="slide" id="sec-3" data-title="As três perguntas do engenheiro" data-group="7.1" aria-label="Slide 3">
+          <header class="shead">
+            <p class="eyebrow">
+              7.1 · Motivação
+            </p>
+            <h2>
+              As três perguntas do engenheiro
+            </h2>
+          </header>
+          <div class="sbody s3">
+            <article class="qcard" data-step="1">
+              <span class="qnum">
+                1
+              </span>
+              <canvas id="s3-i1" data-w="480" data-h="170" aria-hidden="true">
+              </canvas>
+              <h3>
+                Quanta potência de ruído entra no meu receptor?
+              </h3>
+              <p class="qto">
+                <b>
+                  SNR
+                </b>
+                e
+                <b>
+                  BER
+                </b>
+              </p>
+            </article>
+            <article class="qcard" data-step="2">
+              <span class="qnum">
+                2
+              </span>
+              <canvas id="s3-i2" data-w="480" data-h="170" aria-hidden="true">
+              </canvas>
+              <h3>
+                Como essa potência se distribui nas frequências?
+              </h3>
+              <p class="qto">
+                passa-altas resolve… ou não
+              </p>
+            </article>
+            <article class="qcard" data-step="3">
+              <span class="qnum">
+                3
+              </span>
+              <canvas id="s3-i3" data-w="480" data-h="170" aria-hidden="true">
+              </canvas>
+              <h3>
+                O que acontece com o ruído ao atravessar um filtro?
+              </h3>
+              <p class="qto">
+                fecha o capítulo
+              </p>
+            </article>
+          </div>
+          <aside class="notes">
+            <p class="nmeta">
+              ⏱ 4 min · Seção 7.1
+            </p>
+            <h4>
+              O que falar
+            </h4>
+            <ul>
+              <li>
+                (1) A potência de ruído limita a relação sinal-ruído e, portanto, a taxa de erro de bit calculada no Capítulo 6.
+              </li>
+              <li>
+                (2) Ruído concentrado em baixas frequências: um passa-altas resolve. Espalhado por igual: não há onde se esconder.
+              </li>
+              <li>
+                (3) Filtragem de processos estocásticos: a pergunta que fecha o capítulo.
+              </li>
+              <li>
+                As três respostas dependem de uma única função: a DEP.
+              </li>
+            </ul>
+            <h4>
+              Pergunte à turma
+            </h4>
+            <ul>
+              <li>
+                Antes de revelar os cartões: que perguntas vocês fariam sobre o ruído de um receptor?
+              </li>
+              <li>
+                Se o ruído está espalhado por igual, que filtro ajuda?
+              </li>
+            </ul>
+          </aside>
+        </section>
+        <!-- =================================================================== 4 -->
+        <section class="slide" id="sec-4" data-title="Por que a Fourier “de sempre” não basta?" data-group="7.1" aria-label="Slide 4">
+          <header class="shead">
+            <p class="eyebrow">
+              7.1 · Motivação
+            </p>
+            <h2>
+              Por que a Fourier “de sempre” não basta?
+            </h2>
+          </header>
+          <div class="sbody s4">
+            <div class="s4-l">
+              <div class="frow">
+                <div class="mini">
+                  <canvas id="s4-sin" data-w="340" data-h="150" aria-hidden="true">
+                  </canvas>
+                  <span class="cap tex">
+                    x(t)=A\cos(2\pi f_0 t)
+                  </span>
+                </div>
+                <span class="farrow" aria-hidden="true">
+                  <span class="tex">
+                    \mathcal{F}
+                  </span>
+                  <svg viewBox="0 0 80 20">
+                    <path d="M2 10H72M62 3l10 7-10 7" fill="none" stroke="currentColor" stroke-width="3"/>
+                  </svg>
+                </span>
+                <div class="mini">
+                  <canvas id="s4-sinF" data-w="340" data-h="150" aria-hidden="true">
+                  </canvas>
+                  <span class="cap tex">
+                    X(f)
+                  </span>
+                </div>
+                <span class="okmark">
+                  ✔ funciona
+                </span>
+              </div>
+              <div class="frow" data-step="1">
+                <div class="mini">
+                  <canvas id="s4-noise" data-w="340" data-h="150" aria-hidden="true">
+                  </canvas>
+                  <span class="cap tex">
+                    x(t,\omega)
+                  </span>
+                </div>
+                <span class="farrow" aria-hidden="true">
+                  <span class="tex">
+                    \mathcal{F}
+                  </span>
+                  <svg viewBox="0 0 80 20">
+                    <path d="M2 10H72M62 3l10 7-10 7" fill="none" stroke="currentColor" stroke-width="3"/>
+                  </svg>
+                </span>
+                <span class="bigq" aria-label="não sabemos">
+                  ?
+                </span>
+              </div>
+            </div>
+            <div class="s4-r">
+              <div class="reason" data-step="2">
+                <h3>
+                  <span class="rtag">
+                    a
+                  </span>
+                  Cada realização tem a sua transformada
+                </h3>
+                <canvas id="s4-flick" data-w="780" data-h="210" role="img" aria-label="Espectros de duas realizações diferentes, alternando">
+                </canvas>
+              </div>
+              <div class="reason" data-step="3">
+                <h3>
+                  <span class="rtag">
+                    b
+                  </span>
+                  A energia é infinita
+                </h3>
+                <div class="energy">
+                  <span class="tex">
+                    \displaystyle\int_{-T}^{T}x^2(t)\,dt=
+                  </span>
+                  <output id="s4-E">
+                    0,0 J
+                  </output>
+                  <span class="mono dim" id="s4-T">
+                    T = 0,0 s
+                  </span>
+                </div>
+              </div>
+            </div>
+            <p class="three" data-step="4">
+              <span>
+                Truncar
+              </span>
+              <i aria-hidden="true">
+                ·
+              </i>
+              <span>
+                Dividir pelo tempo
+              </span>
+              <i aria-hidden="true">
+                ·
+              </i>
+              <span>
+                Tirar a esperança
+              </span>
+            </p>
+            <div class="box fis" data-step="5">
+              <span class="box-tag">
+                Interpretação física
+              </span>
+              <p>
+                A densidade espectral de potência é a autocorrelação vista pela janela da frequência.
+              </p>
+            </div>
+          </div>
+          <aside class="notes">
+            <p class="nmeta">
+              ⏱ 7 min · Seção 7.1 — “Por que a Transformada de Fourier ‘de sempre’ não basta?”
+            </p>
+            <h4>
+              O que falar
+            </h4>
+            <ul>
+              <li>
+                Determinístico:
+                <span class="tex">
+                  x(t)=A\cos(2\pi f_0t)
+                </span>
+                tem
+                <span class="tex">
+                  X(f)
+                </span>
+                com duas raias; a pergunta 2 se responde na hora.
+              </li>
+              <li>
+                (a) Cada realização
+                <span class="tex">
+                  x(t,\omega)
+                </span>
+                tem sua transformada: o espectro de uma realização é aleatório, não é propriedade do processo.
+              </li>
+              <li>
+                (b) A trajetória não “morre” em
+                <span class="tex">
+                  t\to\pm\infty
+                </span>
+                : a energia é infinita e a integral de Fourier não converge (o contador não para).
+              </li>
+              <li>
+                A saída (Seção 7.4): truncar dá energia finita; dividir pelo tempo passa a potência; a esperança elimina a aleatoriedade.
+              </li>
+              <li>
+                Frase-guia:
+                <span class="tex">
+                  R_X
+                </span>
+                diz quanto o processo se lembra de si; a DEP diz quanta potência há em cada frequência. Wiener–Khinchin (7.6) mostrará que é a mesma informação em dois idiomas.
+              </li>
+            </ul>
+            <h4>
+              Pergunte à turma
+            </h4>
+            <ul>
+              <li>
+                Qual obstáculo o truncamento resolve? E qual a esperança resolve?
+              </li>
+            </ul>
+          </aside>
+        </section>
+        <!-- =================================================================== 5 -->
+        <section class="slide" id="sec-5" data-title="Revisão WSS: o teste das duas perguntas" data-group="7.2" aria-label="Slide 5">
+          <header class="shead">
+            <p class="eyebrow">
+              7.2 · Revisão: processos WSS
+            </p>
+            <h2>
+              O teste das duas perguntas
+            </h2>
+          </header>
+          <div class="sbody s5">
+            <svg class="fc" viewBox="0 0 900 690" role="img" aria-label="Fluxograma: se a média depende de t, não é WSS; se a autocorrelação não depende só de tau, não é WSS; caso contrário, é WSS">
+              <defs>
+                <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                  <path d="M0 0L10 5L0 10z" fill="rgba(255,255,255,.8)"/>
+                </marker>
+              </defs>
+              <g>
+                <path class="draw dia" data-ms="900" d="M330 30 L580 150 L330 270 L80 150 Z"/>
+                <text x="330" y="140" class="ftxt">A média</text>
+        <text x="330" y="176" class="ftxt">depende de <tspan font-style="italic" font-family="'Source Serif 4',serif">t</tspan>?</text>
+                <path class="draw arr" data-d="700" d="M580 150 H660" marker-end="url(#ah)"/>
+                <text x="620" y="134" class="flab">sim</text>
+                <rect class="pill no" x="668" y="122" width="210" height="56" rx="28"/>
+                <text x="773" y="159" class="ptxt no">NÃO WSS</text>
+                <path class="draw arr" data-d="700" d="M330 270 V343" marker-end="url(#ah)"/>
+                <text x="348" y="315" class="flab" text-anchor="start">não</text>
+              </g>
+              <g data-step="1">
+                <path class="draw dia" data-ms="900" d="M330 350 L580 470 L330 590 L80 470 Z"/>
+                <text x="330" y="458" class="ftxt"><tspan font-style="italic" font-family="'Source Serif 4',serif">R</tspan><tspan font-size="19" dy="7" font-style="italic" font-family="'Source Serif 4',serif">X</tspan><tspan dy="-7"> depende só de</tspan></text>
+        <text x="330" y="496" class="ftxt"><tspan font-style="italic" font-family="'Source Serif 4',serif">τ</tspan> = <tspan font-style="italic" font-family="'Source Serif 4',serif">t</tspan>₁ − <tspan font-style="italic" font-family="'Source Serif 4',serif">t</tspan>₂ ?</text>
+                <path class="draw arr" data-d="700" d="M580 470 H660" marker-end="url(#ah)"/>
+                <text x="620" y="454" class="flab">não</text>
+                <rect class="pill no" x="668" y="442" width="210" height="56" rx="28"/>
+                <text x="773" y="479" class="ptxt no">NÃO WSS</text>
+                <path class="draw arr" data-d="700" d="M330 590 V624" marker-end="url(#ah)"/>
+                <text x="348" y="614" class="flab" text-anchor="start">sim</text>
+                <rect class="pill yes" x="225" y="630" width="210" height="56" rx="28"/>
+                <text x="330" y="667" class="ptxt yes">WSS ✔</text>
+              </g>
+            </svg>
+            <div class="s5-r">
+              <div class="box ana" data-step="2">
+                <span class="box-tag">
+                  Analogia
+                  <small>
+                    — o relógio escondido
+                  </small>
+                </span>
+                <p>
+                  Trechos de uma gravação, entregues sem horário. Se nenhuma média ou correlação revela a hora, o processo é WSS.
+                </p>
+              </div>
+              <div class="box def" data-step="3">
+                <span class="box-tag">
+                  Definição
+                  <small>
+                    — processo WSS
+                  </small>
+                </span>
+                <div class="box-body deflist tw">
+                  <p class="t">
+                    <b>
+                      (i)
+                    </b>
+                    <span class="tex">
+                      m_X(t)=E[X(t)]=m_X\quad\forall\,t
+                    </span>
+                  </p>
+                  <p class="t">
+                    <b>
+                      (ii)
+                    </b>
+                    <span class="tex">
+                      R_X(t+\tau,t)=E[X(t+\tau)X^*(t)]=R_X(\tau)
+                    </span>
+                  </p>
+                  <p class="t">
+                    <b>
+                      (iii)
+                    </b>
+                    <span class="tex">
+                      E|X(t)|^2=R_X(0)\lt\infty
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            <p class="nmeta">
+              ⏱ 6 min · Seção 7.2.2 · Eq. (7.4)
+            </p>
+            <h4>
+              O que falar
+            </h4>
+            <ul>
+              <li>
+                Toda a teoria da DEP repousa sobre WSS. Aplicar DEP a processo não WSS é a fonte número um de resultados absurdos em laboratório.
+              </li>
+              <li>
+                Duas perguntas, nesta ordem: a média depende de
+                <span class="tex">
+                  t
+                </span>
+                ?
+                <span class="tex">
+                  R_X
+                </span>
+                depende de
+                <span class="tex">
+                  t_1
+                </span>
+                e
+                <span class="tex">
+                  t_2
+                </span>
+                separadamente, ou só de
+                <span class="tex">
+                  \tau=t_1-t_2
+                </span>
+                ?
+              </li>
+              <li>
+                Relógio escondido: ruído de amplificador (nenhuma estatística revela a hora) × carga de subestação (consumo alto e crescente denuncia o fim de tarde).
+              </li>
+              <li>
+                WSS reduz
+                <span class="tex">
+                  R_X(t_1,t_2)
+                </span>
+                a uma função de uma variável,
+                <span class="tex">
+                  R_X(\tau)
+                </span>
+                — é o que permitirá aplicar Fourier.
+              </li>
+              <li>
+                Tempo discreto:
+                <span class="tex">
+                  R_X[k]=E[X[n+k]X^*[n]]
+                </span>
+                ; a videoaula usa
+                <span class="tex">
+                  r_{xx}[k]=E\{x[n]x^*[n-k]\}
+                </span>
+                , o mesmo objeto. SSS ⇒ WSS (com
+                <span class="tex">
+                  E|X|^2\lt\infty
+                </span>
+                ); no gaussiano coincidem.
+              </li>
+            </ul>
+            <h4>
+              Pergunte à turma
+            </h4>
+            <ul>
+              <li>
+                A temperatura ambiente ao longo de um dia é WSS? Por quê?
+              </li>
+            </ul>
+          </aside>
+        </section>
+        <!-- =================================================================== 6 -->
+        <section class="slide" id="sec-6" data-title="Quiz: WSS ou não WSS?" data-group="7.2" aria-label="Slide 6">
+          <header class="shead">
+            <p class="eyebrow">
+              7.2 · Revisão: processos WSS
+            </p>
+            <h2>
+              Quiz: WSS ou não WSS?
+            </h2>
+          </header>
+          <div class="sbody s6">
+            <div class="quiz">
+              <article class="qp" data-k="0">
+                <header>
+                  <span class="qlab">
+                    (a) senóide com fase aleatória
+                  </span>
+                  <span class="verdict" aria-live="polite">
+                    ?
+                  </span>
+                  <button class="btn sm reveal" type="button" aria-label="Revelar resposta do painel a">
+                    Revelar
+                  </button>
+                </header>
+                <canvas id="s6-0" data-w="840" data-h="214" role="img" aria-label="Feixe de senóides com fase aleatória, média de conjunto e faixa">
+                </canvas>
+                <p class="why" aria-hidden="true">
+                  <span class="tex">
+                    m_X=0
+                  </span>
+                  e
+                  <span class="tex">
+                    R_X(\tau)=\tfrac{A^2}{2}\cos(2\pi f_c\tau)
+                  </span>
+                  : só depende de
+                  <span class="tex">
+                    \tau
+                  </span>
+                  .
+                </p>
+              </article>
+              <article class="qp" data-k="1">
+                <header>
+                  <span class="qlab">
+                    (b) senóide com amplitude aleatória
+                  </span>
+                  <span class="verdict" aria-live="polite">
+                    ?
+                  </span>
+                  <button class="btn sm reveal" type="button" aria-label="Revelar resposta do painel b">
+                    Revelar
+                  </button>
+                </header>
+                <canvas id="s6-1" data-w="840" data-h="214" role="img" aria-label="Feixe de senóides com amplitude aleatória">
+                </canvas>
+                <p class="why" aria-hidden="true">
+                  <span class="tex">
+                    m_X(t)=\tfrac12\,\mathrm{sen}\,2\pi t
+                  </span>
+                  depende de
+                  <span class="tex">
+                    t
+                  </span>
+                  .
+                </p>
+              </article>
+              <article class="qp" data-k="2">
+                <header>
+                  <span class="qlab">
+                    (c) passeio aleatório
+                  </span>
+                  <span class="verdict" aria-live="polite">
+                    ?
+                  </span>
+                  <button class="btn sm reveal" type="button" aria-label="Revelar resposta do painel c">
+                    Revelar
+                  </button>
+                </header>
+                <canvas id="s6-2" data-w="840" data-h="214" role="img" aria-label="Feixe de passeios aleatórios com faixa que se abre">
+                </canvas>
+                <p class="why" aria-hidden="true">
+                  média constante, mas
+                  <span class="tex">
+                    R_X[n,m]=\sigma^2\min(n,m)
+                  </span>
+                  .
+                </p>
+              </article>
+              <article class="qp" data-k="3">
+                <header>
+                  <span class="qlab">
+                    (d) ruído branco discreto
+                  </span>
+                  <span class="verdict" aria-live="polite">
+                    ?
+                  </span>
+                  <button class="btn sm reveal" type="button" aria-label="Revelar resposta do painel d">
+                    Revelar
+                  </button>
+                </header>
+                <canvas id="s6-3" data-w="840" data-h="214" role="img" aria-label="Feixe de ruído branco discreto">
+                </canvas>
+                <p class="why" aria-hidden="true">
+                  <span class="tex">
+                    R_W[k]=\sigma^2\delta[k]
+                  </span>
+                  : nada denuncia o instante.
+                </p>
+              </article>
+            </div>
+            <div class="box erro" data-step="5">
+              <span class="box-tag">
+                Erro comum
+              </span>
+              <p>
+                Média constante, sozinha, não basta — veja o passeio aleatório.
+              </p>
+            </div>
+          </div>
+          <aside class="notes">
+            <p class="nmeta">
+              ⏱ 7 min · Seção 7.2.3 · Fig. 7.2 · Tabela 7.1
+            </p>
+            <h4>
+              O que falar
+            </h4>
+            <ul>
+              <li>
+                Antes de cada revelação, a turma vota. Cada → revela um painel; também dá para clicar em “Revelar” fora de ordem.
+              </li>
+              <li>
+                (a)
+                <span class="tex">
+                  \Theta\sim U[-\pi,\pi]
+                </span>
+                :
+                <span class="tex">
+                  m_X=0
+                </span>
+                ,
+                <span class="tex">
+                  R_X(\tau)=\frac{A^2}{2}\cos(2\pi f_c\tau)
+                </span>
+                — a faixa dourada é horizontal.
+              </li>
+              <li>
+                (b)
+                <span class="tex">
+                  A\sim U[0,1]
+                </span>
+                : falha já na 1ª pergunta; todas as trajetórias passam por zero nos mesmos instantes.
+              </li>
+              <li>
+                (c) Média zero, mas
+                <span class="tex">
+                  R_X[101,100]=100\sigma^2\ne R_X[2,1]=\sigma^2
+                </span>
+                ; a largura cresce como
+                <span class="tex">
+                  \sqrt n
+                </span>
+                .
+              </li>
+              <li>
+                (d)
+                <span class="tex">
+                  R_W[k]=\sigma^2\delta[k]
+                </span>
+                : WSS e sem memória. Compare com o Exemplo E: quem “apaga o relógio” é a fase uniforme, não a amplitude.
+              </li>
+              <li>
+                Gráficos: 40 trajetórias desenhadas; média e faixa
+                <span class="tex">
+                  m_X\pm\sigma_X
+                </span>
+                estimadas com 300 realizações.
+              </li>
+            </ul>
+            <h4>
+              Pergunte à turma
+            </h4>
+            <ul>
+              <li>
+                No painel (c) a média é constante. Por que isso não basta?
+              </li>
+            </ul>
+          </aside>
+        </section>
+        <!-- =================================================================== 7 -->
+        <section class="slide" id="sec-7" data-title="Propriedades de R_X(τ)" data-group="7.2" aria-label="Slide 7">
+          <header class="shead">
+            <p class="eyebrow">
+              7.2.4 · Revisão: processos WSS
+            </p>
+            <h2>
+              Propriedades de
+              <span class="tex">
+                R_X(\tau)
+              </span>
+            </h2>
+          </header>
+          <div class="sbody s7">
+            <div class="prop">
+              <span class="pchip">
+                P1
+              </span>
+              <div class="ptext">
+                <span class="tex">
+                  R_X(0)=E|X(t)|^2\ge 0
+                </span>
+                <span class="pnote">
+                  é a potência média
+                </span>
+              </div>
+              <canvas id="s7-1" data-w="520" data-h="142" aria-hidden="true">
+              </canvas>
+            </div>
+            <div class="prop" data-step="1">
+              <span class="pchip">
+                P2
+              </span>
+              <div class="ptext">
+                <span class="tex">
+                  R_X(-\tau)=R_X^*(\tau)
+                </span>
+                <span class="pnote">
+                  processo real:
+                  <span class="tex">
+                    R_X
+                  </span>
+                  é par
+                </span>
+              </div>
+              <canvas id="s7-2" data-w="520" data-h="142" aria-hidden="true">
+              </canvas>
+            </div>
+            <div class="prop" data-step="2">
+              <span class="pchip">
+                P3
+              </span>
+              <div class="ptext">
+                <span class="tex">
+                  |R_X(\tau)|\le R_X(0)
+                </span>
+                <span class="pnote">
+                  máximo na origem
+                </span>
+              </div>
+              <canvas id="s7-3" data-w="520" data-h="142" aria-hidden="true">
+              </canvas>
+            </div>
+            <div class="prop" data-step="3">
+              <span class="pchip">
+                P4
+              </span>
+              <div class="ptext">
+                <span class="tex">
+                  \sum_i\sum_k a_i a_k^*\,R_X(\tau_i-\tau_k)\ge 0
+                </span>
+                <span class="pnote">
+                  toda combinação linear tem potência ≥ 0 → DEP nunca negativa
+                </span>
+              </div>
+            </div>
+            <p class="gold-line" data-step="4">
+              <span class="tex">
+                R_X
+              </span>
+              larga
+              <span class="tex">
+                \Leftrightarrow
+              </span>
+              espectro estreito
+            </p>
+          </div>
+          <aside class="notes">
+            <p class="nmeta">
+              ⏱ 6 min · Seção 7.2.4 · Fig. 7.3
+            </p>
+            <h4>
+              O que falar
+            </h4>
+            <ul>
+              <li>
+                P1:
+                <span class="tex">
+                  R_X(0)
+                </span>
+                é a potência média do processo.
+              </li>
+              <li>
+                P2: trocamos o instante de referência (permitido porque é WSS); para processo real,
+                <span class="tex">
+                  R_X
+                </span>
+                é par.
+              </li>
+              <li>
+                P3 (Cauchy–Schwarz): ninguém se parece mais com
+                <span class="tex">
+                  X(t)
+                </span>
+                do que o próprio
+                <span class="tex">
+                  X(t)
+                </span>
+                . A rapidez do decaimento mede a memória (tempo de correlação).
+              </li>
+              <li>
+                P4 é a mais profunda: um filtro faz combinações lineares de amostras, logo a DEP nunca poderá ser negativa.
+              </li>
+              <li>
+                Dica: o pulso retangular passa em P1–P3 e viola P4 — resolveremos com Wiener–Khinchin olhando o sinc.
+              </li>
+            </ul>
+            <h4>
+              Pergunte à turma
+            </h4>
+            <ul>
+              <li>
+                Um processo que varia lentamente tem
+                <span class="tex">
+                  R_X
+                </span>
+                larga ou estreita? E o seu espectro?
+              </li>
+            </ul>
+          </aside>
+        </section>
+        <!-- =================================================================== 8 -->
+        <section class="slide" id="sec-8" data-title="Energia × potência" data-group="7.3" aria-label="Slide 8">
+          <header class="shead">
+            <p class="eyebrow">
+              7.3 · Energia, potência e Fourier
+            </p>
+            <h2>
+              Energia × potência
+            </h2>
+          </header>
+          <div class="sbody s8">
+            <div class="ecol">
+              <h3>
+                Sinais de energia
+              </h3>
+              <canvas id="s8-pulse" data-w="820" data-h="140" aria-hidden="true">
+              </canvas>
+              <span class="tex d">
+                0\lt E_x\lt\infty\;\Rightarrow\;P_x=0
+              </span>
+              <p class="etag">
+                “acabam”: pulso, bit isolado
+              </p>
+            </div>
+            <div class="ecol" data-step="1">
+              <h3>
+                Sinais de potência
+              </h3>
+              <canvas id="s8-pow" data-w="820" data-h="140" aria-hidden="true">
+              </canvas>
+              <span class="tex d">
+                E_x=\infty,\qquad 0\lt P_x\lt\infty
+              </span>
+              <p class="etag">
+                “duram para sempre”: senóide, ruído
+              </p>
+            </div>
+            <div class="rayl" data-step="3">
+              <span>
+                Rayleigh (7.7):
+              </span>
+              <span class="tex">
+                \int|g(t)|^2dt=\int|G(f)|^2df
+              </span>
+            </div>
+            <div class="wss" data-step="2">
+              <span class="wss-chip">
+                trajetória WSS
+              </span>
+              <div class="tw">
+                <span class="t tex">
+                  E\Big[\int_{-T}^{T}|X(t)|^2dt\Big]
+                </span>
+                <span class="t tex">
+                  \;=2T\,R_X(0)
+                </span>
+                <span class="t tex">
+                  \;\xrightarrow[T\to\infty]{}\;\infty
+                </span>
+              </div>
+            </div>
+            <div class="dee" data-step="3">
+              <canvas id="s8-g" data-w="520" data-h="280" role="img" aria-label="Pulso retangular de duração T">
+              </canvas>
+              <canvas id="s8-G" data-w="740" data-h="280" role="img" aria-label="Densidade espectral de energia do pulso">
+              </canvas>
+              <div class="dee-ctl">
+                <div class="ctl">
+                  <label for="s8-T">
+                    duração
+                    <span class="tex">
+                      T
+                    </span>
+                  </label>
+                  <input type="range" id="s8-T" min="0.25" max="2" step="0.05" value="1" aria-label="Duração do pulso T em segundos">
+                </div>
+                <output id="s8-To">
+                  T = 1,00 s
+                </output>
+                <p class="dee-read" id="s8-read">
+                  lóbulo principal |f| &lt; 1/T
+                </p>
+                <p class="dee-moral">
+                  curto no tempo
+                  <span class="tex">
+                    \Leftrightarrow
+                  </span>
+                  largo na frequência
+                </p>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            <p class="nmeta">
+              ⏱ 7 min · Seção 7.3 · Eq. (7.5)–(7.7) · Fig. 7.4
+            </p>
+            <h4>
+              O que falar
+            </h4>
+            <ul>
+              <li>
+                Resistor normalizado
+                <span class="tex">
+                  R=1\,\Omega
+                </span>
+                :
+                <span class="tex">
+                  p(t)=|x(t)|^2
+                </span>
+                . Energia e potência média pela Eq. (7.5).
+              </li>
+              <li>
+                Duas famílias que não se misturam: energia (acabam,
+                <span class="tex">
+                  P_x=0
+                </span>
+                ) e potência (duram para sempre,
+                <span class="tex">
+                  E_x=\infty
+                </span>
+                ).
+              </li>
+              <li>
+                Trajetória WSS: energia esperada
+                <span class="tex">
+                  2T\,R_X(0)\to\infty
+                </span>
+                , mas potência na janela
+                <span class="tex">
+                  R_X(0)
+                </span>
+                , finita e independente de
+                <span class="tex">
+                  T
+                </span>
+                .
+              </li>
+              <li>
+                Rayleigh:
+                <span class="tex">
+                  |G(f)|^2
+                </span>
+                é densidade espectral de energia (J/Hz). Pulso:
+                <span class="tex">
+                  A^2T^2\mathrm{sinc}^2(fT)
+                </span>
+                , ≈ 90% da energia em
+                <span class="tex">
+                  |f|\lt 1/T
+                </span>
+                . O gráfico está normalizado por
+                <span class="tex">
+                  A^2T^2
+                </span>
+                .
+              </li>
+              <li>
+                Mas um sinal digital real é uma sequência interminável e aleatória de bits: sinal de potência — a DEE não se aplica. É aí que a DEP entra.
+              </li>
+            </ul>
+            <h4>
+              Pergunte à turma
+            </h4>
+            <ul>
+              <li>
+                Um bit de 1 µs ocupa, essencialmente, que faixa? (≈ |f| &lt; 1 MHz)
+              </li>
+            </ul>
+          </aside>
+        </section>
+        <!-- =================================================================== 9 -->
+        <section class="slide" id="sec-9" data-title="O prisma e o equalizador" data-group="7.4" aria-label="Slide 9">
+          <header class="shead">
+            <p class="eyebrow">
+              7.4.1 · DEP: intuição
+            </p>
+            <h2>
+              O prisma e o equalizador
+            </h2>
+          </header>
+          <div class="sbody s9">
+            <div class="s9-l">
+              <svg id="s9-prism" viewBox="0 0 760 240" role="img" aria-label="Luz branca atravessa um prisma e se abre em um leque de cores">
+                <polygon class="prism-face" points="330,18 218,218 442,218"/>
+                <path class="draw beam" data-ms="600" d="M24 140 L262 140"/>
+                <path class="draw beam densidade-espectral-style-1" data-ms="300" data-d="600" d="M262 140 L402 148"/>
+                <path class="draw ray" data-ms="550" data-d="900" stroke="#ff5a52" d="M402 148 L742 62"/>
+                <path class="draw ray" data-ms="550" data-d="960" stroke="#ff9d3b" d="M402 148 L742 88"/>
+                <path class="draw ray" data-ms="550" data-d="1020" stroke="#ffd84a" d="M402 148 L742 114"/>
+                <path class="draw ray" data-ms="550" data-d="1080" stroke="#6fdc78" d="M402 148 L742 140"/>
+                <path class="draw ray" data-ms="550" data-d="1140" stroke="#4db8ff" d="M402 148 L742 166"/>
+                <path class="draw ray" data-ms="550" data-d="1200" stroke="#6f73ff" d="M402 148 L742 192"/>
+                <path class="draw ray" data-ms="550" data-d="1260" stroke="#b56cff" d="M402 148 L742 218"/>
+                <text x="30" y="122" class="plab">luz branca</text>
+        <text x="560" y="40" class="plab">potência por cor</text>
+              </svg>
+              <figure data-step="1">
+                <canvas id="s9-eq" data-w="760" data-h="330" role="img" aria-label="Equalizador gráfico: barras aleatórias e a altura média de cada barra">
+                </canvas>
+                <figcaption>
+                  barras: um instante ·
+                  <span class="gold">
+                    linha dourada: altura média
+                  </span>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="s9-r">
+              <p class="gold-line" data-step="2">
+                A DEP é o prisma matemático de um processo estocástico.
+              </p>
+              <div class="tblwrap">
+                <table class="tbl rows" data-step="3">
+                  <caption>
+                    Tabela 7.2 · a DEP é para a potência o que a fdp é para a probabilidade
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">
+                      </th>
+                      <th scope="col">
+                        fdp
+                      </th>
+                      <th scope="col">
+                        DEP
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="densidade-espectral-style-2">
+                      <th scope="row">
+                        Distribui o quê?
+                      </th>
+                      <td>
+                        probabilidade total (= 1)
+                      </td>
+                      <td>
+                        potência total (=
+                        <span class="tex">
+                          R_X(0)
+                        </span>
+                        )
+                      </td>
+                    </tr>
+                    <tr class="densidade-espectral-style-3">
+                      <th scope="row">
+                        Ao longo de quê?
+                      </th>
+                      <td>
+                        valores
+                        <span class="tex">
+                          x
+                        </span>
+                        da v.a.
+                      </td>
+                      <td>
+                        frequências
+                        <span class="tex">
+                          f
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="densidade-espectral-style-4">
+                      <th scope="row">
+                        Unidade
+                      </th>
+                      <td>
+                        1/[unidade de
+                        <span class="tex">
+                          x
+                        </span>
+                        ]
+                      </td>
+                      <td>
+                        W/Hz (V²/Hz,
+                        <span class="tex">
+                          R=1\,\Omega
+                        </span>
+                        )
+                      </td>
+                    </tr>
+                    <tr class="densidade-espectral-style-5">
+                      <th scope="row">
+                        Sinal
+                      </th>
+                      <td>
+                        <span class="tex">
+                          f_X(x)\ge 0
+                        </span>
+                      </td>
+                      <td>
+                        <span class="tex">
+                          S_X(f)\ge 0
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="densidade-espectral-style-6">
+                      <th scope="row">
+                        Numa faixa
+                      </th>
+                      <td>
+                        <span class="tex">
+                          P[a\lt X\le b]=\int_a^b f_X\,dx
+                        </span>
+                      </td>
+                      <td>
+                        potência em
+                        <span class="tex">
+                          [f_1,f_2]
+                        </span>
+                        = área sob
+                        <span class="tex">
+                          S_X
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="densidade-espectral-style-7">
+                      <th scope="row">
+                        Num ponto
+                      </th>
+                      <td>
+                        <em>
+                          não
+                        </em>
+                        é probabilidade
+                      </td>
+                      <td>
+                        <em>
+                          não
+                        </em>
+                        é potência
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            <p class="nmeta">
+              ⏱ 6 min · Seção 7.4.1 · Tabela 7.2
+            </p>
+            <h4>
+              O que falar
+            </h4>
+            <ul>
+              <li>
+                O prisma não cria nem destrói luz: redistribui a potência luminosa total, mostrando quanto está no vermelho, no verde, no violeta.
+              </li>
+              <li>
+                Equalizador: cada barra acende conforme a potência naquela faixa. As barras pulam (a música é aleatória), mas a altura média de cada barra é estável.
+              </li>
+              <li>
+                A DEP redistribui a potência total
+                <span class="tex">
+                  R_X(0)
+                </span>
+                ao longo das frequências; a “altura média” é a esperança que vamos calcular.
+              </li>
+              <li>
+                Tabela 7.2: “densidade” como no Capítulo 2.
+                <span class="tex">
+                  S_X(f_0)
+                </span>
+                não é potência, assim como
+                <span class="tex">
+                  f_X(x_0)
+                </span>
+                não é probabilidade.
+              </li>
+              <li>
+                Curiosidade:
+                <em>
+                  spectrum
+                </em>
+                (“aparição, imagem”) foi o termo de Newton, no início da década de 1670, para as cores do prisma em Cambridge.
+              </li>
+            </ul>
+            <h4>
+              Pergunte à turma
+            </h4>
+            <ul>
+              <li>
+                Se
+                <span class="tex">
+                  X
+                </span>
+                é uma tensão sobre
+                <span class="tex">
+                  R=1\,\Omega
+                </span>
+                , qual a unidade de
+                <span class="tex">
+                  S_X
+                </span>
+                ? (V²/Hz = W/Hz)
+              </li>
+            </ul>
+          </aside>
+        </section>
+        <!-- =================================================================== 10 -->
+        <section class="slide" id="sec-10" data-title="Construção em 4 passos" data-group="7.4" aria-label="Slide 10">
+          <header class="shead">
+            <p class="eyebrow">
+              7.4.2 · DEP: definição
+            </p>
+            <h2>
+              Construção em 4 passos
+            </h2>
+          </header>
+          <div class="sbody s10">
+            <div class="steps4">
+              <div class="pb" data-c="1">
+                <p class="pb-h">
+                  <b>
+                    1
+                  </b>
+                  Truncar
+                </p>
+                <canvas id="s10-1" data-w="360" data-h="170" aria-hidden="true">
+                </canvas>
+                <p class="pb-c">
+                  <span class="tex">
+                    x_T(t)
+                  </span>
+                  <span>
+                    energia finita
+                  </span>
+                </p>
+              </div>
+              <span class="pa" aria-hidden="true">
+                →
+              </span>
+              <div class="pb" data-c="2">
+                <p class="pb-h">
+                  <b>
+                    2
+                  </b>
+                  Transformar
+                </p>
+                <canvas id="s10-2" data-w="360" data-h="170" aria-hidden="true">
+                </canvas>
+                <p class="pb-c">
+                  <span class="tex">
+                    |X_T(f)|
+                  </span>
+                  <span>
+                    DEE do trecho (J/Hz)
+                  </span>
+                </p>
+              </div>
+              <span class="pa" aria-hidden="true">
+                →
+              </span>
+              <div class="pb" data-c="3">
+                <p class="pb-h">
+                  <b>
+                    3
+                  </b>
+                  Dividir por 2T
+                </p>
+                <canvas id="s10-3" data-w="360" data-h="170" aria-hidden="true">
+                </canvas>
+                <p class="pb-c">
+                  <span class="tex">
+                    \tfrac{1}{2T}|X_T(f)|^2
+                  </span>
+                  <span>
+                    periodograma (W/Hz, aleatório)
+                  </span>
+                </p>
+              </div>
+              <span class="pa" aria-hidden="true">
+                →
+              </span>
+              <div class="pb" data-c="4">
+                <p class="pb-h">
+                  <b>
+                    4
+                  </b>
+                  Média e limite
+                </p>
+                <canvas id="s10-4" data-w="360" data-h="170" aria-hidden="true">
+                </canvas>
+                <p class="pb-c">
+                  <span class="tex">
+                    S_X(f)
+                  </span>
+                  <span>
+                    DEP (W/Hz, determinística)
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div class="eq79 tw" data-step="5" role="math" aria-label="Equação 7.9: S X de f igual ao limite, com T tendendo a infinito, de 1 sobre 2T vezes a esperança do módulo ao quadrado da integral de menos T a T de X de t vezes e elevado a menos j 2 pi f t, dt">
+              <span class="t tex">
+                S_X(f)\;=
+              </span>
+              <span class="t tex u4">
+                \lim\limits_{T\to\infty}
+              </span>
+              <span class="t tex u3">
+                \dfrac{1}{2T}
+              </span>
+              <span class="t tex u4">
+                E\Bigg[
+              </span>
+              <span class="t tex">
+                \Bigg|
+              </span>
+              <span class="t tex u1">
+                \displaystyle\int_{-T}^{T}
+              </span>
+              <span class="t tex u2">
+                X(t)\,e^{-j2\pi f t}\,dt
+              </span>
+              <span class="t tex">
+                \Bigg|^2\Bigg]
+              </span>
+            </div>
+            <div class="box dica" data-step="6">
+              <span class="box-tag">
+                Dica do professor
+              </span>
+              <p>
+                Esperança primeiro, limite depois — é por isso que o analisador tem o botão
+                <em>
+                  averaging
+                </em>
+                .
+              </p>
+            </div>
+          </div>
+          <aside class="notes">
+            <p class="nmeta">
+              ⏱ 8 min · Seção 7.4.2 · Fig. 7.5 · Eq. (7.8)–(7.9)
+            </p>
+            <h4>
+              O que falar
+            </h4>
+            <ul>
+              <li>
+                1 · Truncar em
+                <span class="tex">
+                  |t|\le T
+                </span>
+                : o que um osciloscópio de memória faz ao capturar 2T segundos. O trecho tem energia finita.
+              </li>
+              <li>
+                2 · Agora a transformada
+                <span class="tex">
+                  X_T(f)
+                </span>
+                existe (Eq. 7.8);
+                <span class="tex">
+                  |X_T|^2
+                </span>
+                é a DEE do trecho, em J/Hz.
+              </li>
+              <li>
+                3 · Energia ÷ duração = potência:
+                <span class="tex">
+                  |X_T|^2/2T
+                </span>
+                é o periodograma, o que o analisador digital calcula a cada varredura. Ainda aleatório.
+              </li>
+              <li>
+                4 · Esperança com
+                <span class="tex">
+                  f
+                </span>
+                congelada (como
+                <span class="tex">
+                  m_X(t)
+                </span>
+                congelava
+                <span class="tex">
+                  t
+                </span>
+                ) e limite
+                <span class="tex">
+                  T\to\infty
+                </span>
+                .
+              </li>
+              <li>
+                Leia a Eq. (7.9) de dentro para fora: correlação com
+                <span class="tex">
+                  e^{j2\pi ft}
+                </span>
+                →
+                <span class="tex">
+                  |\cdot|^2
+                </span>
+                descarta a fase →
+                <span class="tex">
+                  E
+                </span>
+                →
+                <span class="tex">
+                  1/2T
+                </span>
+                → limite. Sem a esperança, o periodograma não converge (próximo slide).
+              </li>
+              <li>
+                Gráficos reais: ruído AR(1) com
+                <span class="tex">
+                  a=0{,}9
+                </span>
+                , janela de 256 amostras, média de 300 periodogramas.
+              </li>
+            </ul>
+            <h4>
+              Pergunte à turma
+            </h4>
+            <ul>
+              <li>
+                O que o
+                <span class="tex">
+                  |\cdot|^2
+                </span>
+                joga fora? (a fase — por isso a DEP é especificação parcial)
+              </li>
+            </ul>
+          </aside>
+        </section>
+        <!-- =================================================================== 11 -->
+        <section class="slide" id="sec-11" data-title="Periodograma × média (Exemplo 1)" data-group="7.5" aria-label="Slide 11">
+          <header class="shead">
+            <p class="eyebrow">
+              7.5.1 · Exemplo 1 · interativo
+            </p>
+            <h2>
+              Periodograma × média
+            </h2>
+          </header>
+          <div class="sbody s11">
+            <div class="s11-main">
+              <canvas id="s11-c" data-w="1120" data-h="540" role="img" aria-label="Periodograma da sequência binária e a DEP teórica igual a A ao quadrado">
+              </canvas>
+              <div class="ctls two">
+                <div>
+                  <div class="ctl">
+                    <label for="s11-N">
+                      N amostras
+                    </label>
+                    <input type="range" id="s11-N" min="0" max="3" step="1" value="1" aria-valuetext="256 amostras">
+                    <output id="s11-No">
+                      256
+                    </output>
+                    <div class="nticks" aria-hidden="true">
+                      <span>
+                        64
+                      </span>
+                      <span>
+                        256
+                      </span>
+                      <span>
+                        1024
+                      </span>
+                      <span>
+                        4096
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="ctl">
+                  <label for="s11-K">
+                    realizações K
+                  </label>
+                  <input type="range" id="s11-K" min="1" max="400" step="1" value="1">
+                  <output id="s11-Ko">
+                    1
+                  </output>
+                </div>
+              </div>
+            </div>
+            <div class="side">
+              <p class="exlab">
+                Ex. 1 · BPSK em banda base
+              </p>
+              <span class="tex d">
+                X[n]=\pm A,\ \text{prob. }\tfrac12,\ A=1
+              </span>
+              <div class="stats">
+                <div>
+                  <span>
+                    média em ω
+                  </span>
+                  <output id="s11-m">
+                    1,000
+                  </output>
+                </div>
+                <div>
+                  <span>
+                    desvio-padrão
+                  </span>
+                  <output id="s11-s">
+                    —
+                  </output>
+                </div>
+              </div>
+              <p class="msg" id="s11-msg" aria-live="polite">
+                Mova N ou K.
+              </p>
+              <div class="rowbtn">
+                <button class="btn" id="s11-new" type="button">
+                  nova realização
+                </button>
+                <button class="btn gold" id="s11-res" type="button" aria-expanded="false" aria-controls="s11-drawer">
+                  resolução
+                </button>
+              </div>
+              <div class="drawer" id="s11-drawer" hidden>
+                <h3>
+                  Resolução — Exemplo 1
+                  <button class="btn sm" id="s11-close" type="button" aria-label="Fechar resolução">
+                    fechar
+                  </button>
+                </h3>
+                <ol>
+                  <li>
+                    <span class="tex">
+                      E[X[n]]=\tfrac12 A+\tfrac12(-A)=0,\ \ E[X^2[n]]=A^2
+                    </span>
+                  </li>
+                  <li>
+                    <span class="tex">
+                      E[X[n]X[m]]=0\ (n\ne m)\Rightarrow R_X[k]=A^2\delta[k]
+                    </span>
+                    <span class="c">
+                      independência e média nula: WSS
+                    </span>
+                  </li>
+                  <li>
+                    <span class="tex">
+                      E|X_L|^2=\sum_{n}\sum_{m}E[X[n]X[m]]\,e^{-j\omega(n-m)}
+                    </span>
+                    <span class="c">
+                      Eq. (7.15) e esperança termo a termo
+                    </span>
+                  </li>
+                  <li>
+                    <span class="tex">
+                      =\sum_{n=-L}^{L}A^2e^{0}=(2L+1)A^2
+                    </span>
+                    <span class="c">
+                      só a diagonal
+                      <span class="tex">
+                        m=n
+                      </span>
+                      sobrevive
+                    </span>
+                  </li>
+                  <li>
+                    <span class="tex">
+                      S_X(e^{j\omega})=\lim_{L\to\infty}\frac{(2L+1)A^2}{2L+1}=A^2
+                    </span>
+                    <span class="c">
+                      nem é preciso tomar o limite
+                    </span>
+                  </li>
+                  <li>
+                    <span class="tex">
+                      P_X=\frac{1}{2\pi}\int_{-\pi}^{\pi}A^2\,d\omega=A^2
+                    </span>
+                    <span class="c">
+                      confere com
+                      <span class="tex">
+                        E[X^2[n]]
+                      </span>
+                      (Eq. 7.14)
+                    </span>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            <p class="nmeta">
+              ⏱ 8 min · Seção 7.5.1 · Fig. 7.6 · Eq. (7.13)–(7.15)
+            </p>
+            <h4>
+              O que falar
+            </h4>
+            <ul>
+              <li>
+                Modulador BPSK em banda base:
+                <span class="tex">
+                  \pm A
+                </span>
+                com probabilidade ½, independentes.
+                <span class="tex">
+                  R_X[k]=A^2\delta[k]
+                </span>
+                .
+              </li>
+              <li>
+                Comece com N = 256, K = 1. Suba N até 4096: mais denso, não menos ruidoso — o desvio-padrão do periodograma é da ordem do próprio valor da DEP.
+              </li>
+              <li>
+                Suba K até 400: a média (Monte Carlo da esperança) converge para
+                <span class="tex">
+                  A^2=1
+                </span>
+                .
+              </li>
+              <li>
+                Abra a resolução: só a diagonal sobrevive; DEP constante = processo
+                <strong>
+                  branco
+                </strong>
+                (sem memória). Vale para qualquer i.i.d. de média nula:
+                <span class="tex">
+                  S_X=\sigma^2
+                </span>
+                .
+              </li>
+              <li>
+                Na prática a média é sobre trechos de uma gravação (Welch), o que exige ergodicidade. Curiosidade: Schuster (1898) batizou o periodograma; Bartlett (1948) e Welch (1967) criaram os remédios.
+              </li>
+              <li>
+                A “média em ω” é 1,000 sempre: é Parseval — a área do periodograma é a potência da realização, e
+                <span class="tex">
+                  x^2=A^2
+                </span>
+                em todo símbolo.
+              </li>
+            </ul>
+            <h4>
+              Pergunte à turma
+            </h4>
+            <ul>
+              <li>
+                Por que a DEP deste processo é plana?
+              </li>
+            </ul>
+          </aside>
+        </section>
+        <!-- =================================================================== 12 -->
+        <section class="slide" id="sec-12" data-title="Área = potência" data-group="7.4" aria-label="Slide 12">
+          <header class="shead">
+            <p class="eyebrow">
+              7.4.3 e 7.4.4 · interativo
+            </p>
+            <h2>
+              A potência é a área sob a DEP
+            </h2>
+          </header>
+          <div class="sbody s12">
+            <div class="s12-main">
+              <canvas id="s12-c" data-w="1000" data-h="490" role="img" aria-label="DEP retangular de 2 W/Hz até 100 Hz, com a faixa entre f1 e f2 e sua imagem sombreadas">
+              </canvas>
+              <div class="ctls">
+                <div class="ctl">
+                  <label for="s12-f1">
+                    <span class="tex">
+                      f_1
+                    </span>
+                  </label>
+                  <input type="range" id="s12-f1" min="0" max="150" step="1" value="50">
+                  <output id="s12-f1o">
+                    50 Hz
+                  </output>
+                </div>
+                <div class="ctl">
+                  <label for="s12-f2">
+                    <span class="tex">
+                      f_2
+                    </span>
+                  </label>
+                  <input type="range" id="s12-f2" min="0" max="150" step="1" value="100">
+                  <output id="s12-f2o">
+                    100 Hz
+                  </output>
+                </div>
+              </div>
+              <div class="rowbtn">
+                <button class="btn gold" id="s12-an" type="button">
+                  ver o analisador
+                </button>
+                <output class="mono" id="s12-anr" aria-live="polite">
+                </output>
+              </div>
+            </div>
+            <div class="side">
+              <div class="calc">
+                <span class="tex d">
+                  P_X=\int_{-\infty}^{\infty}S_X(f)\,df=2\cdot 200=400\ \text{W}
+                </span>
+                <span class="tex d" id="s12-P">
+                </span>
+              </div>
+              <div class="box erro" data-step="1">
+                <span class="box-tag">
+                  Erro comum
+                </span>
+                <p>
+                  <span class="tex">
+                    S_X(f_0)
+                  </span>
+                  NÃO é potência: é densidade (W/Hz).
+                </p>
+              </div>
+              <div class="uni" data-step="2">
+                <p class="uni-h">
+                  Bilateral × unilateral
+                </p>
+                <div class="tw">
+                  <p class="t">
+                    <span class="tex">
+                      G_X(f)=2S_X(f),\ \ f\ge 0
+                    </span>
+                    <span class="small">
+                      · trocar uma pela outra: erro do fator 2 (3 dB)
+                    </span>
+                  </p>
+                  <p class="t">
+                    <span class="tex">
+                      kT_0=(1{,}38\times10^{-23})(290)\approx 4{,}0\times10^{-21}\ \text{W/Hz}
+                    </span>
+                  </p>
+                  <p class="t">
+                    <span class="tex">
+                      10\log_{10}\dfrac{4{,}0\times10^{-21}}{10^{-3}}\approx -174\ \text{dBm/Hz}
+                    </span>
+                  </p>
+                  <p class="t">
+                    <span class="tex">
+                      \text{em 1 MHz: }-174+60=-114\ \text{dBm}
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            <p class="nmeta">
+              ⏱ 8 min · Seções 7.4.3–7.4.4 · Eq. (7.10)–(7.12) · exercício V3
+            </p>
+            <h4>
+              O que falar
+            </h4>
+            <ul>
+              <li>
+                Eq. (7.10):
+                <span class="tex">
+                  R_X(0)=\int S_X\,df
+                </span>
+                — Rayleigh na trajetória truncada, esperança, e a hipótese WSS (
+                <span class="tex">
+                  E|X|^2=R_X(0)
+                </span>
+                ).
+              </li>
+              <li>
+                Eq. (7.11): filtro ideal
+                <span class="tex">
+                  f_1\lt|f|\lt f_2
+                </span>
+                deixa passar
+                <span class="tex">
+                  2\int_{f_1}^{f_2}S_X\,df
+                </span>
+                (processo real). V3: 50–100 Hz → 200 W; total 400 W.
+              </li>
+              <li>
+                “Ver o analisador”: um filtro estreito de largura Δf = 10 Hz (a RBW) varre o eixo e mede ≈
+                <span class="tex">
+                  2S_X(f)\Delta f
+                </span>
+                . Daí
+                <span class="tex">
+                  S_X\ge 0
+                </span>
+                (Lema 3 de Lopes dos Santos & Perdicoulis).
+              </li>
+              <li>
+                Datasheets usam a unilateral
+                <span class="tex">
+                  G_X=2S_X
+                </span>
+                . Ruído branco:
+                <span class="tex">
+                  S_W=N_0/2\leftrightarrow G_W=N_0
+                </span>
+                .
+              </li>
+              <li>
+                <span class="tex">
+                  kT_0\approx 4{,}0\times10^{-21}
+                </span>
+                W/Hz ≈ −174 dBm/Hz; em 1 MHz, −114 dBm: o piso abaixo do qual nenhum receptor enxerga (deduzido na aula de ruído branco).
+              </li>
+            </ul>
+            <h4>
+              Pergunte à turma
+            </h4>
+            <ul>
+              <li>
+                Um datasheet informa −150 dBm/Hz. Qual pergunta vocês fazem antes de usar esse número?
+              </li>
+            </ul>
+          </aside>
+        </section>
+        <!-- =================================================================== 13 -->
+        <section class="slide" id="sec-13" data-title="Senóide de fase aleatória (Exemplo 2)" data-group="7.5" aria-label="Slide 13">
+          <header class="shead">
+            <p class="eyebrow">
+              7.5.2 · Exemplo 2 · interativo
+            </p>
+            <h2>
+              Senóide de fase aleatória
+            </h2>
+          </header>
+          <div class="sbody s13">
+            <div class="s13-plots">
+              <figure>
+                <figcaption>
+                  núcleo
+                  <span class="tex">
+                    \kappa_T(f)=2T\,\mathrm{sinc}^2(2Tf)
+                  </span>
+                </figcaption>
+                <canvas id="s13-k" data-w="820" data-h="410" role="img" aria-label="Núcleo kappa T de área unitária">
+                </canvas>
+              </figure>
+              <figure>
+                <figcaption>
+                  <span class="tex">
+                    E|X_T(f)|^2/2T
+                  </span>
+                  , com
+                  <span class="tex">
+                    A=1
+                  </span>
+                  ,
+                  <span class="tex">
+                    f_c=5
+                  </span>
+                  Hz
+                </figcaption>
+                <canvas id="s13-x" data-w="868" data-h="410" role="img" aria-label="Periodograma esperado da senóide com dois lóbulos em mais e menos fc">
+                </canvas>
+              </figure>
+            </div>
+            <div class="ctl">
+              <label for="s13-T">
+                janela
+                <span class="tex">
+                  T
+                </span>
+              </label>
+              <input type="range" id="s13-T" min="0.4" max="4" step="0.01" value="0.5">
+              <output id="s13-To">
+                T = 0,50 s
+              </output>
+              <button class="btn" id="s13-play" type="button">
+                ▶ animar T
+              </button>
+            </div>
+            <div class="s13-bot">
+              <div class="res tw" data-step="1">
+                <span class="t tex">
+                  S_X(f)=\tfrac{A^2}{4}\big[\delta(f-f_c)+\delta(f+f_c)\big]
+                </span>
+                <span class="t tex">
+                  \int S_X\,df=\tfrac{A^2}{2}=R_X(0)
+                </span>
+              </div>
+              <div class="box fis" data-step="2">
+                <span class="box-tag">
+                  Interpretação física
+                </span>
+                <p>
+                  A fase aleatória NÃO alarga o espectro: só apaga o relógio.
+                </p>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            <p class="nmeta">
+              ⏱ 7 min · Seção 7.5.2 · Eq. (7.16) · Fig. 7.7
+            </p>
+            <h4>
+              O que falar
+            </h4>
+            <ul>
+              <li>
+                Portadora recebida antes do travamento do PLL:
+                <span class="tex">
+                  X(t)=A\cos(2\pi f_ct+\Theta)
+                </span>
+                ,
+                <span class="tex">
+                  \Theta\sim U[-\pi,\pi]
+                </span>
+                .
+              </li>
+              <li>
+                Euler → duas exponenciais em
+                <span class="tex">
+                  \pm f_c
+                </span>
+                ;
+                <span class="tex">
+                  |ae^{j\Theta}+be^{-j\Theta}|^2
+                </span>
+                tem termo cruzado
+                <span class="tex">
+                  2ab\cos 2\Theta
+                </span>
+                , e
+                <span class="tex">
+                  E[\cos 2\Theta]=0
+                </span>
+                o elimina.
+              </li>
+              <li>
+                <span class="tex">
+                  E|X_T|^2/2T=\frac{A^2}{4}[\kappa_T(f-f_c)+\kappa_T(f+f_c)]
+                </span>
+                . O núcleo tem área 1, pico 2T e lóbulo de largura 1/T: tende a
+                <span class="tex">
+                  \delta(f)
+                </span>
+                . Use “▶ animar T”.
+              </li>
+              <li>
+                Resultado: duas raias com metade da potência cada;
+                <span class="tex">
+                  \int S_X=A^2/2=R_X(0)
+                </span>
+                , o famoso
+                <span class="tex">
+                  A^2/2
+                </span>
+                .
+              </li>
+              <li>
+                Raia = componente periódica. Alargar exigiria fase variando no tempo: o ruído de fase dos osciladores (passeio aleatório) e a “saia” em torno da portadora.
+              </li>
+              <li>
+                Analisador real mostra o núcleo, nunca o impulso; RBW menor exige aquisição mais longa — varredura mais lenta.
+              </li>
+            </ul>
+            <h4>
+              Pergunte à turma
+            </h4>
+            <ul>
+              <li>
+                Por que um analisador de espectro nunca mostra um impulso de verdade?
+              </li>
+            </ul>
+          </aside>
+        </section>
+        <!-- =================================================================== 14 -->
+        <section class="slide" id="sec-14" data-title="Sensor com offset (Exemplos 3 e 4)" data-group="7.5" aria-label="Slide 14">
+          <header class="shead">
+            <p class="eyebrow">
+              7.5.3 e 7.5.4 · Exemplos 3 e 4 · interativo
+            </p>
+            <h2>
+              Sensor com offset: raia DC + piso
+            </h2>
+          </header>
+          <div class="sbody s14">
+            <div class="s14-main">
+              <canvas id="s14-c" data-w="1060" data-h="520" role="img" aria-label="DEP estimada em escala logarítmica com piso sigma ao quadrado e raia em omega igual a zero">
+              </canvas>
+              <div class="ctls two">
+                <div class="ctl">
+                  <label for="s14-mu">
+                    <span class="tex">
+                      \mu
+                    </span>
+                  </label>
+                  <input type="range" id="s14-mu" min="0" max="3" step="0.05" value="2">
+                  <output id="s14-muo">
+                    2,00
+                  </output>
+                </div>
+                <div class="ctl">
+                  <label for="s14-s2">
+                    <span class="tex">
+                      \sigma^2
+                    </span>
+                  </label>
+                  <input type="range" id="s14-s2" min="0.1" max="2" step="0.05" value="1">
+                  <output id="s14-s2o">
+                    1,00
+                  </output>
+                </div>
+              </div>
+              <div class="rowbtn">
+                <button class="btn" id="s14-ac" type="button" aria-pressed="false">
+                  acoplamento AC
+                </button>
+                <span class="dim mono densidade-espectral-style-8">
+                  N = 256 · média de 300 periodogramas
+                </span>
+              </div>
+            </div>
+            <div class="side">
+              <p class="exlab">
+                Ex. 4 · nó IoT lendo um sensor em repouso
+              </p>
+              <span class="tex d">
+                X[n]=\mu+W[n]
+              </span>
+              <span class="tex d">
+                S_X(e^{j\omega})=\sigma^2+2\pi\mu^2\,\delta(\omega)
+              </span>
+              <div>
+                <p class="stack-h">
+                  potência total = raia DC + área do piso
+                </p>
+                <div class="bar" aria-hidden="true">
+                  <span class="seg dc" id="s14-dc">
+                  </span>
+                  <span class="seg fl" id="s14-fl">
+                  </span>
+                </div>
+                <p class="stack-l" id="s14-sum" aria-live="polite">
+                </p>
+              </div>
+              <div class="box fis" data-step="1">
+                <span class="box-tag">
+                  Ex. 3
+                  <small>
+                    — constante aleatória
+                  </small>
+                </span>
+                <p>
+                  <span class="tex">
+                    S_X(f)=c_2\,\delta(f)
+                  </span>
+                  : WSS, mas NÃO ergódico. A gravação descreve a unidade; a DEP descreve o lote.
+                </p>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            <p class="nmeta">
+              ⏱ 6 min · Seções 7.5.3–7.5.4 · Fig. 7.8
+            </p>
+            <h4>
+              O que falar
+            </h4>
+            <ul>
+              <li>
+                Ex. 4: ADC de um nó IoT lendo um sensor de temperatura em repouso.
+                <span class="tex">
+                  R_X[k]=\mu^2+\sigma^2\delta[k]
+                </span>
+                .
+              </li>
+              <li>
+                A parte
+                <span class="tex">
+                  \sigma^2\delta
+                </span>
+                deixa só a diagonal (piso); a parte
+                <span class="tex">
+                  \mu^2
+                </span>
+                vira o núcleo de Fejér
+                <span class="tex">
+                  F_L(\omega)\to 2\pi\delta(\omega)
+                </span>
+                (raia).
+              </li>
+              <li>
+                Na simulação (N = 256) a raia tem altura ≈
+                <span class="tex">
+                  N\mu^2
+                </span>
+                : é o Fejér com N finito, a versão de laboratório do impulso.
+              </li>
+              <li>
+                Potência total = raia DC + área do piso:
+                <span class="tex">
+                  E[X^2]=\sigma^2+\mu^2
+                </span>
+                . Acoplamento AC (capacitor em série) remove
+                <span class="tex">
+                  \mu^2
+                </span>
+                ; o piso continua — para reduzi-lo é preciso estreitar a banda (média de M amostras divide a potência de ruído por M).
+              </li>
+              <li>
+                Ex. 3:
+                <span class="tex">
+                  X(t)=C
+                </span>
+                ,
+                <span class="tex">
+                  E[C^2]=c_2
+                </span>
+                ⇒
+                <span class="tex">
+                  S_X=c_2\delta(f)
+                </span>
+                . Um único sensor dá
+                <span class="tex">
+                  C^2\delta(f)
+                </span>
+                com o seu C, não
+                <span class="tex">
+                  E[C^2]
+                </span>
+                .
+              </li>
+            </ul>
+            <h4>
+              Pergunte à turma
+            </h4>
+            <ul>
+              <li>
+                Se eu gravar um único sensor do lote, que DEP eu vou estimar?
+              </li>
+            </ul>
+          </aside>
+        </section>
+        <!-- =================================================================== 15 -->
+        <section class="slide" id="sec-15" data-title="Raia × piso e a SNR (Exemplo 5)" data-group="7.5" aria-label="Slide 15">
+          <header class="shead">
+            <p class="eyebrow">
+              7.5.5 · Exemplo 5 · interativo
+            </p>
+            <h2>
+              Raia × piso: por que estreitar o filtro
+            </h2>
+          </header>
+          <div class="sbody s15">
+            <div class="s15-top">
+              <div class="s15-main">
+                <canvas id="s15-c" data-w="1000" data-h="480" role="img" aria-label="Raia do tom em fc sobre um piso plano de ruído, com a janela do filtro passa-faixa">
+                </canvas>
+                <div class="ctl">
+                  <label for="s15-df">
+                    banda
+                    <span class="tex">
+                      \Delta f
+                    </span>
+                  </label>
+                  <input type="range" id="s15-df" min="2" max="5" step="0.01" value="4" aria-valuetext="10 kHz">
+                  <output id="s15-dfo">
+                    10,0 kHz
+                  </output>
+                </div>
+                <div class="rowbtn">
+                  <button class="btn" type="button" data-df="4">
+                    10 kHz → 31 dB
+                  </button>
+                  <button class="btn" type="button" data-df="3">
+                    1 kHz → 41 dB
+                  </button>
+                </div>
+              </div>
+              <div class="side">
+                <p class="exlab">
+                  Ex. 5 · tom + ruído de piso
+                </p>
+                <span class="tex d">
+                  A=10\ \mu\text{V},\quad N_0/2=2\times10^{-18}\ \text{W/Hz}
+                </span>
+                <div class="calc">
+                  <span class="tex d" id="s15-ps">
+                  </span>
+                  <span class="tex d" id="s15-pn">
+                  </span>
+                  <span class="tex d" id="s15-snr">
+                  </span>
+                </div>
+                <div class="meter">
+                  <div class="meter-bar">
+                    <i id="s15-fill">
+                    </i>
+                    <b class="densidade-espectral-style-9">
+                      31
+                    </b>
+                    <b class="densidade-espectral-style-10">
+                      41
+                    </b>
+                  </div>
+                  <p class="meter-l">
+                    <span>
+                      0 dB
+                    </span>
+                    <span>
+                      SNR
+                    </span>
+                    <span>
+                      60 dB
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <p class="gold-line center" data-step="1">
+              Estreitar o filtro não custa nada ao sinal e corta o ruído proporcionalmente à banda.
+            </p>
+          </div>
+          <aside class="notes">
+            <p class="nmeta">
+              ⏱ 6 min · Seção 7.5.5
+            </p>
+            <h4>
+              O que falar
+            </h4>
+            <ul>
+              <li>
+                <span class="tex">
+                  Y=X+N
+                </span>
+                , com
+                <span class="tex">
+                  X
+                </span>
+                o tom do Ex. 2 e
+                <span class="tex">
+                  N
+                </span>
+                ruído WSS de média nula, independente: o termo cruzado some e
+                <span class="tex">
+                  S_Y=S_X+S_N
+                </span>
+                .
+              </li>
+              <li>
+                <span class="tex">
+                  P_\text{sinal}=A^2/2=5\times10^{-11}
+                </span>
+                W não depende de Δf: as duas raias passam pelo filtro centrado em
+                <span class="tex">
+                  \pm f_c
+                </span>
+                .
+              </li>
+              <li>
+                <span class="tex">
+                  P_\text{ruído}=2\cdot(N_0/2)\cdot\Delta f=4\times10^{-18}\Delta f
+                </span>
+                (Eq. 7.11): piso × largura, nas duas faixas.
+              </li>
+              <li>
+                10 kHz → SNR = 1250 ≈ 31 dB; 1 kHz → 12 500 ≈ 41 dB. Dez vezes mais estreito, dez vezes menos ruído.
+              </li>
+              <li>
+                Raia concentra; piso espalha. É por isso que receptores, analisadores, lock-in e o filtro casado funcionam.
+              </li>
+              <li>
+                Erro comum: somar DEPs exige processos descorrelacionados e ao menos um de média nula. Um eco do próprio sinal gera DEP cruzada.
+              </li>
+            </ul>
+            <h4>
+              Pergunte à turma
+            </h4>
+            <ul>
+              <li>
+                O que limita, na prática, o quanto dá para estreitar Δf? (lembre: com 2T segundos de medição, a resolução é ≈ 1/(2T))
+              </li>
+            </ul>
+          </aside>
+        </section>
+        <!-- =================================================================== 16 -->
+        <section class="slide" id="sec-16" data-title="Síntese e gancho para Wiener–Khinchin" data-group="7.5" aria-label="Slide 16">
+          <header class="shead">
+            <p class="eyebrow">
+              7.5.6 e 7.5.10 · Síntese
+            </p>
+            <h2>
+              Assinaturas espectrais e um padrão escondido
+            </h2>
+          </header>
+          <div class="sbody s16">
+            <div class="s16-top">
+              <div class="sigs">
+                <div class="sig">
+                  <canvas id="s16-a" data-w="190" data-h="104" aria-hidden="true">
+                  </canvas>
+                  <p>
+                    <b>
+                      piso plano
+                    </b>
+                    ↔ branco (sem memória)
+                  </p>
+                </div>
+                <div class="sig">
+                  <canvas id="s16-b" data-w="190" data-h="104" aria-hidden="true">
+                  </canvas>
+                  <p>
+                    <b>
+                      raia em
+                      <span class="tex">
+                        \pm f_c
+                      </span>
+                    </b>
+                    ↔ senoide
+                  </p>
+                </div>
+                <div class="sig">
+                  <canvas id="s16-c" data-w="190" data-h="104" aria-hidden="true">
+                  </canvas>
+                  <p>
+                    <b>
+                      raia em 0
+                    </b>
+                    ↔ DC
+                  </p>
+                </div>
+              </div>
+              <div class="s16-r">
+                <div class="tblwrap">
+                  <table class="tbl rows" data-step="1">
+                    <caption>
+                      Tabela 7.3 · autocorrelação e DEP dos exemplos
+                    </caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">
+                          Processo
+                        </th>
+                        <th scope="col">
+                          Autocorrelação
+                        </th>
+                        <th scope="col">
+                          DEP (pela definição)
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="densidade-espectral-style-2">
+                        <th scope="row">
+                          Ex. 1: binário ±A
+                        </th>
+                        <td>
+                          <span class="tex">
+                            R_X[k]=A^2\delta[k]
+                          </span>
+                        </td>
+                        <td>
+                          <span class="tex">
+                            S_X(e^{j\omega})=A^2
+                          </span>
+                        </td>
+                      </tr>
+                      <tr class="densidade-espectral-style-3">
+                        <th scope="row">
+                          Ex. 2: fase aleatória
+                        </th>
+                        <td>
+                          <span class="tex">
+                            R_X(\tau)=\tfrac{A^2}{2}\cos(2\pi f_c\tau)
+                          </span>
+                        </td>
+                        <td>
+                          <span class="tex">
+                            S_X(f)=\tfrac{A^2}{4}[\delta(f-f_c)+\delta(f+f_c)]
+                          </span>
+                        </td>
+                      </tr>
+                      <tr class="densidade-espectral-style-4">
+                        <th scope="row">
+                          Ex. 3: constante aleatória
+                        </th>
+                        <td>
+                          <span class="tex">
+                            R_X(\tau)=c_2
+                          </span>
+                        </td>
+                        <td>
+                          <span class="tex">
+                            S_X(f)=c_2\,\delta(f)
+                          </span>
+                        </td>
+                      </tr>
+                      <tr class="densidade-espectral-style-5">
+                        <th scope="row">
+                          Ex. 4: offset + ruído
+                        </th>
+                        <td>
+                          <span class="tex">
+                            R_X[k]=\mu^2+\sigma^2\delta[k]
+                          </span>
+                        </td>
+                        <td>
+                          <span class="tex">
+                            S_X(e^{j\omega})=\sigma^2+2\pi\mu^2\delta(\omega)
+                          </span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="wk">
+                  <p class="coinc" data-step="2">
+                    Coincidência?
+                  </p>
+                  <div class="wkf" data-step="3">
+                    <div class="tw">
+                      <span class="t tex">
+                        S_X(f)\;=\;
+                      </span>
+                      <span class="t tex">
+                        \displaystyle\int_{-\infty}^{\infty}R_X(\tau)\,e^{-j2\pi f\tau}\,d\tau
+                      </span>
+                    </div>
+                    <p class="next">
+                      Wiener–Khinchin · próxima aula — 24/09
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="vwrap" data-step="4">
+              <p class="vh">
+                Verifique seu entendimento · clique para virar
+              </p>
+              <div class="vcards">
+                <button class="vcard" type="button" aria-pressed="false">
+                  <span class="vin">
+                    <span class="vf front">
+                      <span class="vt">
+                        V1
+                        <small>
+                          pergunta
+                        </small>
+                      </span>
+                      <span>
+                        Por que não podemos simplesmente calcular a Transformada de Fourier de uma trajetória de ruído?
+                      </span>
+                    </span>
+                    <span class="vf back">
+                      <span class="vt">
+                        V1
+                        <small>
+                          resposta
+                        </small>
+                      </span>
+                      <span>
+                        A energia é infinita: a integral não converge. E, mesmo truncadas, cada trajetória daria um espectro diferente (aleatório).
+                      </span>
+                    </span>
+                  </span>
+                </button>
+                <button class="vcard" type="button" aria-pressed="false">
+                  <span class="vin">
+                    <span class="vf front">
+                      <span class="vt">
+                        V3
+                        <small>
+                          pergunta
+                        </small>
+                      </span>
+                      <span>
+                        Processo real com
+                        <span class="tex">
+                          S_X(f)=2
+                        </span>
+                        W/Hz para
+                        <span class="tex">
+                          |f|\lt 100
+                        </span>
+                        Hz e zero fora. Potência total? E de 50 a 100 Hz?
+                      </span>
+                    </span>
+                    <span class="vf back">
+                      <span class="vt">
+                        V3
+                        <small>
+                          resposta
+                        </small>
+                      </span>
+                      <span>
+                        <span class="tex">
+                          P=\int_{-100}^{100}2\,df=400
+                        </span>
+                        W. Na faixa 50–100 Hz (e sua imagem):
+                        <span class="tex">
+                          2\cdot2\cdot50=200
+                        </span>
+                        W.
+                      </span>
+                    </span>
+                  </span>
+                </button>
+                <button class="vcard" type="button" aria-pressed="false">
+                  <span class="vin">
+                    <span class="vf front">
+                      <span class="vt">
+                        V4
+                        <small>
+                          pergunta
+                        </small>
+                      </span>
+                      <span>
+                        Um datasheet informa −150 dBm/Hz. Qual a potência de ruído em 100 kHz?
+                      </span>
+                    </span>
+                    <span class="vf back">
+                      <span class="vt">
+                        V4
+                        <small>
+                          resposta
+                        </small>
+                      </span>
+                      <span>
+                        <span class="tex">
+                          -150+10\log_{10}(10^5)=-100
+                        </span>
+                        dBm
+                        <span class="tex">
+                          =10^{-13}
+                        </span>
+                        W.
+                      </span>
+                    </span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            <p class="nmeta">
+              ⏱ 5 min · Seções 7.5.6 e 7.5.10 · Tabela 7.3
+            </p>
+            <h4>
+              O que falar
+            </h4>
+            <ul>
+              <li>
+                Assinaturas: piso plano ↔ sequência sem memória (branca); raia em
+                <span class="tex">
+                  \pm f_c
+                </span>
+                ↔ componente senoidal; raia em 0 ↔ componente DC.
+              </li>
+              <li>
+                Tabela 7.3 lado a lado: o impulso vira constante, o cosseno vira par de impulsos, a constante vira impulso.
+              </li>
+              <li>
+                Não é coincidência: na expansão (7.15), a esperança transforma cada
+                <span class="tex">
+                  X[n]X^*[m]
+                </span>
+                em
+                <span class="tex">
+                  R_X[n-m]
+                </span>
+                ; o que sobra é uma Transformada de Fourier. É o Teorema de Wiener–Khinchin (24/09).
+              </li>
+              <li>
+                Peça que tragam a tabela de pares de Fourier (slides do Prof. Evelio). O pulso retangular que viola P4 se resolve olhando para o sinc, que fica negativo.
+              </li>
+              <li>
+                V1, V3 e V4 nos cartões; V2 e V5 ficam para casa.
+              </li>
+            </ul>
+            <h4>
+              Pergunte à turma
+            </h4>
+            <ul>
+              <li>
+                Olhando a Tabela 7.3: que operação leva a coluna do meio à da direita?
+              </li>
+            </ul>
+          </aside>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

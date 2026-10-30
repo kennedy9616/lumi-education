@@ -1,0 +1,19 @@
+/* Ajustes específicos dos diagramas e cartões de Redes. */
+.chapter-icon {
+  width:28px;
+  height:28px;
+  float:right
+}
+.diagram-hidden {
+  display:none
+}
+.packet-alternate-path {
+  animation-delay:-1.5s;
+  offset-path:path('M 80 90 L 240 180 L 400 180 L 560 90')
+}
+.packet-delayed {
+  animation-delay:-3s
+}
+.diagram-dark-label {
+  fill:#0b2540
+}

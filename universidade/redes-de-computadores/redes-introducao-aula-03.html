@@ -1,0 +1,1696 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Do sensor ao servidor: acompanhe a organização em camadas e o percurso de uma mensagem entre dois sistemas.">
+    <meta name="theme-color" content="#0b2540">
+    <title>
+      Arquitetura de redes e modelo OSI · LUMI Education
+    </title>
+    <script src="../../scripts/theme.js">
+    </script>
+    <link rel="stylesheet" href="../../template/tokens.css">
+    <link rel="stylesheet" href="../../template/base.css">
+    <link rel="stylesheet" href="../../template/layout.css">
+    <link rel="stylesheet" href="../../template/pages/redes.css">
+    <script src="../../scripts/site.js" defer>
+    </script>
+    <script src="../../scripts/icons.js" defer>
+    </script>
+    <script src="../../scripts/lessons/redes.js" defer>
+    </script>
+  </head>
+  <body data-root="../../" data-area="universidade">
+    <a class="skip" href="#conteudo">
+      Pular para o conteúdo
+    </a>
+    <header class="topbar" data-site-header>
+    </header>
+    <progress class="progress reading-progress" data-reading-progress value="0" max="100" aria-label="Progresso de leitura da página">
+    </progress>
+    <aside class="sidebar" id="sidebar" data-site-sidebar aria-label="Menu do aluno">
+    </aside>
+    <button class="scrim" type="button" aria-label="Fechar menu" tabindex="-1">
+    </button>
+    <noscript>
+      <p class="noscript">
+        Ative o JavaScript para usar o menu e as atividades interativas.
+        <a href="../../index.html">
+          Visão geral
+        </a>
+        ·
+        <a href="../../infantil/index.html">
+          Infantil
+        </a>
+        ·
+        <a href="../../universidade/index.html">
+          Universidade
+        </a>
+        ·
+        <a href="../../tecnico/index.html">
+          Técnico
+        </a>
+        ·
+        <a href="../../configuracoes/index.html">
+          Configurações
+        </a>
+      </p>
+    </noscript>
+    <template id="course-navigation">
+      <div class="course-navigation">
+        <p class="side-kicker">
+          NESTE CURSO
+        </p>
+        <nav aria-label="Redes de Computadores">
+          <a href="redes-index.html" class="side-home">
+            <i data-lucide="layout-dashboard" aria-hidden="true">
+            </i>
+            Visão geral
+          </a>
+          <div class="side-module">
+            <a href="redes-introducao.html" class="module-link">
+              <span class="nav-index">
+                00
+              </span>
+              Introdução
+            </a>
+            <a href="redes-introducao-aula-01.html" class="lesson-link">
+              <span class="num">
+                01
+              </span>
+              História da Internet e conceitos fundamentais
+            </a>
+            <a href="redes-introducao-aula-02.html" class="lesson-link">
+              <span class="num">
+                02
+              </span>
+              Fundamentos de comunicação de dados
+            </a>
+            <a href="redes-introducao-aula-03.html" class="lesson-link active" aria-current="page" aria-current="page">
+              <span class="num">
+                03
+              </span>
+              Arquitetura de redes e modelo OSI
+            </a>
+          </div>
+          <div class="side-module">
+            <a class="module-link" href="redes-index.html#enlace-fisica">
+              <span class="nav-index">
+                01
+              </span>
+              Enlace e Física
+            </a>
+            <span class="soon">
+              Em breve
+            </span>
+          </div>
+          <div class="side-module">
+            <a class="module-link" href="redes-index.html#rede">
+              <span class="nav-index">
+                02
+              </span>
+              Rede
+            </a>
+            <span class="soon">
+              Em breve
+            </span>
+          </div>
+          <div class="side-module">
+            <a class="module-link" href="redes-index.html#transporte">
+              <span class="nav-index">
+                03
+              </span>
+              Transporte
+            </a>
+            <span class="soon">
+              Em breve
+            </span>
+          </div>
+          <div class="side-module">
+            <a class="module-link" href="redes-index.html#aplicacao">
+              <span class="nav-index">
+                04
+              </span>
+              Aplicação
+            </a>
+            <span class="soon">
+              Em breve
+            </span>
+          </div>
+        </nav>
+      </div>
+    </template>
+    <main class="main " id="conteudo" tabindex="-1">
+      <nav class="breadcrumb" aria-label="Trilha de navegação">
+        <a href="../../index.html">
+          Início
+        </a>
+        <span aria-hidden="true">
+          ›
+        </span>
+        <a href="../index.html">
+          Universidade
+        </a>
+        <span aria-hidden="true">
+          ›
+        </span>
+        <a href="redes-index.html">
+          Redes de Computadores
+        </a>
+        <span aria-hidden="true">
+          ›
+        </span>
+        <span aria-current="page">
+          Arquitetura de redes e modelo OSI
+        </span>
+      </nav>
+      <nav class="utility" aria-label="Navegação da aula">
+        <div class="utility-group">
+          <a href="redes-index.html" class="btn small">
+            <i data-lucide="house" aria-hidden="true">
+            </i>
+            Início da disciplina
+          </a>
+          <a href="redes-introducao.html" class="btn small">
+            <i data-lucide="grid-2x2" aria-hidden="true">
+            </i>
+            Voltar ao módulo
+          </a>
+        </div>
+        <div class="utility-group">
+          <a href="redes-introducao-aula-02.html" class="btn small">
+            <i data-lucide="arrow-left" aria-hidden="true">
+            </i>
+            Aula anterior
+          </a>
+          <span class="btn small" aria-disabled="true">
+            <i data-lucide="arrow-right" aria-hidden="true">
+            </i>
+            Próxima aula
+          </span>
+        </div>
+      </nav>
+      <div class="hero">
+        <div class="eyebrow">
+          Aula 03 / Introdução
+        </div>
+        <h1 tabindex="-1">
+          Arquitetura de redes e modelo OSI
+        </h1>
+        <p class="hero-text">
+          Do sensor ao servidor: acompanhe a organização em camadas e o percurso de uma mensagem entre dois sistemas.
+        </p>
+        <div class="meta">
+          <span class="pill">
+            <i data-lucide="graduation-cap" aria-hidden="true">
+            </i>
+            Engenharia Elétrica · UFMA
+          </span>
+          <span class="pill">
+            <i data-lucide="clock-3" aria-hidden="true">
+            </i>
+            Leitura estimada: 32 min
+          </span>
+          <span class="pill">
+            5 questões de revisão
+          </span>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card reveal span2 objectives" data-kind="Conceito">
+          <div class="eyebrow kind">
+            <i data-lucide="layers" aria-hidden="true">
+            </i>
+            Conceito
+          </div>
+          <h3>
+            Ao final desta aula, você poderá…
+          </h3>
+          <ul>
+            <li>
+              Explicar como camadas organizam o problema da comunicação.
+            </li>
+            <li>
+              Distinguir protocolo, serviço e encapsulamento.
+            </li>
+            <li>
+              Relacionar as camadas TCP/IP às suas funções e PDUs.
+            </li>
+            <li>
+              Acompanhar encapsulamento e desencapsulamento.
+            </li>
+            <li>
+              Comparar OSI e TCP/IP e reconhecer os padrões citados.
+            </li>
+          </ul>
+        </article>
+        <article class="card reveal " data-kind="Resumo">
+          <div class="eyebrow kind">
+            <i data-lucide="list-checks" aria-hidden="true">
+            </i>
+            Resumo
+          </div>
+          <h3>
+            Nesta aula
+          </h3>
+          <nav aria-label="Sumário da aula" class="toc">
+            <a href="#camadas">
+              <small>
+                01
+              </small>
+              Por que usar camadas
+            </a>
+            <a href="#tcpip">
+              <small>
+                02
+              </small>
+              Modelo TCP/IP
+            </a>
+            <a href="#encapsular">
+              <small>
+                03
+              </small>
+              Encapsulamento
+            </a>
+            <a href="#osi">
+              <small>
+                04
+              </small>
+              Modelo OSI
+            </a>
+            <a href="#padroes">
+              <small>
+                05
+              </small>
+              Padrões e protocolos
+            </a>
+            <a href="#pratica">
+              <small>
+                06
+              </small>
+              Redes na prática
+            </a>
+            <a href="#resumo">
+              <small>
+                07
+              </small>
+              Resumo
+            </a>
+            <a href="#verifique">
+              <small>
+                08
+              </small>
+              Verifique seu entendimento
+            </a>
+            <a href="#exercicios">
+              <small>
+                09
+              </small>
+              Atividades originais
+            </a>
+            <a href="#figuras">
+              <small>
+                10
+              </small>
+              Figuras do material
+            </a>
+            <a href="#referencias">
+              <small>
+                11
+              </small>
+              Para saber mais
+            </a>
+          </nav>
+        </article>
+      </div>
+      <section id="camadas" class="lesson-section">
+        <div class="section-heading">
+          <span class="section-line">
+          </span>
+          <h2>
+            Dividir o problema para organizar a comunicação
+          </h2>
+        </div>
+        <p class="section-intro">
+          Sensores, CLPs e servidores precisam trocar dados mesmo sendo de fabricantes diferentes.
+        </p>
+        <div class="grid">
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Por que camadas?
+            </h3>
+            <ul>
+              <li>
+                <strong>
+                  Abstração:
+                </strong>
+                esconder detalhes de implementação.
+              </li>
+              <li>
+                <strong>
+                  Modularidade:
+                </strong>
+                organizar funções separadamente.
+              </li>
+              <li>
+                <strong>
+                  Interoperabilidade:
+                </strong>
+                seguir regras compartilhadas.
+              </li>
+              <li>
+                <strong>
+                  Facilidade de projeto:
+                </strong>
+                dividir a complexidade.
+              </li>
+            </ul>
+          </article>
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Protocolo × serviço
+            </h3>
+            <p>
+              <strong>
+                Protocolo:
+              </strong>
+              regras de formato, ordem e significado das mensagens entre entidades.
+            </p>
+            <p>
+              <strong>
+                Serviço:
+              </strong>
+              funcionalidade que uma camada oferece à camada superior.
+            </p>
+            <p>
+              O protocolo relaciona pares remotos; o serviço relaciona camadas no mesmo sistema.
+            </p>
+          </article>
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Endereçar e encapsular
+            </h3>
+            <p>
+              <strong>
+                Endereçamento:
+              </strong>
+              identifica origem e destino da comunicação.
+            </p>
+            <p>
+              <strong>
+                Encapsulamento:
+              </strong>
+              envolve dados recebidos da camada superior com informações de controle da camada inferior.
+            </p>
+          </article>
+          <article class="card reveal " data-kind="Analogia">
+            <div class="eyebrow kind">
+              <i data-lucide="route" aria-hidden="true">
+              </i>
+              Analogia
+            </div>
+            <h3>
+              Um idioma compartilhado
+            </h3>
+            <p>
+              A imagem original compara computadores e pessoas: a comunicação exige regras sobre linguagem, perguntas, respostas e direção da fala. Trocar sinais só faz sentido quando os participantes conseguem interpretá-los.
+            </p>
+          </article>
+          <article class="card reveal " data-kind="Exemplo">
+            <div class="eyebrow kind">
+              <i data-lucide="search" aria-hidden="true">
+              </i>
+              Exemplo
+            </div>
+            <h3>
+              Contexto industrial
+            </h3>
+            <p>
+              Os diagramas apresentam manufatura, sensores, CLPs, interfaces de operação, switches, servidores e nuvem. A organização em camadas permite estudar funções comuns em sistemas diferentes.
+            </p>
+          </article>
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Uma mudança sem desmontar tudo
+            </h3>
+            <p>
+              A modularidade permite tratar partes do sistema separadamente. O material destaca a independência das camadas; o serviço oferecido funciona como a referência de uso para a camada acima.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="tcpip" class="lesson-section">
+        <div class="section-heading">
+          <span class="section-line">
+          </span>
+          <h2>
+            As funções do modelo TCP/IP
+          </h2>
+        </div>
+        <p class="section-intro">
+          A aula detalha cinco camadas; o menu reúne Enlace e Física no mesmo módulo.
+        </p>
+        <div class="grid">
+          <article class="card reveal wide" data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Camadas, funções e PDUs
+            </h3>
+            <div class="table-scroll" tabindex="0" role="region" aria-label="Tabela comparativa, role horizontalmente se necessário">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      Camada
+                    </th>
+                    <th scope="col">
+                      O que resolve
+                    </th>
+                    <th scope="col">
+                      PDU no PDF
+                    </th>
+                    <th scope="col">
+                      Exemplos do PDF
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      5 · Aplicação
+                    </td>
+                    <td>
+                      Protocolos usados pelas aplicações
+                    </td>
+                    <td>
+                      Mensagem
+                    </td>
+                    <td>
+                      HTTP, DNS, SMTP, FTP
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      4 · Transporte
+                    </td>
+                    <td>
+                      Comunicação processo a processo; portas
+                    </td>
+                    <td>
+                      Segmento*
+                    </td>
+                    <td>
+                      TCP, UDP
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      3 · Rede
+                    </td>
+                    <td>
+                      Comunicação entre hosts através da rede
+                    </td>
+                    <td>
+                      Datagrama / pacote
+                    </td>
+                    <td>
+                      IP, ICMP, ARP*
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      2 · Enlace
+                    </td>
+                    <td>
+                      Comunicação entre nós vizinhos
+                    </td>
+                    <td>
+                      Quadro
+                    </td>
+                    <td>
+                      Ethernet, Wi-Fi
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      1 · Física
+                    </td>
+                    <td>
+                      Bits representados por sinais no meio
+                    </td>
+                    <td>
+                      Bits
+                    </td>
+                    <td>
+                      Cabos, rádio, fibra
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              <strong>
+                PDU
+              </strong>
+              é a unidade de dados apresentada em cada camada. Os asteriscos identificam classificações assinaladas para revisão abaixo.
+            </p>
+          </article>
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Aplicação e Transporte
+            </h3>
+            <p>
+              A Aplicação reúne protocolos utilizados pelas aplicações. O Transporte relaciona a comunicação aos processos, usando portas para chegar à aplicação correta.
+            </p>
+          </article>
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Rede e Enlace
+            </h3>
+            <p>
+              A Rede trata o deslocamento de pacotes entre hospedeiros. O Enlace organiza a comunicação local entre dois nós diretamente conectados: um salto do caminho.
+            </p>
+          </article>
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Física
+            </h3>
+            <p>
+              Movimenta bits codificados em sinais elétricos, ópticos ou de rádio. É a parte da descrição que se relaciona diretamente ao meio de transmissão.
+            </p>
+          </article>
+          <article class="card reveal wide" data-kind="Atenção">
+            <div class="eyebrow kind">
+              <i data-lucide="triangle-alert" aria-hidden="true">
+              </i>
+              Atenção
+            </div>
+            <h3>
+              Nota para revisão do professor
+            </h3>
+            <p>
+              O PDF usa “Segmento” para TCP e UDP e inclui ARP na camada de Rede. Essas classificações são mantidas como registros do material, com revisão solicitada ao professor. A representação geral em quatro camadas e o detalhamento em cinco aparecem no próprio arquivo.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="encapsular" class="lesson-section">
+        <div class="section-heading">
+          <span class="section-line">
+          </span>
+          <h2>
+            Uma mensagem, diferentes unidades de dados
+          </h2>
+        </div>
+        <p class="section-intro">
+          No emissor, a mensagem desce a pilha. No receptor, o processo é percorrido em sentido inverso.
+        </p>
+        <div class="grid">
+          <article class="card reveal " data-kind="Analogia">
+            <div class="eyebrow kind">
+              <i data-lucide="route" aria-hidden="true">
+              </i>
+              Analogia
+            </div>
+            <h3>
+              A analogia dos envelopes
+            </h3>
+            <p>
+              Cada camada envolve os dados em informações de controle, como envelopes colocados sobre uma carta. O conteúdo da aplicação é preservado no esquema didático, enquanto novos cabeçalhos são acrescentados.
+            </p>
+          </article>
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Encapsular
+            </h3>
+            <ul>
+              <li>
+                Aplicação: mensagem.
+              </li>
+              <li>
+                Transporte: segmento no exemplo.
+              </li>
+              <li>
+                Rede: datagrama.
+              </li>
+              <li>
+                Enlace: quadro.
+              </li>
+              <li>
+                Física: transmissão de bits como sinais.
+              </li>
+            </ul>
+          </article>
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Desencapsular
+            </h3>
+            <p>
+              No destino, as informações de controle são retiradas à medida que os dados sobem a pilha. A mensagem original chega à aplicação receptora.
+            </p>
+          </article>
+          <article class="card reveal wide" data-kind="Na prática">
+            <div class="eyebrow kind">
+              <i data-lucide="wrench" aria-hidden="true">
+              </i>
+              Na prática
+            </div>
+            <h3>
+              Explore o percurso, etapa por etapa
+            </h3>
+            <div id="encapsulation">
+              <figure class="figure">
+                <svg viewBox="0 0 690 280" role="img" aria-labelledby="enc-title enc-desc">
+                  <title id="enc-title">
+                    Encapsulamento e desencapsulamento
+                  </title>
+                  <desc id="enc-desc">
+                    Avance para envolver a mensagem em cabeçalhos de transporte, rede e enlace. No receptor, remova essas informações na ordem inversa.
+                  </desc>
+                  <text x="30" y="30" data-step-label>EMISSOR</text>
+                  <g data-envelope="3">
+                    <rect class="layer" x="25" y="65" width="640" height="150" rx="14"/>
+                    <text x="40" y="97">Enlace</text><text x="610" y="195">FCS</text>
+                  </g>
+                  <g data-envelope="2">
+                    <rect class="layer" x="115" y="105" width="475" height="95" rx="12"/>
+                    <text x="130" y="137">Rede</text>
+                  </g>
+                  <g data-envelope="1">
+                    <rect class="layer" x="210" y="135" width="355" height="55" rx="10"/>
+                    <text x="223" y="168">Transporte</text>
+                  </g>
+                  <rect x="335" y="145" width="210" height="35" rx="6" fill="var(--amber)"/>
+                  <text class="diagram-dark-label" x="440" y="168" text-anchor="middle">Mensagem original</text><text x="220" y="255" data-bits>010010 · sinais no meio físico · 101001</text>
+                </svg>
+                <figcaption>
+                  Representação de uma mensagem no exemplo TCP/IP do material. Cabeçalhos e FCS não estão em escala.
+                </figcaption>
+              </figure>
+              <div class="diagram-status" role="status" data-status>
+              </div>
+              <div class="controls">
+                <button class="btn" data-enc-prev>
+                  ← Etapa anterior
+                </button>
+                <button class="btn primary" data-enc-next>
+                  Próxima etapa →
+                </button>
+                <button class="btn" data-enc-reset>
+                  Reiniciar
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="card reveal wide" data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Comunicação virtual entre pares
+            </h3>
+            <p>
+              A camada de Aplicação parece conversar com sua correspondente no outro host; o mesmo vale para as demais. Essa é a comunicação lógica. O percurso efetivo passa pelas camadas inferiores e pelo meio físico.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="osi" class="lesson-section">
+        <div class="section-heading">
+          <span class="section-line">
+          </span>
+          <h2>
+            OSI: sete camadas como referência
+          </h2>
+        </div>
+        <p class="section-intro">
+          O material apresenta o esforço de padronização internacional e compara sua organização com TCP/IP.
+        </p>
+        <div class="grid">
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Origem e propósito
+            </h3>
+            <p>
+              O PDF situa a proposta OSI no esforço da ISO iniciado ao final da década de 1970, diante da diversidade de redes comerciais. O modelo organiza a comunicação em sete camadas.
+            </p>
+          </article>
+          <article class="card reveal " data-kind="Resumo">
+            <div class="eyebrow kind">
+              <i data-lucide="list-checks" aria-hidden="true">
+              </i>
+              Resumo
+            </div>
+            <h3>
+              Sete camadas
+            </h3>
+            <ul>
+              <li>
+                7 · Aplicação
+              </li>
+              <li>
+                6 · Apresentação
+              </li>
+              <li>
+                5 · Sessão
+              </li>
+              <li>
+                4 · Transporte
+              </li>
+              <li>
+                3 · Rede
+              </li>
+              <li>
+                2 · Enlace
+              </li>
+              <li>
+                1 · Física
+              </li>
+            </ul>
+          </article>
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Por que TCP/IP prevaleceu?
+            </h3>
+            <p>
+              A explicação do material enfatiza a adoção prática: TCP/IP já estava implementado e funcionando na ARPANET/Internet enquanto OSI era desenvolvido como especificação.
+            </p>
+          </article>
+          <article class="card reveal wide" data-kind="Resumo">
+            <div class="eyebrow kind">
+              <i data-lucide="list-checks" aria-hidden="true">
+              </i>
+              Resumo
+            </div>
+            <h3>
+              Correspondência entre os modelos
+            </h3>
+            <div class="table-scroll" tabindex="0" role="region" aria-label="Tabela comparativa, role horizontalmente se necessário">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      OSI
+                    </th>
+                    <th scope="col">
+                      Função apresentada nas figuras
+                    </th>
+                    <th scope="col">
+                      TCP/IP no agrupamento do site
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      Aplicação
+                    </td>
+                    <td>
+                      Aplicações de rede
+                    </td>
+                    <td>
+                      Aplicação
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Apresentação
+                    </td>
+                    <td>
+                      Formatação e criptografia
+                    </td>
+                    <td>
+                      Aplicação
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Sessão
+                    </td>
+                    <td>
+                      Estabelecimento e manutenção de sessões
+                    </td>
+                    <td>
+                      Aplicação
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Transporte
+                    </td>
+                    <td>
+                      Comunicação ponta a ponta
+                    </td>
+                    <td>
+                      Transporte
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Rede
+                    </td>
+                    <td>
+                      Entrega de pacotes e roteamento
+                    </td>
+                    <td>
+                      Rede
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Enlace
+                    </td>
+                    <td>
+                      Quadros e checagem de erros
+                    </td>
+                    <td>
+                      Enlace / Física
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Física
+                    </td>
+                    <td>
+                      Transmissão de bits no meio
+                    </td>
+                    <td>
+                      Enlace / Física
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              No detalhamento de cinco camadas, Enlace e Física aparecem separadas. O agrupamento do menu é uma escolha de organização da disciplina.
+            </p>
+          </article>
+          <article class="card reveal wide" data-kind="Atenção">
+            <div class="eyebrow kind">
+              <i data-lucide="triangle-alert" aria-hidden="true">
+              </i>
+              Atenção
+            </div>
+            <h3>
+              Nota para revisão do professor
+            </h3>
+            <p>
+              Uma figura da aula associa “garantia de entrega” à camada de Transporte e lista TCP/UDP conjuntamente. O alcance dessa afirmação precisa de revisão. O quadro acima usa a descrição geral de comunicação ponta a ponta, preservando a figura original na galeria.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="padroes" class="lesson-section">
+        <div class="section-heading">
+          <span class="section-line">
+          </span>
+          <h2>
+            Padrões e protocolos
+          </h2>
+        </div>
+        <p class="section-intro">
+          Organizações e exemplos citados no material.
+        </p>
+        <div class="grid">
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              ISO
+            </h3>
+            <p>
+              A organização apresentada como responsável pela proposta do modelo de referência OSI, usado para ensinar e comparar arquiteturas de rede.
+            </p>
+          </article>
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              ITU-T
+            </h3>
+            <p>
+              O material cita as séries X, relacionadas a redes de dados, e Y, relacionadas à infraestrutura Internet, na discussão sobre padronização.
+            </p>
+          </article>
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              IEEE 802
+            </h3>
+            <ul>
+              <li>
+                802.3 — Ethernet.
+              </li>
+              <li>
+                802.11 — Wi-Fi.
+              </li>
+              <li>
+                802.15 — PAN sem fio, com Bluetooth e ZigBee citados.
+              </li>
+              <li>
+                802.16 — WiMAX.
+              </li>
+            </ul>
+          </article>
+          <article class="card reveal wide" data-kind="Exemplo">
+            <div class="eyebrow kind">
+              <i data-lucide="search" aria-hidden="true">
+              </i>
+              Exemplo
+            </div>
+            <h3>
+              Exemplos por camada — como aparecem no PDF
+            </h3>
+            <div class="table-scroll" tabindex="0" role="region" aria-label="Tabela comparativa, role horizontalmente se necessário">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      Camada
+                    </th>
+                    <th scope="col">
+                      Protocolos e tecnologias citados
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      Aplicação
+                    </td>
+                    <td>
+                      HTTP, HTTPS, DNS, FTP, SMTP, Modbus, DNP3
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Transporte
+                    </td>
+                    <td>
+                      TCP, UDP, SSL/TLS*
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Rede
+                    </td>
+                    <td>
+                      IP, ARP*, ICMP, OSPF
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Enlace
+                    </td>
+                    <td>
+                      Ethernet, 802.11, VLAN, PPP
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Física
+                    </td>
+                    <td>
+                      RS-232, RJ45, fibra óptica, DSL, rádio (802.11)
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+          <article class="card reveal wide" data-kind="Atenção">
+            <div class="eyebrow kind">
+              <i data-lucide="triangle-alert" aria-hidden="true">
+              </i>
+              Atenção
+            </div>
+            <h3>
+              Nota para revisão do professor
+            </h3>
+            <p>
+              A tabela do PDF coloca SSL/TLS em Transporte, enquanto outra figura associa TLS à Apresentação no OSI. A lista também mistura protocolos, tecnologias e conectores. Esses itens permanecem identificados para revisão. A expressão “Ethernet/IP” no trecho industrial não esclarece se nomeia a tecnologia industrial ou a combinação de Ethernet e IP.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="pratica" class="lesson-section">
+        <div class="section-heading">
+          <span class="section-line">
+          </span>
+          <h2>
+            Enxergue as camadas em uma rede real
+          </h2>
+        </div>
+        <p class="section-intro">
+          As imagens complementares conectam o modelo conceitual a dispositivos e ferramentas.
+        </p>
+        <div class="grid">
+          <article class="card reveal " data-kind="Na prática">
+            <div class="eyebrow kind">
+              <i data-lucide="wrench" aria-hidden="true">
+              </i>
+              Na prática
+            </div>
+            <h3>
+              Switches e roteadores
+            </h3>
+            <p>
+              O material relaciona switches à camada de Enlace e ao endereço MAC; relaciona roteadores à camada Internet/Rede e ao endereço IP. Uma figura mostra três redes locais interligadas por roteadores.
+            </p>
+          </article>
+          <article class="card reveal " data-kind="Na prática">
+            <div class="eyebrow kind">
+              <i data-lucide="wrench" aria-hidden="true">
+              </i>
+              Na prática
+            </div>
+            <h3>
+              Wireshark
+            </h3>
+            <p>
+              A captura original mostra uma troca HTTP e a inspeção das informações de Ethernet, IP e TCP. É um exemplo visual de como as camadas aparecem em uma análise de pacotes.
+            </p>
+            <p>
+              Consulte a imagem na galeria; o material não apresenta um roteiro completo de laboratório.
+            </p>
+          </article>
+          <article class="card reveal " data-kind="Na prática">
+            <div class="eyebrow kind">
+              <i data-lucide="wrench" aria-hidden="true">
+              </i>
+              Na prática
+            </div>
+            <h3>
+              Simulação de topologias
+            </h3>
+            <p>
+              A imagem do GNS3 acompanha uma descrição de projeto e análise de redes, execução nativa ou em máquinas virtuais e interação de elementos simulados com a rede física.
+            </p>
+          </article>
+          <article class="card reveal " data-kind="Exemplo">
+            <div class="eyebrow kind">
+              <i data-lucide="search" aria-hidden="true">
+              </i>
+              Exemplo
+            </div>
+            <h3>
+              RS-232, modems e cabeamento
+            </h3>
+            <p>
+              A aula inclui um diagrama de troca de sinais entre terminais e modems, imagens de pares trançados e racks e a visualização de um sinal em osciloscópio. Esses registros ficam disponíveis na galeria para consulta.
+            </p>
+          </article>
+          <article class="card reveal wide" data-kind="Atenção">
+            <div class="eyebrow kind">
+              <i data-lucide="triangle-alert" aria-hidden="true">
+              </i>
+              Atenção
+            </div>
+            <h3>
+              Nota para revisão do professor
+            </h3>
+            <p>
+              A figura comparativa de switch e roteador rotula ambos como “Rede: Local”, sem explicar o contraste com o diagrama de interligação de redes. A legenda original foi preservada na galeria para revisão.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="resumo" class="lesson-section">
+        <div class="section-heading">
+          <span class="section-line">
+          </span>
+          <h2>
+            Resumo da aula
+          </h2>
+        </div>
+        <p class="section-intro">
+          Conecte funções, unidades e percurso.
+        </p>
+        <div class="grid">
+          <article class="card reveal wide" data-kind="Resumo">
+            <div class="eyebrow kind">
+              <i data-lucide="list-checks" aria-hidden="true">
+              </i>
+              Resumo
+            </div>
+            <h3>
+              O essencial
+            </h3>
+            <ul>
+              <li>
+                Camadas organizam a comunicação por funções.
+              </li>
+              <li>
+                Serviço é oferecido à camada superior; protocolo relaciona pares.
+              </li>
+              <li>
+                A aula detalha cinco camadas TCP/IP e também mostra o agrupamento em quatro.
+              </li>
+              <li>
+                Encapsular adiciona informações de controle; desencapsular as retira.
+              </li>
+              <li>
+                OSI usa sete camadas, com correspondências ao TCP/IP.
+              </li>
+              <li>
+                Os exemplos industriais, dispositivos e ferramentas ajudam a reconhecer essas funções.
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <section id="verifique" class="lesson-section">
+        <div class="section-heading">
+          <span class="section-line">
+          </span>
+          <h2>
+            Verifique seu entendimento
+          </h2>
+        </div>
+        <p class="section-intro">
+          Questões adaptadas do material. Escolha uma resposta e confira a explicação.
+        </p>
+        <div class="grid">
+          <form class="card quiz-card" data-answer="0" data-explanation="O serviço descreve o que uma camada oferece à camada imediatamente acima.">
+            <div class="question-index">
+              QUESTÃO 01
+            </div>
+            <fieldset>
+              <legend>
+                O serviço de uma camada é…
+              </legend>
+              <div class="quiz-options">
+                <label>
+                  <input type="radio" name="q1" value="0">
+                  <span>
+                    A funcionalidade oferecida à camada superior
+                  </span>
+                </label>
+                <label>
+                  <input type="radio" name="q1" value="1">
+                  <span>
+                    Uma mensagem sem regras
+                  </span>
+                </label>
+                <label>
+                  <input type="radio" name="q1" value="2">
+                  <span>
+                    A velocidade de um cabo
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+            <button class="btn" type="submit">
+              Conferir resposta
+            </button>
+            <div class="feedback" role="status" hidden>
+            </div>
+          </form>
+          <form class="card quiz-card" data-answer="1" data-explanation="O Enlace organiza a comunicação entre vizinhos diretamente conectados.">
+            <div class="question-index">
+              QUESTÃO 02
+            </div>
+            <fieldset>
+              <legend>
+                Qual camada cuida do salto entre nós diretamente conectados?
+              </legend>
+              <div class="quiz-options">
+                <label>
+                  <input type="radio" name="q2" value="0">
+                  <span>
+                    Aplicação
+                  </span>
+                </label>
+                <label>
+                  <input type="radio" name="q2" value="1">
+                  <span>
+                    Enlace
+                  </span>
+                </label>
+                <label>
+                  <input type="radio" name="q2" value="2">
+                  <span>
+                    Sessão
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+            <button class="btn" type="submit">
+              Conferir resposta
+            </button>
+            <div class="feedback" role="status" hidden>
+            </div>
+          </form>
+          <form class="card quiz-card" data-answer="0" data-explanation="As camadas acrescentam informações de controle ao conteúdo recebido da camada superior.">
+            <div class="question-index">
+              QUESTÃO 03
+            </div>
+            <fieldset>
+              <legend>
+                O que acontece no encapsulamento?
+              </legend>
+              <div class="quiz-options">
+                <label>
+                  <input type="radio" name="q3" value="0">
+                  <span>
+                    Informações de controle envolvem os dados
+                  </span>
+                </label>
+                <label>
+                  <input type="radio" name="q3" value="1">
+                  <span>
+                    A mensagem é sempre descartada
+                  </span>
+                </label>
+                <label>
+                  <input type="radio" name="q3" value="2">
+                  <span>
+                    A rede deixa de usar sinais
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+            <button class="btn" type="submit">
+              Conferir resposta
+            </button>
+            <div class="feedback" role="status" hidden>
+            </div>
+          </form>
+          <form class="card quiz-card" data-answer="1" data-explanation="A comparação do material reúne Aplicação, Apresentação e Sessão na Aplicação do TCP/IP.">
+            <div class="question-index">
+              QUESTÃO 04
+            </div>
+            <fieldset>
+              <legend>
+                Quais camadas OSI são agrupadas na Aplicação do TCP/IP?
+              </legend>
+              <div class="quiz-options">
+                <label>
+                  <input type="radio" name="q4" value="0">
+                  <span>
+                    Física, Enlace e Rede
+                  </span>
+                </label>
+                <label>
+                  <input type="radio" name="q4" value="1">
+                  <span>
+                    Aplicação, Apresentação e Sessão
+                  </span>
+                </label>
+                <label>
+                  <input type="radio" name="q4" value="2">
+                  <span>
+                    Rede e Transporte
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+            <button class="btn" type="submit">
+              Conferir resposta
+            </button>
+            <div class="feedback" role="status" hidden>
+            </div>
+          </form>
+          <form class="card quiz-card" data-answer="0" data-explanation="A aula associa IEEE 802.3 a Ethernet, 802.11 a Wi-Fi e 802.16 a WiMAX.">
+            <div class="question-index">
+              QUESTÃO 05
+            </div>
+            <fieldset>
+              <legend>
+                Qual padrão é associado a Ethernet no material?
+              </legend>
+              <div class="quiz-options">
+                <label>
+                  <input type="radio" name="q5" value="0">
+                  <span>
+                    IEEE 802.3
+                  </span>
+                </label>
+                <label>
+                  <input type="radio" name="q5" value="1">
+                  <span>
+                    IEEE 802.11
+                  </span>
+                </label>
+                <label>
+                  <input type="radio" name="q5" value="2">
+                  <span>
+                    IEEE 802.16
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+            <button class="btn" type="submit">
+              Conferir resposta
+            </button>
+            <div class="feedback" role="status" hidden>
+            </div>
+          </form>
+        </div>
+      </section>
+      <p class="quiz-score" role="status">
+        Responda no seu ritmo. As respostas não são enviadas.
+      </p>
+      <button class="btn" data-reset-quiz>
+        Reiniciar questões
+      </button>
+      <section id="exercicios" class="lesson-section">
+        <div class="section-heading">
+          <span class="section-line">
+          </span>
+          <h2>
+            Pratique com o material original
+          </h2>
+        </div>
+        <p class="section-intro">
+          Enunciados e gabaritos preservados. As quebras de linha foram adaptadas ao formato de leitura.
+        </p>
+        <div class="grid">
+          <article class="card reveal wide" data-kind="Exercício">
+            <div class="eyebrow kind">
+              <i data-lucide="pencil" aria-hidden="true">
+              </i>
+              Exercício
+            </div>
+            <h3>
+              Exercícios e respostas
+            </h3>
+            <details>
+              <summary>
+                Atividades 1 e 2 — camadas e comparação dos modelos
+              </summary>
+              <div class="details-body original-text">
+                PARA PRATICAR
+Atividades e Próxima Aula
+Atividade 1
+Escolha uma aplicação industrial (ex.: leitura
+de um sensor via Modbus/TCP) e descreva o
+caminho dos dados por todas as camadas do
+modelo TCP/IP , do transmissor ao receptor.
+Atividade 2
+Compare o modelo OSI e o modelo TCP/IP:
+quais camadas do OSI são agrupadas no
+TCP/IP? Por que o TCP/IP prevaleceu na
+prática?
+PRÓXIMA AULA
+Endereçamento e Protocolos de Rede
+Endereços MAC e IP , sub-redes e o papel de switches e roteadores em cada camada.
+                <span class="source-tag">
+                  Material original · páginas 29 do PDF.
+                </span>
+              </div>
+            </details>
+          </article>
+        </div>
+      </section>
+      <section id="nota-atividades" class="lesson-section">
+        <div class="section-heading">
+          <span class="section-line">
+          </span>
+          <h2>
+            Orientação para as atividades
+          </h2>
+        </div>
+        <p class="section-intro">
+          O PDF não traz gabarito para as duas atividades finais.
+        </p>
+        <div class="grid">
+          <article class="card reveal wide" data-kind="Exercício">
+            <div class="eyebrow kind">
+              <i data-lucide="pencil" aria-hidden="true">
+              </i>
+              Exercício
+            </div>
+            <h3>
+              Como organizar sua resposta
+            </h3>
+            <p>
+              Na Atividade 1, percorra as camadas na ordem de envio e depois na ordem de recepção. Na Atividade 2, use a tabela de correspondência e a explicação de adoção prática presente na aula. Esta orientação é uma adaptação didática, não um gabarito original.
+            </p>
+          </article>
+          <article class="card reveal wide" data-kind="Atenção">
+            <div class="eyebrow kind">
+              <i data-lucide="triangle-alert" aria-hidden="true">
+              </i>
+              Atenção
+            </div>
+            <h3>
+              Nota para revisão do professor
+            </h3>
+            <p>
+              A capa identifica “Comunicação de Dados e Redes Industriais (CEEB0048)”; o site usa “Redes de Computadores”, conforme a organização solicitada. O anúncio de próxima aula no PDF é “Endereçamento e Protocolos de Rede”. Nesta entrega, não existe Aula 04 publicada: o botão de próxima aula permanece desabilitado.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="figuras" class="lesson-section">
+        <div class="section-heading">
+          <span class="section-line">
+          </span>
+          <h2>
+            Figuras do material
+          </h2>
+        </div>
+        <p class="section-intro">
+          Registros e exemplos visuais preservados para consulta, com os rótulos do original.
+        </p>
+        <div class="grid">
+          <article class="card reveal wide" data-kind="Exemplo">
+            <div class="eyebrow kind">
+              <i data-lucide="search" aria-hidden="true">
+              </i>
+              Exemplo
+            </div>
+            <h3>
+              Galeria de apoio
+            </h3>
+            <details>
+              <summary>
+                Abrir 14 figuras comentadas
+              </summary>
+              <div class="details-body gallery">
+                <figure>
+                  <img loading="lazy" width="1104" height="621" src="../../assets/images/aula-6d3aa02da6b5.jpg" alt="Sistema de manufatura com controladores, servidores, gateways e dispositivos de campo.">
+                  <figcaption>
+                    Sistema de manufatura com controladores, servidores, gateways e dispositivos de campo. · página 3 do PDF original.
+                  </figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" width="1104" height="621" src="../../assets/images/aula-a241f2851f95.jpg" alt="Concepção de Indústria 4.0 conectando manufatura e serviços de nuvem.">
+                  <figcaption>
+                    Concepção de Indústria 4.0 conectando manufatura e serviços de nuvem. · página 4 do PDF original.
+                  </figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" width="1104" height="621" src="../../assets/images/aula-0f08dc6c9dbe.jpg" alt="Sequência de comunicação por RS-232C e modems sobre rede telefônica.">
+                  <figcaption>
+                    Sequência de comunicação por RS-232C e modems sobre rede telefônica. · página 7 do PDF original.
+                  </figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" width="1104" height="621" src="../../assets/images/aula-a46158e4c9a8.jpg" alt="Três redes interligadas por roteadores.">
+                  <figcaption>
+                    Três redes interligadas por roteadores. · página 9 do PDF original.
+                  </figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" width="1104" height="621" src="../../assets/images/aula-29a11b7b33c6.jpg" alt="Modelo TCP/IP agrupado em quatro camadas e protocolos associados.">
+                  <figcaption>
+                    Modelo TCP/IP agrupado em quatro camadas e protocolos associados. · página 11 do PDF original.
+                  </figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" width="1104" height="621" src="../../assets/images/aula-e9746da57eb9.jpg" alt="Exemplo original de encapsulamento HTTP, TCP, IPv4 e Ethernet, incluindo FCS.">
+                  <figcaption>
+                    Exemplo original de encapsulamento HTTP, TCP, IPv4 e Ethernet, incluindo FCS. · página 14 do PDF original.
+                  </figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" width="1104" height="621" src="../../assets/images/aula-428bcfa80b2e.jpg" alt="Cliente HTTP e servidor HTTP em um instrumento, conectados por Ethernet.">
+                  <figcaption>
+                    Cliente HTTP e servidor HTTP em um instrumento, conectados por Ethernet. · página 16 do PDF original.
+                  </figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" width="1104" height="621" src="../../assets/images/aula-736bfb1fcdb3.jpg" alt="Pares trançados, conectores e organização de cabos em rack.">
+                  <figcaption>
+                    Pares trançados, conectores e organização de cabos em rack. · página 17 do PDF original.
+                  </figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" width="1104" height="621" src="../../assets/images/aula-087e28dd20f7.jpg" alt="Comparação visual OSI/TCP-IP e unidades de dados.">
+                  <figcaption>
+                    Comparação visual OSI/TCP-IP e unidades de dados. · página 19 do PDF original.
+                  </figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" width="1104" height="621" src="../../assets/images/aula-80b6c26f8568.jpg" alt="Sete camadas OSI, funções e exemplos; classificações sujeitas às notas de revisão.">
+                  <figcaption>
+                    Sete camadas OSI, funções e exemplos; classificações sujeitas às notas de revisão. · página 20 do PDF original.
+                  </figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" width="1104" height="621" src="../../assets/images/aula-32a7dc901779.jpg" alt="Quadro original de switch e roteador, com rótulos a revisar.">
+                  <figcaption>
+                    Quadro original de switch e roteador, com rótulos a revisar. · página 22 do PDF original.
+                  </figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" width="1104" height="621" src="../../assets/images/aula-a6b0b5d29b8b.jpg" alt="Captura de análise de pacotes no Wireshark.">
+                  <figcaption>
+                    Captura de análise de pacotes no Wireshark. · página 23 do PDF original.
+                  </figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" width="1104" height="621" src="../../assets/images/aula-74a8c46a1b84.jpg" alt="Sinal observado em osciloscópio com interpretação de campos de Ethernet, IP e TCP.">
+                  <figcaption>
+                    Sinal observado em osciloscópio com interpretação de campos de Ethernet, IP e TCP. · página 24 do PDF original.
+                  </figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" width="1104" height="621" src="../../assets/images/aula-24c1ec3f2a8f.jpg" alt="Exemplo de topologia em ambiente GNS3.">
+                  <figcaption>
+                    Exemplo de topologia em ambiente GNS3. · página 27 do PDF original.
+                  </figcaption>
+                </figure>
+              </div>
+            </details>
+          </article>
+        </div>
+      </section>
+      <section id="referencias" class="lesson-section">
+        <div class="section-heading">
+          <span class="section-line">
+          </span>
+          <h2>
+            Para saber mais
+          </h2>
+        </div>
+        <p class="section-intro">
+          Somente referências presentes nos arquivos fornecidos.
+        </p>
+        <div class="grid">
+          <article class="card reveal wide" data-kind="Resumo">
+            <div class="eyebrow kind">
+              <i data-lucide="list-checks" aria-hidden="true">
+              </i>
+              Resumo
+            </div>
+            <h3>
+              Referências do material
+            </h3>
+            <ul>
+              <li>
+                <a href="https://www.wireshark.org/" target="_blank" rel="noopener noreferrer">
+                  Wireshark — endereço citado no slide de análise de pacotes.
+                </a>
+              </li>
+            </ul>
+            <p>
+              A Aula 03 não inclui uma bibliografia formal. ISO, ITU-T e IEEE 802 são mencionados no conteúdo; não foram acrescentados livros, RFCs ou links de normas não fornecidos.
+            </p>
+          </article>
+        </div>
+      </section>
+      <nav class="end-nav" aria-label="Continuar estudos">
+        <a href="redes-introducao-aula-02.html" class="btn">
+          <i data-lucide="arrow-left" aria-hidden="true">
+          </i>
+          Aula anterior
+        </a>
+        <a href="redes-introducao.html" class="btn">
+          <i data-lucide="grid-2x2" aria-hidden="true">
+          </i>
+          Voltar ao módulo
+        </a>
+        <span class="btn " aria-disabled="true">
+          <i data-lucide="arrow-right" aria-hidden="true">
+          </i>
+          Próxima aula
+        </span>
+      </nav>
+      <footer class="footer shell-footer">
+        <span>LUMI Education · Do fundamento à aplicação.</span>
+      <span>Educação Infantil · Profª Nilcilene Mendes<br>Universidade e Ensino Técnico · Prof. Kennedy Nunes</span>
+        <a href="../../configuracoes/index.html">
+          Personalizar meu ambiente
+        </a>
+      </footer>
+    </main>
+    <button class="icon-btn to-top" type="button" data-to-top aria-label="Voltar ao topo">
+      ↑
+    </button>
+  </body>
+</html>

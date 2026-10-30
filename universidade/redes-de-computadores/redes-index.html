@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Uma rede de ideias para entender como a informação atravessa dispositivos, meios e protocolos.">
+    <meta name="theme-color" content="#0b2540">
+    <title>
+      Redes de Computadores · LUMI Education
+    </title>
+    <script src="../../scripts/theme.js">
+    </script>
+    <link rel="stylesheet" href="../../template/tokens.css">
+    <link rel="stylesheet" href="../../template/base.css">
+    <link rel="stylesheet" href="../../template/layout.css">
+    <link rel="stylesheet" href="../../template/pages/redes.css">
+    <script src="../../scripts/site.js" defer>
+    </script>
+    <script src="../../scripts/icons.js" defer>
+    </script>
+    <script src="../../scripts/lessons/redes.js" defer>
+    </script>
+  </head>
+  <body data-root="../../" data-area="universidade">
+    <a class="skip" href="#conteudo">
+      Pular para o conteúdo
+    </a>
+    <header class="topbar" data-site-header>
+    </header>
+    <progress class="progress reading-progress" data-reading-progress value="0" max="100" aria-label="Progresso de leitura da página">
+    </progress>
+    <aside class="sidebar" id="sidebar" data-site-sidebar aria-label="Menu do aluno">
+    </aside>
+    <button class="scrim" type="button" aria-label="Fechar menu" tabindex="-1">
+    </button>
+    <noscript>
+      <p class="noscript">
+        Ative o JavaScript para usar o menu e as atividades interativas.
+        <a href="../../index.html">
+          Visão geral
+        </a>
+        ·
+        <a href="../../infantil/index.html">
+          Infantil
+        </a>
+        ·
+        <a href="../../universidade/index.html">
+          Universidade
+        </a>
+        ·
+        <a href="../../tecnico/index.html">
+          Técnico
+        </a>
+        ·
+        <a href="../../configuracoes/index.html">
+          Configurações
+        </a>
+      </p>
+    </noscript>
+    <template id="course-navigation">
+      <div class="course-navigation">
+        <p class="side-kicker">
+          NESTE CURSO
+        </p>
+        <nav aria-label="Redes de Computadores">
+          <a href="redes-index.html" class="side-home active" aria-current="page" aria-current="page">
+            <i data-lucide="layout-dashboard" aria-hidden="true">
+            </i>
+            Visão geral
+          </a>
+          <div class="side-module">
+            <a href="redes-introducao.html" class="module-link">
+              <span class="nav-index">
+                00
+              </span>
+              Introdução
+            </a>
+            <a href="redes-introducao-aula-01.html" class="lesson-link">
+              <span class="num">
+                01
+              </span>
+              História da Internet e conceitos fundamentais
+            </a>
+            <a href="redes-introducao-aula-02.html" class="lesson-link">
+              <span class="num">
+                02
+              </span>
+              Fundamentos de comunicação de dados
+            </a>
+            <a href="redes-introducao-aula-03.html" class="lesson-link">
+              <span class="num">
+                03
+              </span>
+              Arquitetura de redes e modelo OSI
+            </a>
+          </div>
+          <div class="side-module">
+            <a class="module-link" href="redes-index.html#enlace-fisica">
+              <span class="nav-index">
+                01
+              </span>
+              Enlace e Física
+            </a>
+            <span class="soon">
+              Em breve
+            </span>
+          </div>
+          <div class="side-module">
+            <a class="module-link" href="redes-index.html#rede">
+              <span class="nav-index">
+                02
+              </span>
+              Rede
+            </a>
+            <span class="soon">
+              Em breve
+            </span>
+          </div>
+          <div class="side-module">
+            <a class="module-link" href="redes-index.html#transporte">
+              <span class="nav-index">
+                03
+              </span>
+              Transporte
+            </a>
+            <span class="soon">
+              Em breve
+            </span>
+          </div>
+          <div class="side-module">
+            <a class="module-link" href="redes-index.html#aplicacao">
+              <span class="nav-index">
+                04
+              </span>
+              Aplicação
+            </a>
+            <span class="soon">
+              Em breve
+            </span>
+          </div>
+        </nav>
+      </div>
+    </template>
+    <main class="main " id="conteudo" tabindex="-1">
+      <nav class="breadcrumb" aria-label="Trilha de navegação">
+        <a href="../../index.html">
+          Início
+        </a>
+        <span aria-hidden="true">
+          ›
+        </span>
+        <a href="../index.html">
+          Universidade
+        </a>
+        <span aria-hidden="true">
+          ›
+        </span>
+        <span aria-current="page">
+          Redes de Computadores
+        </span>
+      </nav>
+      <div class="hero">
+        <div class="eyebrow">
+          Engenharia Elétrica / CCBL · UFMA
+        </div>
+        <h1 tabindex="-1">
+          Redes de
+          <br>
+          Computadores
+        </h1>
+        <p class="hero-text">
+          Uma rede de ideias para entender como a informação atravessa dispositivos, meios e protocolos.
+        </p>
+        <div class="meta">
+          <span class="pill">
+            <i data-lucide="graduation-cap" aria-hidden="true">
+            </i>
+            Engenharia Elétrica · UFMA
+          </span>
+          <span class="pill">
+            3 aulas disponíveis
+          </span>
+          <span class="pill">
+            Módulo 00 · Introdução
+          </span>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card reveal span2" data-kind="Conceito">
+          <div class="eyebrow kind">
+            <i data-lucide="layers" aria-hidden="true">
+            </i>
+            Conceito
+          </div>
+          <h3>
+            Entenda as conexões.
+            <br>
+            Construa o conhecimento.
+          </h3>
+          <p>
+            Uma disciplina sobre como dispositivos compartilham dados, recursos e serviços — dos sinais no meio físico à organização dos protocolos em camadas.
+          </p>
+          <p>
+            Comece pelos fundamentos e avance pelos módulos da pilha TCP/IP. Os exemplos conectam os conceitos à Engenharia Elétrica e às redes industriais.
+          </p>
+          <div class="hero-actions">
+            <a href="redes-introducao.html" class="btn primary">
+              <i data-lucide="arrow-right" aria-hidden="true">
+              </i>
+              Explorar Introdução
+            </a>
+          </div>
+        </article>
+        <article class="card reveal " data-kind="Resumo">
+          <div class="eyebrow kind">
+            <i data-lucide="list-checks" aria-hidden="true">
+            </i>
+            Resumo
+          </div>
+          <h3>
+            A pilha que orienta o percurso
+          </h3>
+          <figure class="figure stack-figure">
+            <svg viewBox="0 0 550 310" role="group" aria-label="Pilha TCP/IP: cada camada é um link para o módulo correspondente">
+              <a href="redes-index.html#aplicacao" aria-label="Ir ao módulo Aplicação">
+                <rect class="layer" x="70" y="20" width="420" height="54" rx="10"/>
+                <text x="100" y="53">Aplicação</text><text x="459" y="53" aria-hidden="true">↗</text>
+              </a>
+              <a href="redes-index.html#transporte" aria-label="Ir ao módulo Transporte">
+                <rect class="layer" x="70" y="90" width="420" height="54" rx="10"/>
+                <text x="100" y="123">Transporte</text><text x="459" y="123" aria-hidden="true">↗</text>
+              </a>
+              <a href="redes-index.html#rede" aria-label="Ir ao módulo Rede">
+                <rect class="layer" x="70" y="160" width="420" height="54" rx="10"/>
+                <text x="100" y="193">Rede</text><text x="459" y="193" aria-hidden="true">↗</text>
+              </a>
+              <a href="redes-index.html#enlace-fisica" aria-label="Ir ao módulo Enlace / Física">
+                <rect class="layer" x="70" y="230" width="420" height="54" rx="10"/>
+                <text x="100" y="263">Enlace / Física</text><text x="459" y="263" aria-hidden="true">↗</text>
+              </a>
+              <circle class="packet stack-indicator" cx="40" cy="47" r="6" aria-hidden="true"/>
+            </svg>
+            <figcaption>
+              Organização da disciplina: Enlace e Física reunidas em um módulo. As camadas ainda sem aulas levam aos cards “em breve”.
+            </figcaption>
+          </figure>
+        </article>
+      </div>
+      <section id="modulos" class="lesson-section">
+        <div class="section-heading">
+          <span class="section-line">
+          </span>
+          <h2>
+            Sua trilha em Redes de Computadores
+          </h2>
+        </div>
+        <p class="section-intro">
+          Cinco módulos. Uma sequência para conectar teoria, interpretação e prática.
+        </p>
+        <div class="grid">
+          <article id="introducao" class="card module-card intro-module">
+            <div class="chapter-no">
+              00
+              <i class="chapter-icon" data-lucide="lightbulb" aria-hidden="true">
+              </i>
+            </div>
+            <h3>
+              Introdução
+            </h3>
+            <p>
+              Fundamentos, história da Internet, comunicação de dados e arquitetura em camadas.
+            </p>
+            <p class="module-count">
+              3 aulas disponíveis
+            </p>
+            <a href="redes-introducao.html" class="btn primary">
+              <i data-lucide="arrow-right" aria-hidden="true">
+              </i>
+              Abrir módulo
+            </a>
+          </article>
+          <article id="enlace-fisica" class="card module-card ">
+            <div class="chapter-no">
+              01
+              <i class="chapter-icon" data-lucide="cable" aria-hidden="true">
+              </i>
+            </div>
+            <h3>
+              Enlace e Física
+            </h3>
+            <p>
+              Sinais, meios de transmissão, enquadramento, Ethernet e comunicação entre nós vizinhos.
+            </p>
+            <p class="module-count">
+              0 aulas disponíveis
+            </p>
+            <span class="empty-label">
+              Em breve
+            </span>
+          </article>
+          <article id="rede" class="card module-card ">
+            <div class="chapter-no">
+              02
+              <i class="chapter-icon" data-lucide="network" aria-hidden="true">
+              </i>
+            </div>
+            <h3>
+              Rede
+            </h3>
+            <p>
+              Endereçamento IP e encaminhamento de pacotes entre redes.
+            </p>
+            <p class="module-count">
+              0 aulas disponíveis
+            </p>
+            <span class="empty-label">
+              Em breve
+            </span>
+          </article>
+          <article id="transporte" class="card module-card ">
+            <div class="chapter-no">
+              03
+              <i class="chapter-icon" data-lucide="arrow-left-right" aria-hidden="true">
+              </i>
+            </div>
+            <h3>
+              Transporte
+            </h3>
+            <p>
+              Comunicação entre processos, TCP, UDP e controle do fluxo de dados.
+            </p>
+            <p class="module-count">
+              0 aulas disponíveis
+            </p>
+            <span class="empty-label">
+              Em breve
+            </span>
+          </article>
+          <article id="aplicacao" class="card module-card ">
+            <div class="chapter-no">
+              04
+              <i class="chapter-icon" data-lucide="app-window" aria-hidden="true">
+              </i>
+            </div>
+            <h3>
+              Aplicação
+            </h3>
+            <p>
+              Protocolos próximos das aplicações: HTTP, DNS, SMTP e exemplos de automação.
+            </p>
+            <p class="module-count">
+              0 aulas disponíveis
+            </p>
+            <span class="empty-label">
+              Em breve
+            </span>
+          </article>
+        </div>
+      </section>
+      <section id="disciplina" class="lesson-section">
+        <div class="section-heading">
+          <span class="section-line">
+          </span>
+          <h2>
+            Como vamos estudar
+          </h2>
+        </div>
+        <p class="section-intro">
+          Informações da apresentação da disciplina, preservadas do material de 2026.
+        </p>
+        <div class="grid">
+          <article class="card reveal " data-kind="Conceito">
+            <div class="eyebrow kind">
+              <i data-lucide="layers" aria-hidden="true">
+              </i>
+              Conceito
+            </div>
+            <h3>
+              Pensar como engenheiro
+            </h3>
+            <ul>
+              <li>
+                O que é e por que foi criado?
+              </li>
+              <li>
+                Qual problema resolve e como funciona?
+              </li>
+              <li>
+                Onde é utilizado?
+              </li>
+              <li>
+                Quais são suas vantagens e limitações?
+              </li>
+            </ul>
+          </article>
+          <article class="card reveal " data-kind="Na prática">
+            <div class="eyebrow kind">
+              <i data-lucide="wrench" aria-hidden="true">
+              </i>
+              Na prática
+            </div>
+            <h3>
+              Teoria e prática
+            </h3>
+            <ul>
+              <li>
+                Aulas expositivas com motivação e analogias.
+              </li>
+              <li>
+                Laboratórios em Cisco Packet Tracer.
+              </li>
+              <li>
+                Discussão de estudos de caso.
+              </li>
+              <li>
+                Exercícios: conceito → configuração → análise → desafio.
+              </li>
+            </ul>
+          </article>
+          <article class="card reveal " data-kind="Resumo">
+            <div class="eyebrow kind">
+              <i data-lucide="list-checks" aria-hidden="true">
+              </i>
+              Resumo
+            </div>
+            <h3>
+              Dados da disciplina
+            </h3>
+            <p>
+              <strong>
+                Engenharia Elétrica · CCBL/UFMA
+              </strong>
+            </p>
+            <p>
+              Professor Me. Kennedy Nunes
+              <br>
+              60 horas · 4 créditos teóricos
+              <br>
+              Período letivo: 2026
+            </p>
+          </article>
+          <article class="card reveal wide" data-kind="Atenção">
+            <div class="eyebrow kind">
+              <i data-lucide="triangle-alert" aria-hidden="true">
+              </i>
+              Atenção
+            </div>
+            <h3>
+              Avaliações — calendário do material
+            </h3>
+            <div class="table-scroll" tabindex="0" role="region" aria-label="Tabela comparativa, role horizontalmente se necessário">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      Avaliação
+                    </th>
+                    <th scope="col">
+                      Instrumento
+                    </th>
+                    <th scope="col">
+                      Data em 2026
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      1
+                    </td>
+                    <td>
+                      Prova escrita individual, sem consulta
+                    </td>
+                    <td>
+                      25/09
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      2
+                    </td>
+                    <td>
+                      Seminário em grupo: até 45 min + arguição
+                    </td>
+                    <td>
+                      25 e 27/11
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      3
+                    </td>
+                    <td>
+                      Simulação prática: Cisco Packet Tracer
+                    </td>
+                    <td>
+                      04/12
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Final
+                    </td>
+                    <td>
+                      Prova escrita: conteúdo integral
+                    </td>
+                    <td>
+                      16/12
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Recuperação
+                    </td>
+                    <td>
+                      Prova de recuperação
+                    </td>
+                    <td>
+                      18/12
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              Datas transcritas do PDF, sem atualização de calendário. A média e os critérios de aprovação seguem a resolução vigente citada no material; o documento não detalha esses critérios.
+            </p>
+          </article>
+          <article class="card reveal wide" data-kind="Resumo">
+            <div class="eyebrow kind">
+              <i data-lucide="list-checks" aria-hidden="true">
+              </i>
+              Resumo
+            </div>
+            <h3>
+              Do panorama original aos módulos do site
+            </h3>
+            <p>
+              O PDF apresenta blocos de Fundamentos e Modelos, Física, Enlace, Rede, Transporte e Segurança/Estudos de Caso. Neste site, a navegação segue a estrutura solicitada: Introdução, Enlace e Física, Rede, Transporte e Aplicação. Os temas de segurança permanecem no panorama da disciplina, sem uma aula adicional nesta entrega.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="referencias" class="lesson-section">
+        <div class="section-heading">
+          <span class="section-line">
+          </span>
+          <h2>
+            Para saber mais
+          </h2>
+        </div>
+        <p class="section-intro">
+          Somente referências presentes nos arquivos fornecidos.
+        </p>
+        <div class="grid">
+          <article class="card reveal wide" data-kind="Resumo">
+            <div class="eyebrow kind">
+              <i data-lucide="list-checks" aria-hidden="true">
+              </i>
+              Resumo
+            </div>
+            <h3>
+              Referências do material
+            </h3>
+            <ul>
+              <li>
+                Tanenbaum, Andrew S.
+                <em>
+                  Redes de Computadores.
+                </em>
+                5ª ed. Pearson, 2011.
+              </li>
+              <li>
+                Kurose, James F.; Ross, Keith W.
+                <em>
+                  Redes de Computadores e a Internet: uma abordagem top-down.
+                </em>
+                6ª ed. Pearson, 2013.
+              </li>
+              <li>
+                Comer, Douglas E.
+                <em>
+                  Redes de Computadores e Internet.
+                </em>
+                6ª ed. Bookman, 2016.
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <footer class="footer shell-footer">
+        <span>LUMI Education · Do fundamento à aplicação.</span>
+      <span>Educação Infantil · Profª Nilcilene Mendes<br>Universidade e Ensino Técnico · Prof. Kennedy Nunes</span>
+        <a href="../../configuracoes/index.html">
+          Personalizar meu ambiente
+        </a>
+      </footer>
+    </main>
+    <button class="icon-btn to-top" type="button" data-to-top aria-label="Voltar ao topo">
+      ↑
+    </button>
+  </body>
+</html>

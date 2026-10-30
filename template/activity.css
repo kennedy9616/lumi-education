@@ -1,0 +1,23 @@
+/* A aula é um palco independente; o entorno e o movimento seguem o AVA. */
+[hidden] {
+  display: none !important;
+}
+body {
+  background-color: var(--bg);
+}
+:root {
+  --ouro: var(--amber);
+  --gold: var(--amber);
+}
+:root[data-motion="reduced"] *, :root[data-motion="reduced"] *::before, :root[data-motion="reduced"] *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

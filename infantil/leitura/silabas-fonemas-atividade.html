@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>
+      A trilha dos sons · Atividade LUMI
+    </title>
+    <script src="../../scripts/theme.js">
+    </script>
+    <link rel="stylesheet" href="../../template/tokens.css">
+    <link rel="stylesheet" href="../../template/pages/silabas-fonemas.css">
+    <link rel="stylesheet" href="../../template/activity.css">
+    <script src="../../scripts/lessons/silabas-fonemas.js" defer>
+    </script>
+    <script src="../../scripts/activity.js" defer>
+    </script>
+  </head>
+  <body data-activity="silabas-fonemas">
+    <div id="frame">
+      <header>
+        <div class="brand" id="brand">
+        </div>
+        <div class="crumb" id="crumb">
+          UMA AVENTURA DE ESCUTAR E DESCOBRIR
+        </div>
+        <div class="top-actions">
+          <button class="iconbtn" id="sound" aria-label="Desligar som" title="Som">
+          </button>
+          <button class="iconbtn" id="menu" aria-label="Mapa da aula" title="Mapa da aula">
+            ☷
+          </button>
+          <button class="iconbtn" id="help" aria-label="Dicas para a professora" title="Dicas da professora">
+            ?
+          </button>
+        </div>
+      </header>
+      <main id="content" aria-label="Slide da aula">
+      </main>
+      <footer>
+        <button class="navbtn" id="back">
+          ← VOLTAR
+        </button>
+        <div class="progress" id="progress">
+        </div>
+        <button class="navbtn primary" id="next">
+          AVANÇAR →
+        </button>
+      </footer>
+      <div class="toast hidden" id="toast" role="status">
+      </div>
+      <div id="confetti" class="celebrate">
+      </div>
+    </div>
+    <dialog id="teacher">
+      <button class="close" data-close aria-label="Fechar">
+        ×
+      </button>
+      <h2>
+        Espaço da professora
+      </h2>
+      <p>
+        Escolha uma letra ou ajuste a aula. Atalho:
+        <b>
+          P
+        </b>
+        .
+      </p>
+      <div class="menu-letters" id="letter-menu">
+      </div>
+      <div class="button-row">
+        <button class="action" id="go-map">
+          Ver trilha
+        </button>
+        <button class="action" id="go-blends">
+          Encontros: AI · OI · EU · UI
+        </button>
+      </div>
+      <div class="settings-grid">
+        <div class="setting">
+          <label>
+            <input type="checkbox" id="lowercase">
+            Mostrar também minúsculas
+          </label>
+          <br>
+          <br>
+          <label>
+            Movimento da boca
+            <br>
+            <select id="speed">
+              <option value="3.6">
+                Lento
+              </option>
+              <option value="2.2">
+                Normal
+              </option>
+            </select>
+          </label>
+        </div>
+        <div class="setting">
+          <label>
+            Voz para palavras e instruções
+            <br>
+            <select id="voice">
+              <option value="">
+                Voz padrão em português
+              </option>
+            </select>
+          </label>
+          <br>
+          <br>
+          <label>
+            <input type="checkbox" id="reduce">
+            Reduzir animações
+          </label>
+        </div>
+        <div class="setting">
+          <b>
+            Gravar minha voz
+          </b>
+          <p class="slow-note">
+            Grave o som puro, sem dizer o nome da letra. Nas junções, una os sons lentamente.
+          </p>
+          <select id="record-key">
+          </select>
+          <div class="button-row silabas-fonemas-style-1">
+            <button class="action" id="record">
+              ● Gravar
+            </button>
+            <button class="action" id="play-record">
+              Ouvir
+            </button>
+            <button class="action" id="delete-record">
+              Apagar
+            </button>
+          </div>
+          <p id="record-status" class="slow-note" role="status">
+            As gravações ficam neste navegador.
+          </p>
+        </div>
+        <div class="setting">
+          <b>
+            Condução da aula
+          </b>
+          <p class="slow-note">
+            ← → navegar · F tela cheia · P professora · Esc fechar janela.
+            <br>
+            Os jogos liberam a próxima etapa.
+          </p>
+          <button class="action" id="unlock">
+            Liberar todas as etapas disponíveis
+          </button>
+          <p id="save-status" class="slow-note">
+          </p>
+        </div>
+      </div>
+      <div class="settings-bottom">
+        <p>
+          <b>
+            Nível 2 · Sons que continuam
+          </b>
+        </p>
+        <div class="menu-letters" id="c-menu">
+        </div>
+        <button class="action" id="go-level2">
+          Abrir trilha do Nível 2
+        </button>
+        <p class="silabas-fonemas-style-2">
+          <b>
+            Nível 3 · Sons rápidos
+          </b>
+        </p>
+        <div class="menu-letters" id="stop-menu">
+        </div>
+        <button class="action" id="go-level3">
+          Abrir trilha do Nível 3
+        </button>
+        <p class="silabas-fonemas-style-2">
+          <b>
+            Nível 4 · Novos sons e escritas
+          </b>
+        </p>
+        <div class="menu-letters" id="advanced-menu">
+        </div>
+        <button class="action" id="go-level4">
+          Abrir trilha do Nível 4
+        </button>
+        <p class="slow-note">
+          Esta versão reúne os Níveis 1 a 4. LH, NH, RR, encontros consonantais e sílabas fechadas não fazem parte desta edição.
+        </p>
+        <button class="action silabas-fonemas-style-1" id="reset">
+          Reiniciar progresso da turma
+        </button>
+      </div>
+    </dialog>
+    <dialog id="tips">
+      <button class="close" data-close aria-label="Fechar">
+        ×
+      </button>
+      <h2>
+        Dica para esta tela
+      </h2>
+      <p id="tip-text">
+      </p>
+    </dialog>
+  </body>
+</html>

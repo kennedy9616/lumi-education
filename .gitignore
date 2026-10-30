@@ -1,0 +1,11 @@
+# Preferências locais, credenciais e arquivos temporários não fazem parte do site.
+.DS_Store
+Thumbs.db
+.env
+.env.*
+.codex/
+.agents/
+.vscode/
+node_modules/
+tmp/
+*.log
